@@ -19,7 +19,13 @@ import {
   forgotPasswordRequestSchema,
   resetPasswordRequestSchema,
   userRegistrationSchema,
-} from '@/shared/schemas/api/requests'
+} from '@/shared/schemas/api/auth.schemas'
+
+// Static imports for better performance
+import { authenticateUser, registerUser } from './auth.core'
+import { verifyEmail, requestPasswordReset, resetPassword } from './auth.email'
+import { logoutUser, logoutAllUserSessions } from './auth.sessions'
+import { linkProvider, unlinkProvider } from './auth.providers'
 
 const AUTH_TAG = 'Authentication'
 const authRoutes = new Hono()
@@ -60,34 +66,25 @@ authRoutes.post(
       throw new BadRequestError('Provider không được hỗ trợ', 'INVALID_PROVIDER')
     }
 
-    try {
-      const authProvider = providerRegistry.get(provider)
-      const ipAddress = c.req.header('x-forwarded-for')
-      const userAgent = c.req.header('user-agent')
-
-      // Handle email login specifically
-      if (provider === 'email') {
-        if (!body.email || !body.password) {
-          throw new ValidationError('Yêu cầu email và mật khẩu')
-        }
+    // Handle email login validation
+    if (provider === 'email') {
+      if (!body.email || !body.password) {
+        throw new ValidationError('Yêu cầu email và mật khẩu')
       }
-
-      const { authService } = await import('./service')
-      const { user, token, expiresAt } = await authService.authenticate(
-        provider,
-        body,
-        ipAddress,
-        userAgent,
-      )
-
-      return c.json(response.success({ user, token, expiresAt }, 'Đăng nhập thành công'))
-    } catch (error: any) {
-      // Distinguish between different auth errors
-      if (error.message.includes('password')) {
-        throw new UnauthorizedError('Email hoặc mật khẩu không hợp lệ')
-      }
-      throw new BadRequestError(error.message || 'Lỗi xác thực', 'AUTH_FAILURE')
     }
+
+    const ipAddress = c.req.header('x-forwarded-for')
+    const userAgent = c.req.header('user-agent')
+
+    // Let authenticateUser handle its own errors properly
+    const { user, token, expiresAt } = await authenticateUser(
+      provider,
+      body,
+      ipAddress,
+      userAgent,
+    )
+
+    return c.json(response.success({ user, token, expiresAt }, 'Đăng nhập thành công'))
   },
 )
 
@@ -117,13 +114,9 @@ authRoutes.get(
       throw new BadRequestError('Yêu cầu authorization code', 'MISSING_CODE')
     }
 
-    try {
-      const { authService } = await import('./service')
-      const { user, token, expiresAt } = await authService.authenticate(provider, { code })
-      return c.json(response.success({ user, token, expiresAt }, 'Đăng nhập thành công'))
-    } catch (error: any) {
-      throw new BadRequestError(`Lỗi OAuth: ${error.message}`, 'OAUTH_ERROR')
-    }
+    // Let authenticateUser handle its own errors properly
+    const { user, token, expiresAt } = await authenticateUser(provider, { code })
+    return c.json(response.success({ user, token, expiresAt }, 'Đăng nhập thành công'))
   },
 )
 
@@ -138,28 +131,21 @@ authRoutes.post(
   async (c) => {
     const body = c.req.valid('json')
 
-    if (!body.email || !body.password || !body.name) {
-      throw new ValidationError('Yêu cầu email, mật khẩu và tên')
-    }
-
-    try {
-      const { authService } = await import('./service')
-      const { user, verificationToken } = await authService.register(
-        body.email,
-        body.password,
-        body.name,
-      )
-      // TODO: Send verification email with the token
-      return c.json(
-        response.success(
-          { user },
-          'Đăng ký thành công. Vui lòng kiểm tra email để xác thực.',
-        ),
-        201,
-      )
-    } catch (error: any) {
-      throw new UserExistsError('Email đã được đăng ký')
-    }
+    // Zod validation already ensures required fields
+    const { user, verificationToken } = await registerUser(
+      body.email,
+      body.password,
+      body.name,
+    )
+    
+    // TODO: Send verification email with the token
+    return c.json(
+      response.success(
+        { user },
+        'Đăng ký thành công. Vui lòng kiểm tra email để xác thực.',
+      ),
+      201,
+    )
   },
 )
 
@@ -174,12 +160,8 @@ authRoutes.post(
   async (c) => {
     const body = c.req.valid('json')
 
-    if (!body.token) {
-      throw new ValidationError('Yêu cầu verification token')
-    }
-
-    const { authService } = await import('./service')
-    const isVerified = await authService.verifyEmail(body.token)
+    // Zod validation already ensures token is present
+    const isVerified = await verifyEmail(body.token)
 
     if (!isVerified) {
       throw new InvalidTokenError('Token xác thực không hợp lệ hoặc đã hết hạn')
@@ -200,12 +182,8 @@ authRoutes.post(
   async (c) => {
     const body = c.req.valid('json')
     
-    if (!body.email) {
-      throw new ValidationError('Yêu cầu email')
-    }
-
-    const { authService } = await import('./service')
-    await authService.requestPasswordReset(body.email)
+    // Zod validation already ensures email is present
+    await requestPasswordReset(body.email)
     return c.json(
       response.success(
         null,
@@ -225,17 +203,9 @@ authRoutes.post(
   async (c) => {
     const body = c.req.valid('json')
     
-    if (!body.token || !body.newPassword) {
-      throw new ValidationError('Yêu cầu token và mật khẩu mới')
-    }
-
-    try {
-      const { authService } = await import('./service')
-      await authService.resetPassword(body.token, body.newPassword)
-      return c.json(response.success(null, 'Đặt lại mật khẩu thành công'))
-    } catch (error: any) {
-      throw new InvalidTokenError(error.message || 'Token không hợp lệ hoặc đã hết hạn')
-    }
+    // Zod validation already ensures required fields
+    await resetPassword(body.token, body.newPassword)
+    return c.json(response.success(null, 'Đặt lại mật khẩu thành công'))
   },
 )
 
@@ -253,8 +223,7 @@ authRoutes.post(
     const token = authHeader?.substring(7)
     
     if (token) {
-      const { authService } = await import('./service')
-      await authService.logout(token)
+      await logoutUser(token)
     }
     return c.json(response.success({ loggedOut: true }, 'Đăng xuất thành công'))
   },
@@ -270,8 +239,7 @@ authRoutes.post(
   authMiddleware,
   async (c) => {
     const user = c.get('user')
-    const { authService } = await import('./service')
-    await authService.logoutAllSessions(user.userId)
+    await logoutAllUserSessions(user.userId)
     return c.json(response.success(null, 'Đã đăng xuất khỏi tất cả các thiết bị'))
   },
 )
@@ -301,13 +269,9 @@ authRoutes.post(
       throw new BadRequestError('Provider không được hỗ trợ', 'INVALID_PROVIDER')
     }
 
-    try {
-      const { authService } = await import('./service')
-      await authService.linkProvider(user.userId, provider, body)
-      return c.json(response.success(null, `Đã liên kết thành công với ${provider}`))
-    } catch (error: any) {
-      throw new ConflictError(error.message || `Không thể liên kết với ${provider}`)
-    }
+    // Let linkProvider handle its own errors properly
+    await linkProvider(user.userId, provider, body)
+    return c.json(response.success(null, `Đã liên kết thành công với ${provider}`))
   },
 )
 
@@ -329,8 +293,7 @@ authRoutes.delete(
     const user = c.get('user')
     const provider = c.req.valid('param').provider
     
-    const { authService } = await import('./service')
-    await authService.unlinkProvider(user.userId, provider)
+    await unlinkProvider(user.userId, provider)
     return c.json(response.success(null, `Đã hủy liên kết với ${provider}`))
   },
 )

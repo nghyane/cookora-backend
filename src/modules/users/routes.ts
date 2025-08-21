@@ -7,8 +7,8 @@ import { authMiddleware } from '@/shared/middleware/auth'
 import {
   changePasswordSchema,
   updateUserProfileSchema,
-  paginationQuerySchema,
-} from '@/shared/schemas/api/requests'
+} from '@/shared/schemas/api/user.schemas'
+import { paginationQuerySchema } from '@/shared/schemas/api/common.schemas'
 import { usersService } from './service'
 import { response } from '@/shared/utils/response'
 import { NotFoundError } from '@/shared/utils/errors'

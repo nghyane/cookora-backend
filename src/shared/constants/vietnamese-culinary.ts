@@ -49,6 +49,34 @@ export const MEAL_TYPES = [
 ] as const
 
 /**
+ * Vietnamese Ingredient Categories - Phân loại nguyên liệu (đồng nhất tiếng Việt)
+ */
+export const INGREDIENT_CATEGORIES = [
+  'rau_cu', // rau củ (30 items)
+  'gia_vi', // gia vị (19 items)  
+  'rau_thom', // rau thơm (16 items)
+  'thit', // thịt (15 items)
+  'gia_vi_kho', // gia vị khô (13 items)
+  'ngu_coc', // ngũ cốc (10 items)
+  'hai_san', // hải sản (6 items)
+  'khac', // khác (4 items)
+] as const
+
+/**
+ * Mapping từ categories cũ (English) sang mới (Vietnamese)
+ */
+export const CATEGORY_MIGRATION_MAP = {
+  vegetables: 'rau_cu',
+  seasoning: 'gia_vi',
+  herbs: 'rau_thom', 
+  meat: 'thit',
+  spices: 'gia_vi_kho',
+  grains: 'ngu_coc',
+  seafood: 'hai_san',
+  other: 'khac'
+} as const
+
+/**
  * Vietnamese Dish Categories - Phân loại món ăn
  */
 export const DISH_CATEGORIES = [
@@ -157,6 +185,7 @@ export const TIME_CATEGORIES = [
 export type CookingMethod = (typeof COOKING_METHODS)[number]
 export type VietnameseRegion = (typeof VIETNAMESE_REGIONS)[number]
 export type MealType = (typeof MEAL_TYPES)[number]
+export type IngredientCategory = (typeof INGREDIENT_CATEGORIES)[number]
 export type DishCategory = (typeof DISH_CATEGORIES)[number]
 export type DietaryRestriction = (typeof DIETARY_RESTRICTIONS)[number]
 export type SpiceLevel = (typeof SPICE_LEVELS)[number]

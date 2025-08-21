@@ -1,1660 +1,1660 @@
 [
-    {
-        "name": "Phở Bò",
-        "description": "Phở Bò (Vietnamese Beef Pho Noodle Soup) là món ăn quốc hồn quốc túy của Việt Nam, nổi bật với nước dùng đậm đà hương vị bò, thanh trong, cùng bánh phở mềm mượt và thịt bò thái lát. Món này thường được ăn kèm rau thơm, giá đỗ, chanh và ớt tươi.",
-        "cookingTime": 390,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Xương bò",
-                "amount": 0.91,
-                "unit": "kg"
-            },
-            {
-                "name": "Thịt bò",
-                "amount": 378,
-                "unit": "g",
-                "notes": "thịt nạm/bắp bò"
-            },
-            {
-                "name": "Thịt bò",
-                "amount": 303,
-                "unit": "g",
-                "notes": "thịt bắp"
-            },
-            {
-                "name": "Nước",
-                "amount": 2.33,
-                "unit": "l"
-            },
-            {
-                "name": "Muối",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Hoa hồi",
-                "amount": 6,
-                "unit": "cái"
-            },
-            {
-                "name": "Quế",
-                "amount": 1,
-                "unit": "miếng"
-            },
-            {
-                "name": "Đinh hương",
-                "amount": 6,
-                "unit": "nụ"
-            },
-            {
-                "name": "Hạt mùi",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Tiểu hồi",
-                "amount": 2,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Thảo quả",
-                "amount": 1.5,
-                "unit": "củ"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 2,
-                "unit": "củ"
-            },
-            {
-                "name": "Gừng",
-                "amount": 2,
-                "unit": "nhánh"
-            },
-            {
-                "name": "Hành tím",
-                "amount": 4,
-                "unit": "củ"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường phèn",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Bánh phở",
-                "amount": 533,
-                "unit": "g"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Ngò rí",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 1,
-                "unit": "túi"
-            },
-            {
-                "name": "Chanh",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Tiêu",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            }
-        ]
-    },
-    {
-        "name": "Bún Bò Huế",
-        "description": "Bún Bò Huế là món bún nước nổi tiếng của ẩm thực Huế, Việt Nam. Món ăn này nổi bật với nước dùng đậm đà, cay nồng, hương sả đặc trưng, cùng với các loại thịt bò, giò heo, và đôi khi có thêm tiết lợn và chả lụa. Thường được ăn kèm với rau sống đa dạng như bắp chuối, giá đỗ, rau muống và rau thơm.",
-        "cookingTime": 240,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Xương bò",
-                "amount": 450,
-                "unit": "g"
-            },
-            {
-                "name": "Giò heo",
-                "amount": 350,
-                "unit": "g"
-            },
-            {
-                "name": "Thịt bắp bò",
-                "amount": 350,
-                "unit": "g"
-            },
-            {
-                "name": "Gân bò",
-                "amount": 125,
-                "unit": "g"
-            },
-            {
-                "name": "Nước",
-                "amount": 2.5,
-                "unit": "l"
-            },
-            {
-                "name": "Sả",
-                "amount": 6,
-                "unit": "cây"
-            },
-            {
-                "name": "Hành tím",
-                "amount": 10,
-                "unit": "củ"
-            },
-            {
-                "name": "Gừng",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Dứa",
-                "amount": 0.25,
-                "unit": "quả",
-                "notes": "thơm"
-            },
-            {
-                "name": "Mắm ruốc Huế",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường phèn",
-                "amount": 30,
-                "unit": "g"
-            },
-            {
-                "name": "Muối",
-                "amount": 1.5,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 1.5,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dầu điều",
-                "amount": 0.5,
-                "unit": "tách"
-            },
-            {
-                "name": "Ớt sa tế",
-                "amount": 3,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Bún tươi",
-                "amount": 450,
-                "unit": "g",
-                "notes": "loại bún bò Huế"
-            },
-            {
-                "name": "Tiết lợn",
-                "amount": 225,
-                "unit": "g"
-            },
-            {
-                "name": "Chả lụa",
-                "amount": 225,
-                "unit": "g"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Ngò rí",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Rau muống bào",
-                "amount": 1,
-                "unit": "đĩa"
-            },
-            {
-                "name": "Bắp chuối bào",
-                "amount": 1,
-                "unit": "đĩa"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 1,
-                "unit": "túi"
-            },
-            {
-                "name": "Rau thơm",
-                "amount": 1,
-                "unit": "đĩa",
-                "notes": "húng quế, kinh giới, tía tô"
-            },
-            {
-                "name": "Chanh",
-                "amount": 2,
-                "unit": "quả"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 2,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Chả Giò (Nem Rán)",
-        "description": "Chả Giò (Nem Rán) là món nem chiên giòn rụm với lớp vỏ bánh tráng vàng ươm, nhân bên trong đậm đà hương vị của thịt heo, tôm, miến, mộc nhĩ và các loại rau củ. Đây là món ăn không thể thiếu trong các dịp lễ Tết, cỗ bàn của người Việt.",
-        "cookingTime": 60,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Thịt heo",
-                "amount": 500,
-                "unit": "g"
-            },
-            {
-                "name": "Tôm",
-                "amount": 200,
-                "unit": "g"
-            },
-            {
-                "name": "Trứng gà",
-                "amount": 2,
-                "unit": "quả"
-            },
-            {
-                "name": "Miến dong khô",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Mộc nhĩ khô",
-                "amount": 20,
-                "unit": "g"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Cà rốt",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 20,
-                "unit": "g"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 150,
-                "unit": "g"
-            },
-            {
-                "name": "Bánh tráng",
-                "amount": 30,
-                "unit": "cái",
-                "notes": "vỏ ram"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Tiêu",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "lượng đủ dùng"
-            },
-            {
-                "name": "Xà lách",
-                "amount": 1,
-                "unit": "cây"
-            },
-            {
-                "name": "Rau thơm",
-                "amount": 1,
-                "unit": "bó"
-            }
-        ]
-    },
-    {
-        "name": "Bánh Mì Thịt",
-        "description": "Bánh Mì Thịt là biểu tượng ẩm thực đường phố Việt Nam, kết hợp bánh mì baguette giòn tan với đa dạng loại nhân như thịt heo quay, chả lụa, pate, cùng rau dưa chua ngọt, rau thơm và ớt tươi. Món này mang đến sự hòa quyện hoàn hảo giữa các hương vị và kết cấu.",
-        "cookingTime": 40,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Bánh mì baguette",
-                "amount": 4,
-                "unit": "ổ"
-            },
-            {
-                "name": "Thịt nguội",
-                "amount": 150,
-                "unit": "g",
-                "notes": "chả lụa"
-            },
-            {
-                "name": "Thịt heo",
-                "amount": 150,
-                "unit": "g",
-                "notes": "xá xíu, hoặc luộc/quay"
-            },
-            {
-                "name": "Pate gan",
-                "amount": 4,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Sốt mayonnaise",
-                "amount": 4,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dưa leo",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Đồ chua",
-                "amount": 150,
-                "unit": "g",
-                "notes": "cà rốt, củ cải trắng"
-            },
-            {
-                "name": "Ngò rí",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Nước tương",
-                "amount": 2,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Maggi (tùy chọn)",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            }
-        ]
-    },
-    {
-        "name": "Canh Chua Cá Lóc",
-        "description": "Canh Chua Cá Lóc là món canh chua ngọt đặc trưng của miền Tây Nam Bộ Việt Nam, nổi bật với vị chua dịu từ me, ngọt thanh từ dứa và cá lóc, cùng sự hòa quyện của các loại rau củ như cà chua, đậu bắp, bạc hà, giá đỗ. Món canh này thường được nêm nếm đậm đà, có chút cay nhẹ và hương thơm của rau ngò om, ngò gai.",
-        "cookingTime": 40,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Cá lóc",
-                "amount": 1,
-                "unit": "kg",
-                "notes": "hoặc cá basa"
-            },
-            {
-                "name": "Dứa",
-                "amount": 0.25,
-                "unit": "quả",
-                "notes": "thơm"
-            },
-            {
-                "name": "Cà chua",
-                "amount": 2,
-                "unit": "quả"
-            },
-            {
-                "name": "Đậu bắp",
-                "amount": 150,
-                "unit": "g"
-            },
-            {
-                "name": "Bạc hà",
-                "amount": 150,
-                "unit": "g"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Ngò om",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Ngò gai",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Sả",
-                "amount": 1,
-                "unit": "nhánh"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Tỏi",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Me vắt",
-                "amount": 20,
-                "unit": "g"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Muối",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "lượng đủ dùng"
-            }
-        ]
-    },
-    {
-        "name": "Bún Riêu Cua",
-        "description": "Bún Riêu Cua là món bún nước nổi tiếng của Việt Nam, đặc trưng với nước dùng chua nhẹ từ cà chua và me, đậm đà vị cua đồng (hoặc riêu cua từ tôm, thịt), ăn kèm đậu phụ chiên, huyết, chả lụa và nhiều loại rau sống tươi ngon như rau muống bào, bắp chuối, giá đỗ.",
-        "cookingTime": 80,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Xương heo",
-                "amount": 0.68,
-                "unit": "kg"
-            },
-            {
-                "name": "Cua đồng",
-                "amount": 200,
-                "unit": "g"
-            },
-            {
-                "name": "Thịt heo xay",
-                "amount": 113,
-                "unit": "g"
-            },
-            {
-                "name": "Tôm tươi",
-                "amount": 113,
-                "unit": "g"
-            },
-            {
-                "name": "Trứng gà",
-                "amount": 4,
-                "unit": "quả"
-            },
-            {
-                "name": "Đậu phụ chiên",
-                "amount": 125,
-                "unit": "g"
-            },
-            {
-                "name": "Cà chua",
-                "amount": 5,
-                "unit": "quả"
-            },
-            {
-                "name": "Bún tươi",
-                "amount": 450,
-                "unit": "g",
-                "notes": "loại bún riêu"
-            },
-            {
-                "name": "Mắm tôm",
-                "amount": 50,
-                "unit": "ml"
-            },
-            {
-                "name": "Hành khô",
-                "amount": 2,
-                "unit": "củ"
-            },
-            {
-                "name": "Tỏi",
-                "amount": 5,
-                "unit": "tép"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Tiết lợn",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Chả lụa",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Rau muống bào",
-                "amount": 1,
-                "unit": "đĩa"
-            },
-            {
-                "name": "Bắp chuối bào",
-                "amount": 1,
-                "unit": "đĩa"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 1,
-                "unit": "túi"
-            },
-            {
-                "name": "Rau kinh giới",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Tía tô",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Chanh",
-                "amount": 2,
-                "unit": "quả"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 2,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Bún Chả",
-        "description": "Bún Chả là một đặc sản nổi tiếng của Hà Nội, Việt Nam, bao gồm bún tươi, chả thịt heo nướng thơm lừng (chả miếng và chả băm), ăn kèm nước chấm chua ngọt đậm đà, đu đủ xanh và cà rốt muối chua, cùng với nhiều loại rau sống tươi ngon.",
-        "cookingTime": 30,
-        "servings": 2,
-        "ingredients": [
-            {
-                "name": "Thịt heo xay",
-                "amount": 250,
-                "unit": "g",
-                "notes": "thịt nạc vai"
-            },
-            {
-                "name": "Thịt ba chỉ",
-                "amount": 150,
-                "unit": "g",
-                "notes": "chả miếng"
-            },
-            {
-                "name": "Bún tươi",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Đường",
-                "amount": 3,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 3,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dấm gạo",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước cốt chanh",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước lọc",
-                "amount": 0.33,
-                "unit": "tách"
-            },
-            {
-                "name": "Tỏi băm",
-                "amount": 3,
-                "unit": "tép"
-            },
-            {
-                "name": "Ớt tươi băm",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Đu đủ xanh",
-                "amount": 50,
-                "unit": "g"
-            },
-            {
-                "name": "Cà rốt",
-                "amount": 50,
-                "unit": "g"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 0.33,
-                "unit": "tách",
-                "notes": "phần trắng băm nhỏ"
-            },
-            {
-                "name": "Hành tím băm",
-                "amount": 1,
-                "unit": "tép",
-                "notes": "băm"
-            },
-            {
-                "name": "Tiêu trắng",
-                "amount": 1,
-                "unit": "nhúm"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1.5,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Xà lách",
-                "amount": 1,
-                "unit": "cây"
-            },
-            {
-                "name": "Ngò rí",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Rau thơm",
-                "amount": 1,
-                "unit": "nắm",
-                "notes": "kinh giới, tía tô"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 1,
-                "unit": "nắm"
-            }
-        ]
-    },
-    {
+  {
+    "name": "Phở Bò",
+    "description": "Phở Bò (Vietnamese Beef Pho Noodle Soup) là món ăn quốc hồn quốc túy của Việt Nam, nổi bật với nước dùng đậm đà hương vị bò, thanh trong, cùng bánh phở mềm mượt và thịt bò thái lát. Món này thường được ăn kèm rau thơm, giá đỗ, chanh và ớt tươi.",
+    "cookingTime": 390,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Xương bò",
+        "amount": 0.91,
+        "unit": "kg"
+      },
+      {
+        "name": "Thịt bò",
+        "amount": 378,
+        "unit": "g",
+        "notes": "thịt nạm/bắp bò"
+      },
+      {
+        "name": "Thịt bò",
+        "amount": 303,
+        "unit": "g",
+        "notes": "thịt bắp"
+      },
+      {
+        "name": "Nước",
+        "amount": 2.33,
+        "unit": "l"
+      },
+      {
+        "name": "Muối",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Hoa hồi",
+        "amount": 6,
+        "unit": "cái"
+      },
+      {
+        "name": "Quế",
+        "amount": 1,
+        "unit": "miếng"
+      },
+      {
+        "name": "Đinh hương",
+        "amount": 6,
+        "unit": "nụ"
+      },
+      {
+        "name": "Hạt mùi",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Tiểu hồi",
+        "amount": 2,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Thảo quả",
+        "amount": 1.5,
+        "unit": "củ"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 2,
+        "unit": "củ"
+      },
+      {
+        "name": "Gừng",
+        "amount": 2,
+        "unit": "nhánh"
+      },
+      {
+        "name": "Hành tím",
+        "amount": 4,
+        "unit": "củ"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường phèn",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Bánh phở",
+        "amount": 533,
+        "unit": "g"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Ngò rí",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 1,
+        "unit": "túi"
+      },
+      {
+        "name": "Chanh",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Tiêu",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      }
+    ]
+  },
+  {
+    "name": "Bún Bò Huế",
+    "description": "Bún Bò Huế là món bún nước nổi tiếng của ẩm thực Huế, Việt Nam. Món ăn này nổi bật với nước dùng đậm đà, cay nồng, hương sả đặc trưng, cùng với các loại thịt bò, giò heo, và đôi khi có thêm tiết lợn và chả lụa. Thường được ăn kèm với rau sống đa dạng như bắp chuối, giá đỗ, rau muống và rau thơm.",
+    "cookingTime": 240,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Xương bò",
+        "amount": 450,
+        "unit": "g"
+      },
+      {
+        "name": "Giò heo",
+        "amount": 350,
+        "unit": "g"
+      },
+      {
+        "name": "Thịt bắp bò",
+        "amount": 350,
+        "unit": "g"
+      },
+      {
+        "name": "Gân bò",
+        "amount": 125,
+        "unit": "g"
+      },
+      {
+        "name": "Nước",
+        "amount": 2.5,
+        "unit": "l"
+      },
+      {
+        "name": "Sả",
+        "amount": 6,
+        "unit": "cây"
+      },
+      {
+        "name": "Hành tím",
+        "amount": 10,
+        "unit": "củ"
+      },
+      {
+        "name": "Gừng",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Dứa",
+        "amount": 0.25,
+        "unit": "quả",
+        "notes": "thơm"
+      },
+      {
+        "name": "Mắm ruốc Huế",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường phèn",
+        "amount": 30,
+        "unit": "g"
+      },
+      {
+        "name": "Muối",
+        "amount": 1.5,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 1.5,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dầu điều",
+        "amount": 0.5,
+        "unit": "tách"
+      },
+      {
+        "name": "Ớt sa tế",
+        "amount": 3,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Bún tươi",
+        "amount": 450,
+        "unit": "g",
+        "notes": "loại bún bò Huế"
+      },
+      {
+        "name": "Tiết lợn",
+        "amount": 225,
+        "unit": "g"
+      },
+      {
+        "name": "Chả lụa",
+        "amount": 225,
+        "unit": "g"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Ngò rí",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Rau muống bào",
+        "amount": 1,
+        "unit": "đĩa"
+      },
+      {
+        "name": "Bắp chuối bào",
+        "amount": 1,
+        "unit": "đĩa"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 1,
+        "unit": "túi"
+      },
+      {
+        "name": "Rau thơm",
+        "amount": 1,
+        "unit": "đĩa",
+        "notes": "húng quế, kinh giới, tía tô"
+      },
+      {
+        "name": "Chanh",
+        "amount": 2,
+        "unit": "quả"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 2,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Chả Giò (Nem Rán)",
+    "description": "Chả Giò (Nem Rán) là món nem chiên giòn rụm với lớp vỏ bánh tráng vàng ươm, nhân bên trong đậm đà hương vị của thịt heo, tôm, miến, mộc nhĩ và các loại rau củ. Đây là món ăn không thể thiếu trong các dịp lễ Tết, cỗ bàn của người Việt.",
+    "cookingTime": 60,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Thịt heo",
+        "amount": 500,
+        "unit": "g"
+      },
+      {
+        "name": "Tôm",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "name": "Trứng gà",
+        "amount": 2,
+        "unit": "quả"
+      },
+      {
+        "name": "Miến dong khô",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Mộc nhĩ khô",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Cà rốt",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Bánh tráng",
+        "amount": 30,
+        "unit": "cái",
+        "notes": "vỏ ram"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Tiêu",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "lượng đủ dùng"
+      },
+      {
+        "name": "Xà lách",
+        "amount": 1,
+        "unit": "cây"
+      },
+      {
+        "name": "Rau thơm",
+        "amount": 1,
+        "unit": "bó"
+      }
+    ]
+  },
+  {
+    "name": "Bánh Mì Thịt",
+    "description": "Bánh Mì Thịt là biểu tượng ẩm thực đường phố Việt Nam, kết hợp bánh mì baguette giòn tan với đa dạng loại nhân như thịt heo quay, chả lụa, pate, cùng rau dưa chua ngọt, rau thơm và ớt tươi. Món này mang đến sự hòa quyện hoàn hảo giữa các hương vị và kết cấu.",
+    "cookingTime": 40,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Bánh mì baguette",
+        "amount": 4,
+        "unit": "ổ"
+      },
+      {
+        "name": "Thịt nguội",
+        "amount": 150,
+        "unit": "g",
+        "notes": "chả lụa"
+      },
+      {
+        "name": "Thịt heo",
+        "amount": 150,
+        "unit": "g",
+        "notes": "xá xíu, hoặc luộc/quay"
+      },
+      {
+        "name": "Pate gan",
+        "amount": 4,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Sốt mayonnaise",
+        "amount": 4,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dưa leo",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Đồ chua",
+        "amount": 150,
+        "unit": "g",
+        "notes": "cà rốt, củ cải trắng"
+      },
+      {
+        "name": "Ngò rí",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Nước tương",
+        "amount": 2,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Maggi (tùy chọn)",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      }
+    ]
+  },
+  {
+    "name": "Canh Chua Cá Lóc",
+    "description": "Canh Chua Cá Lóc là món canh chua ngọt đặc trưng của miền Tây Nam Bộ Việt Nam, nổi bật với vị chua dịu từ me, ngọt thanh từ dứa và cá lóc, cùng sự hòa quyện của các loại rau củ như cà chua, đậu bắp, bạc hà, giá đỗ. Món canh này thường được nêm nếm đậm đà, có chút cay nhẹ và hương thơm của rau ngò om, ngò gai.",
+    "cookingTime": 40,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Cá lóc",
+        "amount": 1,
+        "unit": "kg",
+        "notes": "hoặc cá basa"
+      },
+      {
+        "name": "Dứa",
+        "amount": 0.25,
+        "unit": "quả",
+        "notes": "thơm"
+      },
+      {
+        "name": "Cà chua",
+        "amount": 2,
+        "unit": "quả"
+      },
+      {
+        "name": "Đậu bắp",
+        "amount": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Bạc hà",
+        "amount": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Ngò om",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Ngò gai",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Sả",
+        "amount": 1,
+        "unit": "nhánh"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Tỏi",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Me vắt",
+        "amount": 20,
+        "unit": "g"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Muối",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "lượng đủ dùng"
+      }
+    ]
+  },
+  {
+    "name": "Bún Riêu Cua",
+    "description": "Bún Riêu Cua là món bún nước nổi tiếng của Việt Nam, đặc trưng với nước dùng chua nhẹ từ cà chua và me, đậm đà vị cua đồng (hoặc riêu cua từ tôm, thịt), ăn kèm đậu phụ chiên, huyết, chả lụa và nhiều loại rau sống tươi ngon như rau muống bào, bắp chuối, giá đỗ.",
+    "cookingTime": 80,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Xương heo",
+        "amount": 0.68,
+        "unit": "kg"
+      },
+      {
+        "name": "Cua đồng",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "name": "Thịt heo xay",
+        "amount": 113,
+        "unit": "g"
+      },
+      {
+        "name": "Tôm tươi",
+        "amount": 113,
+        "unit": "g"
+      },
+      {
+        "name": "Trứng gà",
+        "amount": 4,
+        "unit": "quả"
+      },
+      {
+        "name": "Đậu phụ chiên",
+        "amount": 125,
+        "unit": "g"
+      },
+      {
+        "name": "Cà chua",
+        "amount": 5,
+        "unit": "quả"
+      },
+      {
+        "name": "Bún tươi",
+        "amount": 450,
+        "unit": "g",
+        "notes": "loại bún riêu"
+      },
+      {
+        "name": "Mắm tôm",
+        "amount": 50,
+        "unit": "ml"
+      },
+      {
+        "name": "Hành khô",
+        "amount": 2,
+        "unit": "củ"
+      },
+      {
+        "name": "Tỏi",
+        "amount": 5,
+        "unit": "tép"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Tiết lợn",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Chả lụa",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Rau muống bào",
+        "amount": 1,
+        "unit": "đĩa"
+      },
+      {
+        "name": "Bắp chuối bào",
+        "amount": 1,
+        "unit": "đĩa"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 1,
+        "unit": "túi"
+      },
+      {
+        "name": "Rau kinh giới",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Tía tô",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Chanh",
+        "amount": 2,
+        "unit": "quả"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 2,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Bún Chả",
+    "description": "Bún Chả là một đặc sản nổi tiếng của Hà Nội, Việt Nam, bao gồm bún tươi, chả thịt heo nướng thơm lừng (chả miếng và chả băm), ăn kèm nước chấm chua ngọt đậm đà, đu đủ xanh và cà rốt muối chua, cùng với nhiều loại rau sống tươi ngon.",
+    "cookingTime": 30,
+    "servings": 2,
+    "ingredients": [
+      {
+        "name": "Thịt heo xay",
+        "amount": 250,
+        "unit": "g",
+        "notes": "thịt nạc vai"
+      },
+      {
+        "name": "Thịt ba chỉ",
+        "amount": 150,
+        "unit": "g",
+        "notes": "chả miếng"
+      },
+      {
+        "name": "Bún tươi",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Đường",
+        "amount": 3,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 3,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dấm gạo",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước cốt chanh",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước lọc",
+        "amount": 0.33,
+        "unit": "tách"
+      },
+      {
+        "name": "Tỏi băm",
+        "amount": 3,
+        "unit": "tép"
+      },
+      {
+        "name": "Ớt tươi băm",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Đu đủ xanh",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Cà rốt",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 0.33,
+        "unit": "tách",
+        "notes": "phần trắng băm nhỏ"
+      },
+      {
+        "name": "Hành tím băm",
+        "amount": 1,
+        "unit": "tép",
+        "notes": "băm"
+      },
+      {
+        "name": "Tiêu trắng",
+        "amount": 1,
+        "unit": "nhúm"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1.5,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Xà lách",
+        "amount": 1,
+        "unit": "cây"
+      },
+      {
+        "name": "Ngò rí",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Rau thơm",
+        "amount": 1,
+        "unit": "nắm",
+        "notes": "kinh giới, tía tô"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 1,
+        "unit": "nắm"
+      }
+    ]
+  },
+  {
+    "name": "Mì Quảng",
+    "description": "Mì Quảng là món mì nước đặc trưng của tỉnh Quảng Nam, miền Trung Việt Nam, nổi bật với sợi mì vàng làm từ bột gạo và nghệ, nước dùng ít nhưng đậm đà, ăn kèm tôm, thịt heo, trứng cút, đậu phộng rang, bánh tráng mè nướng giòn và nhiều loại rau sống.",
+    "cookingTime": 70,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Xương heo",
+        "amount": 0.91,
+        "unit": "kg"
+      },
+      {
+        "name": "Thịt ba chỉ",
+        "amount": 303,
+        "unit": "g"
+      },
+      {
+        "name": "Tôm tươi",
+        "amount": 303,
+        "unit": "g",
+        "notes": "nguyên con"
+      },
+      {
         "name": "Mì Quảng",
-        "description": "Mì Quảng là món mì nước đặc trưng của tỉnh Quảng Nam, miền Trung Việt Nam, nổi bật với sợi mì vàng làm từ bột gạo và nghệ, nước dùng ít nhưng đậm đà, ăn kèm tôm, thịt heo, trứng cút, đậu phộng rang, bánh tráng mè nướng giòn và nhiều loại rau sống.",
-        "cookingTime": 70,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Xương heo",
-                "amount": 0.91,
-                "unit": "kg"
-            },
-            {
-                "name": "Thịt ba chỉ",
-                "amount": 303,
-                "unit": "g"
-            },
-            {
-                "name": "Tôm tươi",
-                "amount": 303,
-                "unit": "g",
-                "notes": "nguyên con"
-            },
-            {
-                "name": "Mì Quảng",
-                "amount": 397,
-                "unit": "g",
-                "notes": "sợi vàng"
-            },
-            {
-                "name": "Nước",
-                "amount": 1.26,
-                "unit": "l"
-            },
-            {
-                "name": "Muối",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Bột ớt",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Bột nghệ",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 3,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Hành tím",
-                "amount": 2,
-                "unit": "củ"
-            },
-            {
-                "name": "Tỏi",
-                "amount": 6,
-                "unit": "tép"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Ngò rí",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Hành tây thái lát mỏng",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Đậu phộng rang",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Bánh tráng mè nướng",
-                "amount": 1,
-                "unit": "cái"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Cải bắp",
-                "amount": 1,
-                "unit": "lượng nhỏ",
-                "notes": "xanh hoặc tím"
-            },
-            {
-                "name": "Rau xà lách",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Chanh",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Gỏi Cuốn (Nem Cuốn)",
-        "description": "Gỏi Cuốn là món ăn khai vị thanh mát, được làm từ bánh tráng mỏng cuốn nhân tôm, thịt luộc, bún tươi, xà lách và các loại rau thơm. Món này thường được chấm kèm nước mắm chua ngọt hoặc tương đậu phộng, mang đến hương vị tươi ngon và nhẹ nhàng.",
-        "cookingTime": 30,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Thịt heo",
-                "amount": 180,
-                "unit": "g",
-                "notes": "thịt ba chỉ"
-            },
-            {
-                "name": "Tôm tươi",
-                "amount": 180,
-                "unit": "g"
-            },
-            {
-                "name": "Bún tươi",
-                "amount": 44,
-                "unit": "g"
-            },
-            {
-                "name": "Xà lách",
-                "amount": 1,
-                "unit": "cây"
-            },
-            {
-                "name": "Húng quế",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Ngò rí",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Bánh tráng",
-                "amount": 10,
-                "unit": "cái",
-                "notes": "vỏ ram"
-            },
-            {
-                "name": "Đậu phộng rang",
-                "amount": 60,
-                "unit": "g"
-            },
-            {
-                "name": "Tương đen",
-                "amount": 0.25,
-                "unit": "tách",
-                "notes": "hoisin"
-            },
-            {
-                "name": "Bơ đậu phộng",
-                "amount": 0.5,
-                "unit": "tách"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Cơm Tấm Sườn Bì Chả",
-        "description": "Cơm Tấm Sườn Bì Chả là món ăn đặc trưng của ẩm thực Sài Gòn, Việt Nam. Món này gồm cơm tấm (gạo tấm), sườn heo nướng ướp đậm đà, bì (thịt heo và da heo thái sợi trộn thính), chả trứng hấp, ăn kèm dưa leo, cà chua, đồ chua và chan nước mắm chua ngọt.",
-        "cookingTime": 60,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Gạo tấm",
-                "amount": 2,
-                "unit": "bát"
-            },
-            {
-                "name": "Sườn cốt lết heo",
-                "amount": 250,
-                "unit": "g"
-            },
-            {
-                "name": "Thịt bì heo",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Chả trứng hấp",
-                "amount": 1,
-                "unit": "miếng"
-            },
-            {
-                "name": "Trứng ốp la",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Dưa leo",
-                "amount": 0.5,
-                "unit": "quả"
-            },
-            {
-                "name": "Cà chua",
-                "amount": 0.5,
-                "unit": "quả"
-            },
-            {
-                "name": "Đồ chua",
-                "amount": 50,
-                "unit": "g",
-                "notes": "cà rốt, củ cải trắng"
-            },
-            {
-                "name": "Mỡ hành",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước mắm chua ngọt",
-                "amount": 1,
-                "unit": "chén nhỏ"
-            }
-        ]
-    },
-    {
-        "name": "Bánh Xèo",
-        "description": "Bánh Xèo là một loại bánh xèo giòn, vàng ươm, được làm từ bột gạo, nước cốt dừa và nghệ, nhân bên trong thường có tôm, thịt heo, giá đỗ và hành tây. Món này thường được ăn kèm với rau sống tươi mát và nước chấm chua ngọt.",
-        "cookingTime": 20,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Bột gạo",
-                "amount": 75,
-                "unit": "g"
-            },
-            {
-                "name": "Bột bắp",
-                "amount": 25,
-                "unit": "g"
-            },
-            {
-                "name": "Muối",
-                "amount": 0.25,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Bột nghệ",
-                "amount": 0.25,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Nước cốt dừa",
-                "amount": 60,
-                "unit": "ml"
-            },
-            {
-                "name": "Nước",
-                "amount": 240,
-                "unit": "ml"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 2,
-                "unit": "nhánh"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Thịt heo",
-                "amount": 120,
-                "unit": "g",
-                "notes": "thịt nạc vai"
-            },
-            {
-                "name": "Hành khô",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Tôm tươi",
-                "amount": 250,
-                "unit": "g"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 150,
-                "unit": "g"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Tiêu đen",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "lượng đủ dùng"
-            },
-            {
-                "name": "Xà lách",
-                "amount": 1,
-                "unit": "cây"
-            },
-            {
-                "name": "Rau thơm",
-                "amount": 1,
-                "unit": "bó"
-            }
-        ]
-    },
-    {
-        "name": "Bánh Cuốn",
-        "description": "Bánh Cuốn là món ăn sáng hoặc ăn nhẹ phổ biến, bao gồm những lớp bánh tráng mỏng, mềm mượt được hấp từ bột gạo, nhân bên trong thường là thịt heo băm và mộc nhĩ. Bánh được ăn kèm chả lụa, hành phi giòn, rau thơm và chấm nước mắm chua ngọt.",
-        "cookingTime": 65,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Bột gạo",
-                "amount": 0.8,
-                "unit": "tách"
-            },
-            {
-                "name": "Bột năng",
-                "amount": 0.8,
-                "unit": "tách",
-                "notes": "tinh bột sắn"
-            },
-            {
-                "name": "Muối",
-                "amount": 0.5,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Nước lạnh",
-                "amount": 3.2,
-                "unit": "tách"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Mộc nhĩ khô",
-                "amount": 0.5,
-                "unit": "tách"
-            },
-            {
-                "name": "Thịt heo xay",
-                "amount": 180,
-                "unit": "g"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Tỏi băm",
-                "amount": 3,
-                "unit": "tép"
-            },
-            {
-                "name": "Chả lụa",
-                "amount": 120,
-                "unit": "g"
-            },
-            {
-                "name": "Hành phi",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dưa leo",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Giá đỗ",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Rau thơm",
-                "amount": 1,
-                "unit": "nắm",
-                "notes": "húng quế, ngò rí"
-            },
-            {
-                "name": "Nước chấm chua ngọt",
-                "amount": 1,
-                "unit": "chén nhỏ"
-            }
-        ]
-    },
-    {
-        "name": "Bò Lúc Lắc",
-        "description": "Bò Lúc Lắc là món bò xào nhanh với thịt bò thái hạt lựu, được ướp đậm đà và xào trên lửa lớn cho đến khi cháy cạnh bên ngoài nhưng vẫn mềm mọng bên trong. Món này thường được ăn kèm với cơm, salad xà lách, cà chua, dưa leo và chấm muối tiêu chanh hoặc sốt đặc trưng.",
-        "cookingTime": 20,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Thịt bò thăn",
-                "amount": 500,
-                "unit": "g"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Ớt chuông",
-                "amount": 2,
-                "unit": "quả"
-            },
-            {
-                "name": "Tỏi băm",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước tương",
-                "amount": 3,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dầu hào",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Tiêu đen xay",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 1.5,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Ketchup",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Khoai tây chiên",
-                "amount": 2,
-                "unit": "củ"
-            },
-            {
-                "name": "Xà lách",
-                "amount": 1,
-                "unit": "cây"
-            },
-            {
-                "name": "Cà chua",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Dưa leo",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 3,
-                "unit": "nhánh"
-            },
-            {
-                "name": "Chanh",
-                "amount": 1,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Cá Kho Tộ",
-        "description": "Cá Kho Tộ là món ăn đậm chất miền Tây Nam Bộ Việt Nam, với cá (thường là cá lóc hoặc cá basa) được kho rim trong nồi đất cùng nước mắm, đường, tiêu và nước màu đường cho đến khi thịt cá săn chắc, thấm vị mặn ngọt và có màu vàng cánh gián hấp dẫn. Thường ăn kèm cơm nóng.",
-        "cookingTime": 50,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Cá lóc",
-                "amount": 1,
-                "unit": "kg",
-                "notes": "hoặc cá basa"
-            },
-            {
-                "name": "Thịt ba chỉ",
-                "amount": 100,
-                "unit": "g"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 4,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước hàng",
-                "amount": 2,
-                "unit": "thìa canh",
-                "notes": "nước màu"
-            },
-            {
-                "name": "Tỏi băm",
-                "amount": 3,
-                "unit": "tép"
-            },
-            {
-                "name": "Hành khô băm",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Tiêu xay",
-                "amount": 0.25,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Nước dừa tươi",
-                "amount": 180,
-                "unit": "ml",
-                "notes": "hoặc soda dừa Coco Rico"
-            }
-        ]
-    },
-    {
-        "name": "Bún Đậu Mắm Tôm",
-        "description": "Bún Đậu Mắm Tôm là món ăn dân dã đặc trưng của Hà Nội, với bún lá, đậu phụ chiên giòn, chả cốm, thịt chân giò luộc, và lòng dồi chiên (tùy chọn), tất cả được bày biện trên một mẹt tre và chấm với mắm tôm pha chua ngọt cay nồng, ăn kèm các loại rau thơm và dưa chuột.",
-        "cookingTime": 45,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Bún lá",
-                "amount": 500,
-                "unit": "g",
-                "notes": "hoặc bún tươi"
-            },
-            {
-                "name": "Đậu phụ",
-                "amount": 500,
-                "unit": "g"
-            },
-            {
-                "name": "Thịt chân giò heo",
-                "amount": 300,
-                "unit": "g"
-            },
-            {
-                "name": "Chả cốm",
-                "amount": 200,
-                "unit": "g"
-            },
-            {
-                "name": "Mắm tôm",
-                "amount": 50,
-                "unit": "g"
-            },
-            {
-                "name": "Đường",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Quất",
-                "amount": 1,
-                "unit": "quả",
-                "notes": "tắc hoặc chanh"
-            },
-            {
-                "name": "Ớt tươi",
-                "amount": 1,
-                "unit": "quả"
-            },
-            {
-                "name": "Tỏi",
-                "amount": 1,
-                "unit": "tép"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "lượng đủ dùng",
-                "notes": "để chiên đậu"
-            },
-            {
-                "name": "Rau kinh giới",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Tía tô",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Húng lủi",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Dưa leo",
-                "amount": 1,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Chả Cá Lã Vọng",
-        "description": "Chả Cá Lã Vọng là món đặc sản nổi tiếng của Hà Nội, với những miếng cá lăng (hoặc cá basa) tẩm ướp nghệ và riềng, chiên trên chảo nóng cùng thì là và hành lá. Món này thường được ăn kèm bún, đậu phộng rang, rau thơm và chấm mắm tôm pha chua ngọt cay nồng.",
-        "cookingTime": 20,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Cá lăng",
-                "amount": 680,
-                "unit": "g",
-                "notes": "hoặc cá basa/diêu hồng"
-            },
-            {
-                "name": "Muối",
-                "amount": 0.5,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Đường",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Bột nghệ",
-                "amount": 1,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Riềng",
-                "amount": 1,
-                "unit": "thìa cà phê",
-                "notes": "hoặc gừng băm"
-            },
-            {
-                "name": "Tỏi băm",
-                "amount": 2,
-                "unit": "tép"
-            },
-            {
-                "name": "Hành tím băm",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "lượng đủ dùng"
-            },
-            {
-                "name": "Bột năng",
-                "amount": 0.5,
-                "unit": "tách"
-            },
-            {
-                "name": "Thì là",
-                "amount": 1,
-                "unit": "bó"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 4,
-                "unit": "nhánh"
-            },
-            {
-                "name": "Hành tây nhỏ",
-                "amount": 1,
-                "unit": "củ"
-            },
-            {
-                "name": "Bún tươi",
-                "amount": 1,
-                "unit": "gói",
-                "notes": "sợi vừa"
-            },
-            {
-                "name": "Đậu phộng rang",
-                "amount": 1,
-                "unit": "nắm"
-            },
-            {
-                "name": "Mắm tôm",
-                "amount": 1,
-                "unit": "chén nhỏ"
-            }
-        ]
-    },
-    {
-        "name": "Gỏi Gà Bắp Cải",
-        "description": "Gỏi Gà Bắp Cải là món salad thanh mát của Việt Nam, với thịt gà luộc xé phay trộn cùng bắp cải thái sợi, cà rốt, hành tây, rau răm và các loại rau thơm khác. Món này được trộn đều với nước mắm chua ngọt, rắc thêm đậu phộng rang và hành phi, tạo nên hương vị hài hòa và giòn ngon.",
-        "cookingTime": 45,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Thịt gà",
-                "amount": 340,
-                "unit": "g",
-                "notes": "ức hoặc đùi"
-            },
-            {
-                "name": "Bắp cải xanh",
-                "amount": 2,
-                "unit": "tách",
-                "notes": "thái sợi"
-            },
-            {
-                "name": "Bắp cải tím",
-                "amount": 1,
-                "unit": "tách",
-                "notes": "tùy chọn, thái sợi"
-            },
-            {
-                "name": "Cà rốt",
-                "amount": 0.5,
-                "unit": "tách",
-                "notes": "thái sợi"
-            },
-            {
-                "name": "Hành tây",
-                "amount": 0.25,
-                "unit": "tách",
-                "notes": "trắng hoặc vàng, thái lát mỏng"
-            },
-            {
-                "name": "Rau răm",
-                "amount": 0.5,
-                "unit": "tách",
-                "notes": "thái nhỏ"
-            },
-            {
-                "name": "Đậu phộng rang",
-                "amount": 1,
-                "unit": "lượng nhỏ",
-                "notes": "đập dập"
-            },
-            {
-                "name": "Hành phi",
-                "amount": 1,
-                "unit": "lượng nhỏ"
-            },
-            {
-                "name": "Nước mắm",
-                "amount": 4,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Đường",
-                "amount": 3,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước cốt chanh",
-                "amount": 2,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Tỏi băm",
-                "amount": 2,
-                "unit": "tép"
-            },
-            {
-                "name": "Ớt tươi băm",
-                "amount": 1,
-                "unit": "quả"
-            }
-        ]
-    },
-    {
-        "name": "Bánh Khọt",
-        "description": "Bánh Khọt là loại bánh xèo mini giòn rụm, vàng ươm, được làm từ bột gạo, nước cốt dừa và bột nghệ, nhân thường là tôm tươi. Bánh được đổ trong khuôn tròn nhỏ, ăn kèm rau sống, nước chấm chua ngọt và mỡ hành thơm lừng.",
-        "cookingTime": 55,
-        "servings": 4,
-        "ingredients": [
-            {
-                "name": "Bột gạo",
-                "amount": 1,
-                "unit": "tách"
-            },
-            {
-                "name": "Bột bắp",
-                "amount": 1,
-                "unit": "thìa canh"
-            },
-            {
-                "name": "Nước",
-                "amount": 1,
-                "unit": "tách"
-            },
-            {
-                "name": "Nước cốt dừa",
-                "amount": 200,
-                "unit": "ml"
-            },
-            {
-                "name": "Bột nghệ",
-                "amount": 0.5,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Muối",
-                "amount": 0.5,
-                "unit": "thìa cà phê"
-            },
-            {
-                "name": "Tôm tươi",
-                "amount": 400,
-                "unit": "g"
-            },
-            {
-                "name": "Hành lá",
-                "amount": 2,
-                "unit": "nhánh"
-            },
-            {
-                "name": "Dầu ăn",
-                "amount": 1,
-                "unit": "lượng đủ dùng"
-            },
-            {
-                "name": "Xà lách",
-                "amount": 1,
-                "unit": "cây"
-            },
-            {
-                "name": "Rau thơm",
-                "amount": 1,
-                "unit": "nắm",
-                "notes": "húng quế, tía tô, diếp cá"
-            },
-            {
-                "name": "Nước chấm chua ngọt",
-                "amount": 1,
-                "unit": "chén nhỏ"
-            }
-        ]
-    }
+        "amount": 397,
+        "unit": "g",
+        "notes": "sợi vàng"
+      },
+      {
+        "name": "Nước",
+        "amount": 1.26,
+        "unit": "l"
+      },
+      {
+        "name": "Muối",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Bột ớt",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Bột nghệ",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 3,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Hành tím",
+        "amount": 2,
+        "unit": "củ"
+      },
+      {
+        "name": "Tỏi",
+        "amount": 6,
+        "unit": "tép"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Ngò rí",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Hành tây thái lát mỏng",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Đậu phộng rang",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Bánh tráng mè nướng",
+        "amount": 1,
+        "unit": "cái"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Cải bắp",
+        "amount": 1,
+        "unit": "lượng nhỏ",
+        "notes": "xanh hoặc tím"
+      },
+      {
+        "name": "Rau xà lách",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Chanh",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Gỏi Cuốn (Nem Cuốn)",
+    "description": "Gỏi Cuốn là món ăn khai vị thanh mát, được làm từ bánh tráng mỏng cuốn nhân tôm, thịt luộc, bún tươi, xà lách và các loại rau thơm. Món này thường được chấm kèm nước mắm chua ngọt hoặc tương đậu phộng, mang đến hương vị tươi ngon và nhẹ nhàng.",
+    "cookingTime": 30,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Thịt heo",
+        "amount": 180,
+        "unit": "g",
+        "notes": "thịt ba chỉ"
+      },
+      {
+        "name": "Tôm tươi",
+        "amount": 180,
+        "unit": "g"
+      },
+      {
+        "name": "Bún tươi",
+        "amount": 44,
+        "unit": "g"
+      },
+      {
+        "name": "Xà lách",
+        "amount": 1,
+        "unit": "cây"
+      },
+      {
+        "name": "Húng quế",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Ngò rí",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Bánh tráng",
+        "amount": 10,
+        "unit": "cái",
+        "notes": "vỏ ram"
+      },
+      {
+        "name": "Đậu phộng rang",
+        "amount": 60,
+        "unit": "g"
+      },
+      {
+        "name": "Tương đen",
+        "amount": 0.25,
+        "unit": "tách",
+        "notes": "hoisin"
+      },
+      {
+        "name": "Bơ đậu phộng",
+        "amount": 0.5,
+        "unit": "tách"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Cơm Tấm Sườn Bì Chả",
+    "description": "Cơm Tấm Sườn Bì Chả là món ăn đặc trưng của ẩm thực Sài Gòn, Việt Nam. Món này gồm cơm tấm (gạo tấm), sườn heo nướng ướp đậm đà, bì (thịt heo và da heo thái sợi trộn thính), chả trứng hấp, ăn kèm dưa leo, cà chua, đồ chua và chan nước mắm chua ngọt.",
+    "cookingTime": 60,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Gạo tấm",
+        "amount": 2,
+        "unit": "bát"
+      },
+      {
+        "name": "Sườn cốt lết heo",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "name": "Thịt bì heo",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Chả trứng hấp",
+        "amount": 1,
+        "unit": "miếng"
+      },
+      {
+        "name": "Trứng ốp la",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Dưa leo",
+        "amount": 0.5,
+        "unit": "quả"
+      },
+      {
+        "name": "Cà chua",
+        "amount": 0.5,
+        "unit": "quả"
+      },
+      {
+        "name": "Đồ chua",
+        "amount": 50,
+        "unit": "g",
+        "notes": "cà rốt, củ cải trắng"
+      },
+      {
+        "name": "Mỡ hành",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước mắm chua ngọt",
+        "amount": 1,
+        "unit": "chén nhỏ"
+      }
+    ]
+  },
+  {
+    "name": "Bánh Xèo",
+    "description": "Bánh Xèo là một loại bánh xèo giòn, vàng ươm, được làm từ bột gạo, nước cốt dừa và nghệ, nhân bên trong thường có tôm, thịt heo, giá đỗ và hành tây. Món này thường được ăn kèm với rau sống tươi mát và nước chấm chua ngọt.",
+    "cookingTime": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Bột gạo",
+        "amount": 75,
+        "unit": "g"
+      },
+      {
+        "name": "Bột bắp",
+        "amount": 25,
+        "unit": "g"
+      },
+      {
+        "name": "Muối",
+        "amount": 0.25,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Bột nghệ",
+        "amount": 0.25,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Nước cốt dừa",
+        "amount": 60,
+        "unit": "ml"
+      },
+      {
+        "name": "Nước",
+        "amount": 240,
+        "unit": "ml"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 2,
+        "unit": "nhánh"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Thịt heo",
+        "amount": 120,
+        "unit": "g",
+        "notes": "thịt nạc vai"
+      },
+      {
+        "name": "Hành khô",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Tôm tươi",
+        "amount": 250,
+        "unit": "g"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 150,
+        "unit": "g"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Tiêu đen",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "lượng đủ dùng"
+      },
+      {
+        "name": "Xà lách",
+        "amount": 1,
+        "unit": "cây"
+      },
+      {
+        "name": "Rau thơm",
+        "amount": 1,
+        "unit": "bó"
+      }
+    ]
+  },
+  {
+    "name": "Bánh Cuốn",
+    "description": "Bánh Cuốn là món ăn sáng hoặc ăn nhẹ phổ biến, bao gồm những lớp bánh tráng mỏng, mềm mượt được hấp từ bột gạo, nhân bên trong thường là thịt heo băm và mộc nhĩ. Bánh được ăn kèm chả lụa, hành phi giòn, rau thơm và chấm nước mắm chua ngọt.",
+    "cookingTime": 65,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Bột gạo",
+        "amount": 0.8,
+        "unit": "tách"
+      },
+      {
+        "name": "Bột năng",
+        "amount": 0.8,
+        "unit": "tách",
+        "notes": "tinh bột sắn"
+      },
+      {
+        "name": "Muối",
+        "amount": 0.5,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Nước lạnh",
+        "amount": 3.2,
+        "unit": "tách"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Mộc nhĩ khô",
+        "amount": 0.5,
+        "unit": "tách"
+      },
+      {
+        "name": "Thịt heo xay",
+        "amount": 180,
+        "unit": "g"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Tỏi băm",
+        "amount": 3,
+        "unit": "tép"
+      },
+      {
+        "name": "Chả lụa",
+        "amount": 120,
+        "unit": "g"
+      },
+      {
+        "name": "Hành phi",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dưa leo",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Giá đỗ",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Rau thơm",
+        "amount": 1,
+        "unit": "nắm",
+        "notes": "húng quế, ngò rí"
+      },
+      {
+        "name": "Nước chấm chua ngọt",
+        "amount": 1,
+        "unit": "chén nhỏ"
+      }
+    ]
+  },
+  {
+    "name": "Bò Lúc Lắc",
+    "description": "Bò Lúc Lắc là món bò xào nhanh với thịt bò thái hạt lựu, được ướp đậm đà và xào trên lửa lớn cho đến khi cháy cạnh bên ngoài nhưng vẫn mềm mọng bên trong. Món này thường được ăn kèm với cơm, salad xà lách, cà chua, dưa leo và chấm muối tiêu chanh hoặc sốt đặc trưng.",
+    "cookingTime": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Thịt bò thăn",
+        "amount": 500,
+        "unit": "g"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Ớt chuông",
+        "amount": 2,
+        "unit": "quả"
+      },
+      {
+        "name": "Tỏi băm",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước tương",
+        "amount": 3,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dầu hào",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Tiêu đen xay",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 1.5,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Ketchup",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Khoai tây chiên",
+        "amount": 2,
+        "unit": "củ"
+      },
+      {
+        "name": "Xà lách",
+        "amount": 1,
+        "unit": "cây"
+      },
+      {
+        "name": "Cà chua",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Dưa leo",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 3,
+        "unit": "nhánh"
+      },
+      {
+        "name": "Chanh",
+        "amount": 1,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Cá Kho Tộ",
+    "description": "Cá Kho Tộ là món ăn đậm chất miền Tây Nam Bộ Việt Nam, với cá (thường là cá lóc hoặc cá basa) được kho rim trong nồi đất cùng nước mắm, đường, tiêu và nước màu đường cho đến khi thịt cá săn chắc, thấm vị mặn ngọt và có màu vàng cánh gián hấp dẫn. Thường ăn kèm cơm nóng.",
+    "cookingTime": 50,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Cá lóc",
+        "amount": 1,
+        "unit": "kg",
+        "notes": "hoặc cá basa"
+      },
+      {
+        "name": "Thịt ba chỉ",
+        "amount": 100,
+        "unit": "g"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 4,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước hàng",
+        "amount": 2,
+        "unit": "thìa canh",
+        "notes": "nước màu"
+      },
+      {
+        "name": "Tỏi băm",
+        "amount": 3,
+        "unit": "tép"
+      },
+      {
+        "name": "Hành khô băm",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Tiêu xay",
+        "amount": 0.25,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Nước dừa tươi",
+        "amount": 180,
+        "unit": "ml",
+        "notes": "hoặc soda dừa Coco Rico"
+      }
+    ]
+  },
+  {
+    "name": "Bún Đậu Mắm Tôm",
+    "description": "Bún Đậu Mắm Tôm là món ăn dân dã đặc trưng của Hà Nội, với bún lá, đậu phụ chiên giòn, chả cốm, thịt chân giò luộc, và lòng dồi chiên (tùy chọn), tất cả được bày biện trên một mẹt tre và chấm với mắm tôm pha chua ngọt cay nồng, ăn kèm các loại rau thơm và dưa chuột.",
+    "cookingTime": 45,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Bún lá",
+        "amount": 500,
+        "unit": "g",
+        "notes": "hoặc bún tươi"
+      },
+      {
+        "name": "Đậu phụ",
+        "amount": 500,
+        "unit": "g"
+      },
+      {
+        "name": "Thịt chân giò heo",
+        "amount": 300,
+        "unit": "g"
+      },
+      {
+        "name": "Chả cốm",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "name": "Mắm tôm",
+        "amount": 50,
+        "unit": "g"
+      },
+      {
+        "name": "Đường",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Quất",
+        "amount": 1,
+        "unit": "quả",
+        "notes": "tắc hoặc chanh"
+      },
+      {
+        "name": "Ớt tươi",
+        "amount": 1,
+        "unit": "quả"
+      },
+      {
+        "name": "Tỏi",
+        "amount": 1,
+        "unit": "tép"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "lượng đủ dùng",
+        "notes": "để chiên đậu"
+      },
+      {
+        "name": "Rau kinh giới",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Tía tô",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Húng lủi",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Dưa leo",
+        "amount": 1,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Chả Cá Lã Vọng",
+    "description": "Chả Cá Lã Vọng là món đặc sản nổi tiếng của Hà Nội, với những miếng cá lăng (hoặc cá basa) tẩm ướp nghệ và riềng, chiên trên chảo nóng cùng thì là và hành lá. Món này thường được ăn kèm bún, đậu phộng rang, rau thơm và chấm mắm tôm pha chua ngọt cay nồng.",
+    "cookingTime": 20,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Cá lăng",
+        "amount": 680,
+        "unit": "g",
+        "notes": "hoặc cá basa/diêu hồng"
+      },
+      {
+        "name": "Muối",
+        "amount": 0.5,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Đường",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Bột nghệ",
+        "amount": 1,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Riềng",
+        "amount": 1,
+        "unit": "thìa cà phê",
+        "notes": "hoặc gừng băm"
+      },
+      {
+        "name": "Tỏi băm",
+        "amount": 2,
+        "unit": "tép"
+      },
+      {
+        "name": "Hành tím băm",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "lượng đủ dùng"
+      },
+      {
+        "name": "Bột năng",
+        "amount": 0.5,
+        "unit": "tách"
+      },
+      {
+        "name": "Thì là",
+        "amount": 1,
+        "unit": "bó"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 4,
+        "unit": "nhánh"
+      },
+      {
+        "name": "Hành tây nhỏ",
+        "amount": 1,
+        "unit": "củ"
+      },
+      {
+        "name": "Bún tươi",
+        "amount": 1,
+        "unit": "gói",
+        "notes": "sợi vừa"
+      },
+      {
+        "name": "Đậu phộng rang",
+        "amount": 1,
+        "unit": "nắm"
+      },
+      {
+        "name": "Mắm tôm",
+        "amount": 1,
+        "unit": "chén nhỏ"
+      }
+    ]
+  },
+  {
+    "name": "Gỏi Gà Bắp Cải",
+    "description": "Gỏi Gà Bắp Cải là món salad thanh mát của Việt Nam, với thịt gà luộc xé phay trộn cùng bắp cải thái sợi, cà rốt, hành tây, rau răm và các loại rau thơm khác. Món này được trộn đều với nước mắm chua ngọt, rắc thêm đậu phộng rang và hành phi, tạo nên hương vị hài hòa và giòn ngon.",
+    "cookingTime": 45,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Thịt gà",
+        "amount": 340,
+        "unit": "g",
+        "notes": "ức hoặc đùi"
+      },
+      {
+        "name": "Bắp cải xanh",
+        "amount": 2,
+        "unit": "tách",
+        "notes": "thái sợi"
+      },
+      {
+        "name": "Bắp cải tím",
+        "amount": 1,
+        "unit": "tách",
+        "notes": "tùy chọn, thái sợi"
+      },
+      {
+        "name": "Cà rốt",
+        "amount": 0.5,
+        "unit": "tách",
+        "notes": "thái sợi"
+      },
+      {
+        "name": "Hành tây",
+        "amount": 0.25,
+        "unit": "tách",
+        "notes": "trắng hoặc vàng, thái lát mỏng"
+      },
+      {
+        "name": "Rau răm",
+        "amount": 0.5,
+        "unit": "tách",
+        "notes": "thái nhỏ"
+      },
+      {
+        "name": "Đậu phộng rang",
+        "amount": 1,
+        "unit": "lượng nhỏ",
+        "notes": "đập dập"
+      },
+      {
+        "name": "Hành phi",
+        "amount": 1,
+        "unit": "lượng nhỏ"
+      },
+      {
+        "name": "Nước mắm",
+        "amount": 4,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Đường",
+        "amount": 3,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước cốt chanh",
+        "amount": 2,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Tỏi băm",
+        "amount": 2,
+        "unit": "tép"
+      },
+      {
+        "name": "Ớt tươi băm",
+        "amount": 1,
+        "unit": "quả"
+      }
+    ]
+  },
+  {
+    "name": "Bánh Khọt",
+    "description": "Bánh Khọt là loại bánh xèo mini giòn rụm, vàng ươm, được làm từ bột gạo, nước cốt dừa và bột nghệ, nhân thường là tôm tươi. Bánh được đổ trong khuôn tròn nhỏ, ăn kèm rau sống, nước chấm chua ngọt và mỡ hành thơm lừng.",
+    "cookingTime": 55,
+    "servings": 4,
+    "ingredients": [
+      {
+        "name": "Bột gạo",
+        "amount": 1,
+        "unit": "tách"
+      },
+      {
+        "name": "Bột bắp",
+        "amount": 1,
+        "unit": "thìa canh"
+      },
+      {
+        "name": "Nước",
+        "amount": 1,
+        "unit": "tách"
+      },
+      {
+        "name": "Nước cốt dừa",
+        "amount": 200,
+        "unit": "ml"
+      },
+      {
+        "name": "Bột nghệ",
+        "amount": 0.5,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Muối",
+        "amount": 0.5,
+        "unit": "thìa cà phê"
+      },
+      {
+        "name": "Tôm tươi",
+        "amount": 400,
+        "unit": "g"
+      },
+      {
+        "name": "Hành lá",
+        "amount": 2,
+        "unit": "nhánh"
+      },
+      {
+        "name": "Dầu ăn",
+        "amount": 1,
+        "unit": "lượng đủ dùng"
+      },
+      {
+        "name": "Xà lách",
+        "amount": 1,
+        "unit": "cây"
+      },
+      {
+        "name": "Rau thơm",
+        "amount": 1,
+        "unit": "nắm",
+        "notes": "húng quế, tía tô, diếp cá"
+      },
+      {
+        "name": "Nước chấm chua ngọt",
+        "amount": 1,
+        "unit": "chén nhỏ"
+      }
+    ]
+  }
 ]

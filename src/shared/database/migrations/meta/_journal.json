@@ -22,6 +22,20 @@
       "when": 1751565489255,
       "tag": "0002_amusing_echo",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1755776231521,
+      "tag": "0003_sloppy_kitty_pryde",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1755778775296,
+      "tag": "0004_smart_chat",
+      "breakpoints": true
     }
   ]
 }

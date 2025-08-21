@@ -8,9 +8,23 @@ import {
     addPantryItemSchema,
     updatePantryItemSchema,
     pantrySearchQuerySchema,
-    idParamSchema,
-} from '@/shared/schemas/api/requests'
-import { pantryService } from './service'
+} from '@/shared/schemas/api/pantry.schemas'
+import { idParamSchema } from '@/shared/schemas/api/common.schemas'
+import {
+    addPantryItem,
+    addPantryBatch,
+    updatePantryItem,
+    removePantryItem,
+} from './pantry.operations'
+import {
+    getPantryItems,
+    getExpiringItems,
+} from './pantry.queries'
+import { getPantryStats } from './pantry.analytics'
+import {
+    suggestRecipes,
+    checkRecipeAvailability,
+} from './pantry.recommendations'
 import { response } from '@/shared/utils/response'
 
 const PANTRY_TAG = 'Pantry'
@@ -29,7 +43,7 @@ pantryRoutes.get(
     async (c) => {
         const user = c.get('user')
         const query = c.req.valid('query')
-        const result = await pantryService.getPantryItems(user.userId, query)
+        const result = await getPantryItems(user.userId, query)
         return c.json(response.success(result))
     },
 )
@@ -47,7 +61,7 @@ pantryRoutes.post(
     async (c) => {
         const user = c.get('user')
         const body = c.req.valid('json')
-        const newItem = await pantryService.addItem(user.userId, body)
+        const newItem = await addPantryItem(user.userId, body)
         return c.json(response.success(newItem), 201)
     },
 )
@@ -70,7 +84,7 @@ pantryRoutes.post(
     async (c) => {
         const user = c.get('user')
         const { items } = c.req.valid('json')
-        const newItems = await pantryService.addBatch(user.userId, items)
+        const newItems = await addPantryBatch(user.userId, items)
         return c.json(response.success({ items: newItems, count: newItems.length }), 201)
     },
 )
@@ -90,7 +104,7 @@ pantryRoutes.put(
         const user = c.get('user')
         const id = c.req.valid('param').id
         const body = c.req.valid('json')
-        const updated = await pantryService.updateItem(user.userId, id, body)
+        const updated = await updatePantryItem(user.userId, id, body)
         return c.json(response.success(updated))
     },
 )
@@ -108,7 +122,7 @@ pantryRoutes.delete(
     async (c) => {
         const user = c.get('user')
         const id = c.req.valid('param').id
-        const result = await pantryService.removeItem(user.userId, id)
+        const result = await removePantryItem(user.userId, id)
         return c.json(response.success(result))
     },
 )
@@ -131,7 +145,7 @@ pantryRoutes.get(
     async (c) => {
         const user = c.get('user')
         const { days } = c.req.valid('query')
-        const items = await pantryService.getExpiringItems(user.userId, days)
+        const items = await getExpiringItems(user.userId, days)
         return c.json(response.success(items))
     },
 )
@@ -147,7 +161,7 @@ pantryRoutes.get(
     authMiddleware,
     async (c) => {
         const user = c.get('user')
-        const stats = await pantryService.getStats(user.userId)
+        const stats = await getPantryStats(user.userId)
         return c.json(response.success(stats))
     },
 )
@@ -172,8 +186,31 @@ pantryRoutes.get(
     async (c) => {
         const user = c.get('user')
         const options = c.req.valid('query')
-        const suggestions = await pantryService.suggestRecipes(user.userId, options)
+        const suggestions = await suggestRecipes(user.userId, options)
         return c.json(response.success(suggestions))
+    },
+)
+
+// Check recipe availability based on pantry
+pantryRoutes.get(
+    '/check-recipe/:recipeId',
+    describeRoute({
+        summary: 'Kiểm tra khả năng làm món từ nguyên liệu có sẵn',
+        tags: [PANTRY_TAG],
+        security: [{ Bearer: [] }],
+    }),
+    authMiddleware,
+    zValidator(
+        'param',
+        z.object({
+            recipeId: z.string().uuid('Recipe ID phải là UUID hợp lệ'),
+        }),
+    ),
+    async (c) => {
+        const user = c.get('user')
+        const { recipeId } = c.req.valid('param')
+        const availability = await checkRecipeAvailability(user.userId, recipeId)
+        return c.json(response.success(availability))
     },
 )
 

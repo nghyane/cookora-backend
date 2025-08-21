@@ -5,34 +5,15 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/modules/*": [
-        "./src/modules/*"
-      ],
-      "@/shared/*": [
-        "./src/shared/*"
-      ],
-      "@/db/*": [
-        "./src/db/*"
-      ],
-      "@modules/*": [
-        "./src/modules/*"
-      ],
-      "@shared/*": [
-        "./src/shared/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/modules/*": ["./src/modules/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/db/*": ["./src/db/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@shared/*": ["./src/shared/*"]
     },
-    "types": [
-      "bun-types"
-    ]
+    "types": ["bun-types"]
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

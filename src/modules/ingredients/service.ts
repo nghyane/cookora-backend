@@ -4,9 +4,8 @@ import { eq, ilike, and, count, sql } from 'drizzle-orm'
 import { NotFoundError, ConflictError } from '@/shared/utils/errors'
 import type {
   CreateIngredientRequest,
-  UpdateIngredientRequest,
   IngredientSearchQuery
-} from '@/shared/schemas'
+} from '@/shared/schemas/api/ingredient.schemas'
 
 export class IngredientsService {
   /**

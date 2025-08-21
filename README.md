@@ -1,14 +1,41 @@
 # 🌐 Cookora Backend
 
-> REST API server for Cookora AI Cooking Assistant Platform
+> REST API server for Cookora AI Cooking Assistant Platform - Vietnamese Culinary API with AI-powered ingredient detection
 
-## Tech Stack
-- **Runtime**: Bun
-- **Framework**: Hono
-- **Database**: PostgreSQL with pgvector
-- **Cache**: Redis
-- **ORM**: Drizzle ORM
-- **Validation**: Zod
+[![Production Status](https://img.shields.io/badge/Status-Production%20Ready-success)](https://cookora-backend.vercel.app)
+[![API Documentation](https://img.shields.io/badge/API-Documentation-blue)](https://cookora-backend.vercel.app/docs)
+[![Health Check](https://img.shields.io/badge/Health-Check-green)](https://cookora-backend.vercel.app/health)
+
+## 📋 Current Project Status
+
+**✅ Completed Features:**
+- ✅ **User Authentication** - Email/password & Google OAuth integration
+- ✅ **Ingredients Management** - Vietnamese culinary ingredients database (2000+ items)
+- ✅ **Recipe Management** - CRUD operations với Vietnamese cuisine
+- ✅ **Pantry System** - User pantry tracking và ingredient inventory
+- ✅ **Search & Filtering** - Full-text search với PostgreSQL và pgvector
+- ✅ **Admin Panel** - Admin controls cho content management
+- ✅ **API Documentation** - OpenAPI 3.0 với Scalar UI
+- ✅ **Production Ready** - Docker containerization và deployment
+
+## 🚀 Production Demo
+
+**Live Demo:** [https://cookora-backend.vercel.app](https://cookora-backend.vercel.app)
+
+**API Documentation:** [https://cookora-backend.vercel.app/docs](https://cookora-backend.vercel.app/docs)
+
+**Health Check:** [https://cookora-backend.vercel.app/health](https://cookora-backend.vercel.app/health)
+
+## 🛠️ Tech Stack
+
+- **Runtime**: Bun 1.2.16
+- **Framework**: Hono với OpenAPI integration
+- **Database**: PostgreSQL 17 with pgvector extension
+- **Cache**: Redis 8
+- **ORM**: Drizzle ORM 0.44.4
+- **Validation**: Zod schemas với type safety
+- **Documentation**: OpenAPI 3.0 + Scalar UI
+- **Deployment**: Docker + Production hosting
 
 ## Quick Start
 
@@ -69,69 +96,46 @@ bun run db:migrate   # Apply database migrations
 bun run check        # Format and lint code
 ```
 
-## API Endpoints
+## 📖 API Documentation
 
-### Health Check
-- `GET /health` - API health status
+**Live Documentation:** [https://cookora-backend.vercel.app/docs](https://cookora-backend.vercel.app/docs)
 
-### Authentication
-- `POST /auth/login` - User login
-- `POST /auth/register` - User registration
+**Main Modules:** Authentication, Ingredients (2000+ Vietnamese items), Recipes, Pantry Management, User Profiles
 
-### Ingredients
-- `GET /ingredients` - List ingredients
-- `POST /ingredients` - Add ingredient
-
-### Recipes
-- `GET /recipes` - List recipes
-- `POST /recipes` - Add recipe
-
-### Pantry
-- `GET /pantry` - User pantry
-- `POST /pantry` - Add to pantry
-
-## Environment Variables
-
-Copy `.env.example` to `.env` and configure:
+## 🌍 Production Deployment
 
 ```bash
-cp .env.example .env
+# Build & start production
+bun run build && bun run start
+
+# Or với Docker
+docker-compose up -d
 ```
 
-Required variables:
-- `DATABASE_URL` - PostgreSQL connection string
-- `REDIS_URL` - Redis connection string
-- `PORT` - Server port (default: 3000)
+**Production URL:** [https://cookora-backend.vercel.app](https://cookora-backend.vercel.app)
 
-## Docker Services
+## 🔧 Environment Variables
 
-- **postgres**: PostgreSQL 17 with pgvector extension
-- **redis**: Redis 8 for caching
-- **backend**: Bun runtime with Hono API
+**Required:** `DATABASE_URL`, `JWT_SECRET`, `ADMIN_API_KEY` (32+ chars)
+**Optional:** `REDIS_URL`, `GOOGLE_CLIENT_ID/SECRET` (OAuth), `PORT` (default: 3000)
 
-## Database Schema
+## 🏗️ Architecture
 
-The database includes tables for:
-- **users** - User authentication and profiles
-- **ingredients** - Ingredient master data
-- **recipes** - Recipe information and steps
-- **pantry** - User pantry management
-- **cache** - Application caching
+**Domain-Driven Modules:** `auth`, `ingredients`, `recipes`, `pantry`, `users`
+**Vietnamese Culinary Focus:** 2000+ ingredients, Vietnamese cuisine specialization
+**AI-Ready:** pgvector embeddings, full-text search, type-safe APIs
 
-## Development Notes
+## 💾 Database Schema
 
-- Uses Biome for code formatting and linting
-- TypeScript with strict mode enabled
-- Path aliases configured for clean imports
-- Drizzle ORM for type-safe database operations
+**PostgreSQL 17** với pgvector extension cho AI-powered search
+**Tables:** users, ingredients, recipes, pantry, cache
+**Features:** Full-text search, vector embeddings, type-safe ORM
 
-## API Documentation
+## 🛠️ Development
 
-When running, visit:
-- **Swagger/OpenAPI**: http://localhost:3000/docs
+**Tools:** Biome (formatting/lint), TypeScript 5.9, Zod validation, Drizzle ORM
+**Workflow:** `make dev` for development, `make check` for code quality
 
-## Ports
+## 🔌 Default Ports
 
-- **Backend**: 3000
-- **PostgreSQL**: 5432
-- **Redis**: 6379
+**Backend:** 3000 | **PostgreSQL:** 5433 | **Redis:** 6380

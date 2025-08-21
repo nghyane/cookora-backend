@@ -81,12 +81,8 @@ export class UsersService {
    */
   async changePassword(userId: string, oldPassword: string, newPassword: string): Promise<void> {
     const emailProvider = providerRegistry.get('email') as EmailAuthProvider
-    try {
-      await emailProvider.changePassword(userId, oldPassword, newPassword)
-    } catch (error: any) {
-      // Translate provider-specific error to a domain error
-      throw new UnauthorizedError(error.message || 'Mật khẩu hiện tại không chính xác')
-    }
+    // Let email provider handle its own errors - it already throws meaningful errors
+    await emailProvider.changePassword(userId, oldPassword, newPassword)
   }
 
   /**

@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { INGREDIENT_CATEGORIES } from '@/shared/constants/vietnamese-culinary'
 
 /**
  * MVP INGREDIENT SCHEMA - Tinh gọn cho giai đoạn đầu
@@ -6,7 +7,7 @@ import { z } from 'zod'
 export const vietnameseIngredientBaseSchema = z.object({
   id: z.string().uuid(),
   name: z.string().min(1, 'Tên nguyên liệu không được để trống'),
-  category: z.string().optional(), // protein, vegetable, spice, etc.
+  category: z.enum(INGREDIENT_CATEGORIES).optional(), // Sync với DB categories
   aliases: z.array(z.string()).default([]), // Các tên gọi khác để tìm kiếm
   imageUrl: z.string().url().optional(),
   createdAt: z.date(),

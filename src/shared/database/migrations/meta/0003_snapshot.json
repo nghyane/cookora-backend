@@ -1,6 +1,6 @@
 {
-  "id": "f5990940-0aac-47e9-b921-39fd3c7d5056",
-  "prevId": "805b0ea4-19be-4255-85f9-0790a7a56e85",
+  "id": "d46a55be-772d-4338-b748-a5e998badfbf",
+  "prevId": "725c9c51-0523-445a-bfd2-2586f682286b",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -151,8 +151,12 @@
           "name": "auth_providers_user_id_users_id_fk",
           "tableFrom": "auth_providers",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -162,7 +166,10 @@
         "unq_auth_providers_provider_id": {
           "name": "unq_auth_providers_provider_id",
           "nullsNotDistinct": false,
-          "columns": ["provider", "provider_id"]
+          "columns": [
+            "provider",
+            "provider_id"
+          ]
         }
       },
       "policies": {},
@@ -297,8 +304,12 @@
           "name": "pantry_items_user_id_users_id_fk",
           "tableFrom": "pantry_items",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -306,8 +317,12 @@
           "name": "pantry_items_ingredient_id_ingredients_id_fk",
           "tableFrom": "pantry_items",
           "tableTo": "ingredients",
-          "columnsFrom": ["ingredient_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "ingredient_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "restrict",
           "onUpdate": "no action"
         }
@@ -404,8 +419,12 @@
           "name": "sessions_user_id_users_id_fk",
           "tableFrom": "sessions",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -415,7 +434,9 @@
         "sessions_token_unique": {
           "name": "sessions_token_unique",
           "nullsNotDistinct": false,
-          "columns": ["token"]
+          "columns": [
+            "token"
+          ]
         }
       },
       "policies": {},
@@ -459,8 +480,12 @@
           "name": "user_favorites_user_id_users_id_fk",
           "tableFrom": "user_favorites",
           "tableTo": "users",
-          "columnsFrom": ["user_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -468,8 +493,12 @@
           "name": "user_favorites_recipe_id_recipes_id_fk",
           "tableFrom": "user_favorites",
           "tableTo": "recipes",
-          "columnsFrom": ["recipe_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "recipe_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -553,7 +582,9 @@
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         }
       },
       "policies": {},
@@ -601,8 +632,12 @@
           "name": "recipe_ingredients_recipe_id_recipes_id_fk",
           "tableFrom": "recipe_ingredients",
           "tableTo": "recipes",
-          "columnsFrom": ["recipe_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "recipe_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
@@ -610,8 +645,12 @@
           "name": "recipe_ingredients_ingredient_id_ingredients_id_fk",
           "tableFrom": "recipe_ingredients",
           "tableTo": "ingredients",
-          "columnsFrom": ["ingredient_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "ingredient_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "restrict",
           "onUpdate": "no action"
         }
@@ -619,7 +658,10 @@
       "compositePrimaryKeys": {
         "recipe_ingredients_recipe_id_ingredient_id_pk": {
           "name": "recipe_ingredients_recipe_id_ingredient_id_pk",
-          "columns": ["recipe_id", "ingredient_id"]
+          "columns": [
+            "recipe_id",
+            "ingredient_id"
+          ]
         }
       },
       "uniqueConstraints": {},
@@ -656,8 +698,12 @@
           "name": "recipe_instructions_recipe_id_recipes_id_fk",
           "tableFrom": "recipe_instructions",
           "tableTo": "recipes",
-          "columnsFrom": ["recipe_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "recipe_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -665,7 +711,10 @@
       "compositePrimaryKeys": {
         "recipe_instructions_recipe_id_step_pk": {
           "name": "recipe_instructions_recipe_id_step_pk",
-          "columns": ["recipe_id", "step"]
+          "columns": [
+            "recipe_id",
+            "step"
+          ]
         }
       },
       "uniqueConstraints": {},
@@ -788,8 +837,12 @@
           "name": "recipes_author_id_users_id_fk",
           "tableFrom": "recipes",
           "tableTo": "users",
-          "columnsFrom": ["author_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "author_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -895,6 +948,21 @@
           "concurrently": false,
           "method": "gin",
           "with": {}
+        },
+        "ingredients_name_temp_idx": {
+          "name": "ingredients_name_temp_idx",
+          "columns": [
+            {
+              "expression": "name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
         }
       },
       "foreignKeys": {},
@@ -903,7 +971,9 @@
         "ingredients_name_unique": {
           "name": "ingredients_name_unique",
           "nullsNotDistinct": false,
-          "columns": ["name"]
+          "columns": [
+            "name"
+          ]
         }
       },
       "policies": {},
@@ -988,7 +1058,9 @@
         "image_cache_hash_unique": {
           "name": "image_cache_hash_unique",
           "nullsNotDistinct": false,
-          "columns": ["hash"]
+          "columns": [
+            "hash"
+          ]
         }
       },
       "policies": {},
@@ -1000,7 +1072,10 @@
     "public.user_role": {
       "name": "user_role",
       "schema": "public",
-      "values": ["user", "admin"]
+      "values": [
+        "user",
+        "admin"
+      ]
     }
   },
   "schemas": {},

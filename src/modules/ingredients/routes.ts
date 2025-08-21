@@ -6,10 +6,10 @@ import { authMiddleware } from '@/shared/middleware/auth'
 import { adminMiddleware } from '@/shared/middleware/admin'
 import {
   createIngredientRequestSchema,
-  idParamSchema,
   ingredientSearchQuerySchema,
   ingredientSuggestionQuerySchema,
-} from '@/shared/schemas/api/requests'
+} from '@/shared/schemas/api/ingredient.schemas'
+import { idParamSchema } from '@/shared/schemas/api/common.schemas'
 import { ingredientsService } from './service'
 import { response } from '@/shared/utils/response'
 

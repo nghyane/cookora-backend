@@ -1,6 +1,5 @@
 import app from './app'
 import { env } from './shared/config/env'
-import { logger } from './shared/utils/logger'
 
 // Start server
 // Bun.serve({

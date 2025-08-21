@@ -7,14 +7,27 @@ import { authMiddleware } from '@/shared/middleware/auth'
 
 import {
   createRecipeRequestSchema,
-  idParamSchema,
   recipeSearchQuerySchema,
   updateRecipeRequestSchema,
   addRecipeIngredientsSchema,
   addRecipeInstructionsSchema,
   findByIngredientsSchema,
-} from '@/shared/schemas/api/requests'
-import { recipesService } from './service'
+} from '@/shared/schemas/api/recipe.schemas'
+import { idParamSchema } from '@/shared/schemas/api/common.schemas'
+import {
+    getAllRecipes,
+    getRecipeById,
+    findRecipesByIngredients,
+} from './recipes.queries'
+import {
+    createRecipe,
+    updateRecipe,
+    deleteRecipe,
+} from './recipes.operations'
+import {
+    addRecipeIngredients,
+    addRecipeInstructions,
+} from './recipes.content'
 import { response } from '@/shared/utils/response'
 
 const RECIPES_TAG = 'Recipes'
@@ -30,7 +43,7 @@ recipesRoutes.get(
   zValidator('query', recipeSearchQuerySchema),
   async (c) => {
     const query = c.req.valid('query')
-    const result = await recipesService.getAll(query)
+    const result = await getAllRecipes(query)
     return c.json(response.success(result))
   },
 )
@@ -44,7 +57,7 @@ recipesRoutes.get(
   zValidator('param', idParamSchema),
   async (c) => {
     const id = c.req.valid('param').id
-    const recipe = await recipesService.getById(id)
+    const recipe = await getRecipeById(id)
     return c.json(response.success(recipe))
   },
 )
@@ -60,7 +73,7 @@ recipesRoutes.post(
   async (c) => {
     const body = c.req.valid('json')
     const { ingredientIds, matchType, limit } = body
-    const recipes = await recipesService.findByIngredients(ingredientIds, matchType, limit)
+    const recipes = await findRecipesByIngredients(ingredientIds, matchType, limit)
     return c.json(response.success({
       recipes,
       matchType,
@@ -82,7 +95,7 @@ recipesRoutes.post(
   async (c) => {
     const user = c.get('user')
     const body = c.req.valid('json')
-    const newRecipe = await recipesService.create(user.userId, body)
+    const newRecipe = await createRecipe(user.userId, body)
     return c.json(response.success(newRecipe), 201)
   },
 )
@@ -101,7 +114,7 @@ recipesRoutes.put(
     const user = c.get('user')
     const id = c.req.valid('param').id
     const body = c.req.valid('json')
-    const updatedRecipe = await recipesService.update(user.userId, id, body)
+    const updatedRecipe = await updateRecipe(user.userId, id, body)
     return c.json(response.success(updatedRecipe))
   },
 )
@@ -118,7 +131,7 @@ recipesRoutes.delete(
   async (c) => {
     const user = c.get('user')
     const id = c.req.valid('param').id
-    const result = await recipesService.delete(user.userId, id)
+    const result = await deleteRecipe(user.userId, id)
     return c.json(response.success(result))
   },
 )
@@ -138,7 +151,7 @@ recipesRoutes.put(
     const user = c.get('user')
     const id = c.req.valid('param').id
     const body = c.req.valid('json')
-    const result = await recipesService.addIngredients(
+    const result = await addRecipeIngredients(
       user.userId,
       id,
       body.ingredients.map((i) => ({
@@ -167,7 +180,7 @@ recipesRoutes.put(
     const user = c.get('user')
     const id = c.req.valid('param').id
     const body = c.req.valid('json')
-    const result = await recipesService.addInstructions(
+    const result = await addRecipeInstructions(
       user.userId,
       id,
       body.instructions.map((ins) => ({

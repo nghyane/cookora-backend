@@ -1,991 +1,682 @@
 [
-    {
-        "name": "Thịt bò",
-        "category": "meat",
-        "aliases": [
-            "beef"
-        ]
-    },
-    {
-        "name": "Thịt gà",
-        "category": "meat",
-        "aliases": [
-            "chicken"
-        ]
-    },
-    {
-        "name": "Thịt heo",
-        "category": "meat",
-        "aliases": [
-            "pork",
-            "thịt lợn"
-        ]
-    },
-    {
-        "name": "Thịt nạc vai",
-        "category": "meat",
-        "aliases": [
-            "pork shoulder"
-        ]
-    },
-    {
-        "name": "Xương bò",
-        "category": "meat",
-        "aliases": [
-            "beef bones",
-            "xương ống bò",
-            "xương tủy bò"
-        ]
-    },
-    {
-        "name": "Xương heo",
-        "category": "meat",
-        "aliases": [
-            "pork bones",
-            "xương ống heo"
-        ]
-    },
-    {
-        "name": "Bắp bò",
-        "category": "meat",
-        "aliases": [
-            "beef shank"
-        ]
-    },
-    {
-        "name": "Nạm bò",
-        "category": "meat",
-        "aliases": [
-            "beef flank"
-        ]
-    },
-    {
-        "name": "Gân bò",
-        "category": "meat",
-        "aliases": [
-            "beef tendon"
-        ]
-    },
-    {
-        "name": "Tái lăn",
-        "category": "meat",
-        "aliases": [
-            "sliced rare beef",
-            "tái băm"
-        ]
-    },
-    {
-        "name": "Thịt ba chỉ",
-        "category": "meat",
-        "aliases": [
-            "pork belly"
-        ]
-    },
-    {
-        "name": "Giò heo",
-        "category": "meat",
-        "aliases": [
-            "pork hock",
-            "pork leg"
-        ]
-    },
-    {
-        "name": "Chả lụa",
-        "category": "meat",
-        "aliases": [
-            "vietnamese pork sausage",
-            "pork loaf"
-        ]
-    },
-    {
-        "name": "Chả bò",
-        "category": "meat",
-        "aliases": [
-            "beef sausage"
-        ]
-    },
-    {
-        "name": "Chả cua",
-        "category": "seafood",
-        "aliases": [
-            "crab cake"
-        ]
-    },
-    {
-        "name": "Tiết lợn",
-        "category": "meat",
-        "aliases": [
-            "pork blood",
-            "huyết"
-        ]
-    },
-    {
-        "name": "Cá lóc",
-        "category": "seafood",
-        "aliases": [
-            "snakehead fish",
-            "cá quả"
-        ]
-    },
-    {
-        "name": "Tôm",
-        "category": "seafood",
-        "aliases": [
-            "shrimp"
-        ]
-    },
-    {
-        "name": "Mực",
-        "category": "seafood",
-        "aliases": [
-            "squid"
-        ]
-    },
-    {
-        "name": "Nghêu",
-        "category": "seafood",
-        "aliases": [
-            "clam"
-        ]
-    },
-    {
-        "name": "Cà chua",
-        "category": "vegetables",
-        "aliases": [
-            "tomato"
-        ]
-    },
-    {
-        "name": "Dứa",
-        "category": "vegetables",
-        "aliases": [
-            "pineapple",
-            "thơm"
-        ]
-    },
-    {
-        "name": "Đậu bắp",
-        "category": "vegetables",
-        "aliases": [
-            "okra"
-        ]
-    },
-    {
-        "name": "Bạc hà",
-        "category": "vegetables",
-        "aliases": [
-            "dọc mùng",
-            "elephant ear stalk"
-        ]
-    },
-    {
-        "name": "Giá đỗ",
-        "category": "vegetables",
-        "aliases": [
-            "bean sprouts"
-        ]
-    },
-    {
-        "name": "Hành tây",
-        "category": "vegetables",
-        "aliases": [
-            "onion"
-        ]
-    },
-    {
-        "name": "Cà rốt",
-        "category": "vegetables",
-        "aliases": [
-            "carrot"
-        ]
-    },
-    {
-        "name": "Đu đủ xanh",
-        "category": "vegetables",
-        "aliases": [
-            "green papaya"
-        ]
-    },
-    {
-        "name": "Xà lách",
-        "category": "vegetables",
-        "aliases": [
-            "lettuce"
-        ]
-    },
-    {
-        "name": "Rau cải bẹ xanh",
-        "category": "vegetables",
-        "aliases": [
-            "mustard greens",
-            "cải non"
-        ]
-    },
-    {
-        "name": "Dưa leo",
-        "category": "vegetables",
-        "aliases": [
-            "cucumber",
-            "dưa chuột"
-        ]
-    },
-    {
-        "name": "Chuối chát",
-        "category": "vegetables",
-        "aliases": [
-            "green banana"
-        ]
-    },
-    {
-        "name": "Khế",
-        "category": "vegetables",
-        "aliases": [
-            "star fruit"
-        ]
-    },
-    {
-        "name": "Bông so đũa",
-        "category": "vegetables",
-        "aliases": [
-            "sesbania grandiflora flower"
-        ]
-    },
-    {
-        "name": "Kèo nèo",
-        "category": "vegetables",
-        "aliases": [
-            "water lily stem"
-        ]
-    },
-    {
-        "name": "Nấm rơm",
-        "category": "vegetables",
-        "aliases": [
-            "straw mushroom"
-        ]
-    },
-    {
-        "name": "Bông cải",
-        "category": "vegetables",
-        "aliases": [
-            "cauliflower"
-        ]
-    },
-    {
-        "name": "Cải thìa",
-        "category": "vegetables",
-        "aliases": [
-            "bok choy"
-        ]
-    },
-    {
-        "name": "Rau muống",
-        "category": "vegetables",
-        "aliases": [
-            "water spinach"
-        ]
-    },
-    {
-        "name": "Mồng tơi",
-        "category": "vegetables",
-        "aliases": [
-            "malabar spinach"
-        ]
-    },
-    {
-        "name": "Rau dền",
-        "category": "vegetables",
-        "aliases": [
-            "amaranth"
-        ]
-    },
-    {
-        "name": "Khoai tây",
-        "category": "vegetables",
-        "aliases": [
-            "potato"
-        ]
-    },
-    {
-        "name": "Bắp cải",
-        "category": "vegetables",
-        "aliases": [
-            "cabbage"
-        ]
-    },
-    {
-        "name": "Măng",
-        "category": "vegetables",
-        "aliases": [
-            "bamboo shoot"
-        ]
-    },
-    {
-        "name": "Khổ qua",
-        "category": "vegetables",
-        "aliases": [
-            "bitter melon",
-            "mướp đắng"
-        ]
-    },
-    {
-        "name": "Bí đao",
-        "category": "vegetables",
-        "aliases": [
-            "winter melon"
-        ]
-    },
-    {
-        "name": "Bí đỏ",
-        "category": "vegetables",
-        "aliases": [
-            "pumpkin"
-        ]
-    },
-    {
-        "name": "Su su",
-        "category": "vegetables",
-        "aliases": [
-            "chayote"
-        ]
-    },
-    {
-        "name": "Cà tím",
-        "category": "vegetables",
-        "aliases": [
-            "eggplant"
-        ]
-    },
-    {
-        "name": "Rau đắng",
-        "category": "vegetables",
-        "aliases": [
-            "bitter herb"
-        ]
-    },
-    {
-        "name": "Hành lá",
-        "category": "herbs",
-        "aliases": [
-            "scallion",
-            "spring onion"
-        ]
-    },
-    {
-        "name": "Ngò rí",
-        "category": "herbs",
-        "aliases": [
-            "coriander",
-            "cilantro",
-            "rau mùi"
-        ]
-    },
-    {
-        "name": "Húng quế",
-        "category": "herbs",
-        "aliases": [
-            "thai basil"
-        ]
-    },
-    {
-        "name": "Tía tô",
-        "category": "herbs",
-        "aliases": [
-            "perilla leaf"
-        ]
-    },
-    {
-        "name": "Kinh giới",
-        "category": "herbs",
-        "aliases": [
-            "vietnamese balm"
-        ]
-    },
-    {
-        "name": "Húng lủi",
-        "category": "herbs",
-        "aliases": [
-            "spearmint",
-            "mojito mint"
-        ]
-    },
-    {
-        "name": "Diếp cá",
-        "category": "herbs",
-        "aliases": [
-            "fish mint"
-        ]
-    },
-    {
-        "name": "Ngò gai",
-        "category": "herbs",
-        "aliases": [
-            "culantro",
-            "sawtooth coriander"
-        ]
-    },
-    {
-        "name": "Ngò om",
-        "category": "herbs",
-        "aliases": [
-            "rice paddy herb",
-            "rau ngổ"
-        ]
-    },
-    {
-        "name": "Rau răm",
-        "category": "herbs",
-        "aliases": [
-            "vietnamese coriander"
-        ]
-    },
-    {
-        "name": "Hẹ",
-        "category": "herbs",
-        "aliases": [
-            "garlic chives"
-        ]
-    },
-    {
-        "name": "Lá lốt",
-        "category": "herbs",
-        "aliases": [
-            "lolot leaf"
-        ]
-    },
-    {
-        "name": "Xương sông",
-        "category": "herbs",
-        "aliases": [
-            "elsholtzia ciliata"
-        ]
-    },
-    {
-        "name": "Lá chanh",
-        "category": "herbs",
-        "aliases": [
-            "lime leaf"
-        ]
-    },
-    {
-        "name": "Bạc hà",
-        "category": "herbs",
-        "aliases": [
-            "mint"
-        ]
-    },
-    {
-        "name": "Rau má",
-        "category": "herbs",
-        "aliases": [
-            "pennywort"
-        ]
-    },
-    {
-        "name": "Tỏi",
-        "category": "spices",
-        "aliases": [
-            "garlic"
-        ]
-    },
-    {
-        "name": "Hành tím",
-        "category": "spices",
-        "aliases": [
-            "shallot",
-            "hành khô"
-        ]
-    },
-    {
-        "name": "Gừng",
-        "category": "spices",
-        "aliases": [
-            "ginger"
-        ]
-    },
-    {
-        "name": "Hoa hồi",
-        "category": "spices",
-        "aliases": [
-            "star anise"
-        ]
-    },
-    {
-        "name": "Quế",
-        "category": "spices",
-        "aliases": [
-            "cinnamon stick",
-            "cinnamon"
-        ]
-    },
-    {
-        "name": "Thảo quả",
-        "category": "spices",
-        "aliases": [
-            "black cardamom"
-        ]
-    },
-    {
-        "name": "Đinh hương",
-        "category": "spices",
-        "aliases": [
-            "clove"
-        ]
-    },
-    {
-        "name": "Hạt mùi",
-        "category": "spices",
-        "aliases": [
-            "coriander seeds"
-        ]
-    },
-    {
-        "name": "Ớt tươi",
-        "category": "spices",
-        "aliases": [
-            "chilli",
-            "chili"
-        ]
-    },
-    {
-        "name": "Tiêu",
-        "category": "spices",
-        "aliases": [
-            "pepper",
-            "black pepper"
-        ]
-    },
-    {
-        "name": "Nghệ",
-        "category": "spices",
-        "aliases": [
-            "turmeric",
-            "bột nghệ"
-        ]
-    },
-    {
-        "name": "Sả",
-        "category": "spices",
-        "aliases": [
-            "lemongrass"
-        ]
-    },
-    {
-        "name": "Riềng",
-        "category": "spices",
-        "aliases": [
-            "galangal"
-        ]
-    },
-    {
-        "name": "Nước mắm",
-        "category": "seasoning",
-        "aliases": [
-            "fish sauce"
-        ]
-    },
-    {
-        "name": "Muối",
-        "category": "seasoning",
-        "aliases": [
-            "salt"
-        ]
-    },
-    {
-        "name": "Đường",
-        "category": "seasoning",
-        "aliases": [
-            "sugar",
-            "đường cát"
-        ]
-    },
-    {
-        "name": "Đường phèn",
-        "category": "seasoning",
-        "aliases": [
-            "rock sugar"
-        ]
-    },
-    {
-        "name": "Bột ngọt",
-        "category": "seasoning",
-        "aliases": [
-            "MSG",
-            "monosodium glutamate"
-        ]
-    },
-    {
-        "name": "Dầu ăn",
-        "category": "seasoning",
-        "aliases": [
-            "cooking oil"
-        ]
-    },
-    {
-        "name": "Nước hàng",
-        "category": "seasoning",
-        "aliases": [
-            "caramelized sugar syrup"
-        ]
-    },
-    {
-        "name": "Dấm",
-        "category": "seasoning",
-        "aliases": [
-            "vinegar"
-        ]
-    },
-    {
-        "name": "Chanh",
-        "category": "seasoning",
-        "aliases": [
-            "lime"
-        ]
-    },
-    {
-        "name": "Mắm ruốc Huế",
-        "category": "seasoning",
-        "aliases": [
-            "fermented shrimp paste hue style"
-        ]
-    },
-    {
-        "name": "Dầu điều",
-        "category": "seasoning",
-        "aliases": [
-            "annatto oil"
-        ]
-    },
-    {
-        "name": "Ớt bột",
-        "category": "seasoning",
-        "aliases": [
-            "chilli powder"
-        ]
-    },
-    {
-        "name": "Sa tế",
-        "category": "seasoning",
-        "aliases": [
-            "chilli sate"
-        ]
-    },
-    {
-        "name": "Tương ớt",
-        "category": "seasoning",
-        "aliases": [
-            "chilli sauce"
-        ]
-    },
-    {
-        "name": "Nước tương",
-        "category": "seasoning",
-        "aliases": [
-            "soy sauce",
-            "xì dầu"
-        ]
-    },
-    {
-        "name": "Dầu hào",
-        "category": "seasoning",
-        "aliases": [
-            "oyster sauce"
-        ]
-    },
-    {
-        "name": "Mẻ",
-        "category": "seasoning",
-        "aliases": [
-            "fermented rice"
-        ]
-    },
-    {
-        "name": "Mắm tôm",
-        "category": "seasoning",
-        "aliases": [
-            "shrimp paste"
-        ]
-    },
-    {
-        "name": "Tương hột",
-        "category": "seasoning",
-        "aliases": [
-            "fermented soybean paste"
-        ]
-    },
-    {
-        "name": "Bánh phở",
-        "category": "grains",
-        "aliases": [
-            "pho noodles",
-            "flat rice noodles"
-        ]
-    },
-    {
-        "name": "Bún tươi",
-        "category": "grains",
-        "aliases": [
-            "rice vermicelli",
-            "bún rối",
-            "bún lá"
-        ]
-    },
-    {
-        "name": "Gạo",
-        "category": "grains",
-        "aliases": [
-            "rice"
-        ]
-    },
-    {
-        "name": "Bánh tráng",
-        "category": "grains",
-        "aliases": [
-            "rice paper"
-        ]
-    },
-    {
-        "name": "Bột gạo",
-        "category": "grains",
-        "aliases": [
-            "rice flour"
-        ]
-    },
-    {
-        "name": "Bột năng",
-        "category": "grains",
-        "aliases": [
-            "tapioca starch"
-        ]
-    },
-    {
-        "name": "Bột bắp",
-        "category": "grains",
-        "aliases": [
-            "cornstarch"
-        ]
-    },
-    {
-        "name": "Miến",
-        "category": "grains",
-        "aliases": [
-            "glass noodles",
-            "cellophane noodles"
-        ]
-    },
-    {
-        "name": "Bánh mì",
-        "category": "grains",
-        "aliases": [
-            "baguette"
-        ]
-    },
-    {
-        "name": "Trứng gà",
-        "category": "other",
-        "aliases": [
-            "chicken egg"
-        ]
-    },
-    {
-        "name": "Nước cốt dừa",
-        "category": "other",
-        "aliases": [
-            "coconut milk"
-        ]
-    },
-    {
-        "name": "Đậu xanh cà",
-        "category": "other",
-        "aliases": [
-            "split mung bean"
-        ]
-    },
-    {
-        "name": "Đậu phộng rang",
-        "category": "other",
-        "aliases": [
-            "roasted peanuts",
-            "lạc rang"
-        ]
-    },
-    {
-        "name": "Xương gà",
-        "category": "meat",
-        "aliases": [
-            "chicken bones"
-        ]
-    },
-    {
-        "name": "Nem (chả viên)",
-        "category": "meat",
-        "aliases": [
-            "pork sausage patty",
-            "grilled pork patty"
-        ]
-    },
-    {
-        "name": "Tương đen",
-        "category": "seasoning",
-        "aliases": [
-            "Hoisin sauce"
-        ]
-    },
-    {
-        "name": "Bì heo",
-        "category": "meat",
-        "aliases": [
-            "shredded pork skin"
-        ]
-    },
-    {
-        "name": "Mộc nhĩ",
-        "category": "vegetables",
-        "aliases": [
-            "wood ear mushroom",
-            "nấm mèo"
-        ]
-    },
-    {
-        "name": "Đậu phụ",
-        "category": "other",
-        "aliases": [
-            "tofu"
-        ]
-    },
-    {
-        "name": "Chả cốm",
-        "category": "meat",
-        "aliases": [
-            "fried green rice flake sausage"
-        ]
-    },
-    {
-        "name": "Mì Quảng",
-        "category": "grains",
-        "aliases": [
-            "Quang noodles"
-        ]
-    },
-    {
-        "name": "Trứng cút",
-        "category": "other",
-        "aliases": [
-            "quail egg"
-        ]
-    },
-    {
-        "name": "Mì Cao Lầu",
-        "category": "grains",
-        "aliases": [
-            "Cao Lau noodles"
-        ]
-    },
-    {
-        "name": "Mắm cá linh",
-        "category": "seasoning",
-        "aliases": [
-            "fermented fish sauce (Linh fish)"
-        ]
-    },
-    {
-        "name": "Mắm cá sặc",
-        "category": "seasoning",
-        "aliases": [
-            "fermented fish sauce (Sac fish)"
-        ]
-    },
-    {
-        "name": "Cá lăng",
-        "category": "seafood",
-        "aliases": [
-            "catfish (Hemibagrus)"
-        ]
-    },
-    {
-        "name": "Cá trình",
-        "category": "seafood",
-        "aliases": [
-            "eel"
-        ]
-    },
-    {
-        "name": "Thì là",
-        "category": "herbs",
-        "aliases": [
-            "dill"
-        ]
-    },
-    {
-        "name": "Nước dùng gà",
-        "category": "other",
-        "aliases": [
-            "chicken broth",
-            "chicken stock"
-        ]
-    },
-    {
-        "name": "Tôm khô",
-        "category": "seafood",
-        "aliases": [
-            "dried shrimp"
-        ]
-    },
-    {
-        "name": "Mỡ heo",
-        "category": "meat",
-        "aliases": [
-            "pork fat"
-        ]
-    },
-    {
-        "name": "Xoài xanh",
-        "category": "fruits",
-        "aliases": [
-            "green mango"
-        ]
-    },
-    {
-        "name": "Me",
-        "category": "seasoning",
-        "aliases": [
-            "tamarind"
-        ]
-    },
-    {
-        "name": "Khô bò",
-        "category": "meat",
-        "aliases": [
-            "beef jerky"
-        ]
-    },
-    {
-        "name": "Trứng vịt",
-        "category": "other",
-        "aliases": [
-            "duck egg"
-        ]
-    },
-    {
-        "name": "Ngó sen",
-        "category": "vegetables",
-        "aliases": [
-            "lotus stem"
-        ]
-    },
-    {
-        "name": "Da heo chiên giòn",
-        "category": "other",
-        "aliases": [
-            "fried pork skin",
-            "tóp mỡ"
-        ]
-    },
-    {
-        "name": "Chả cá",
-        "category": "seafood",
-        "aliases": [
-            "fish cake"
-        ]
-    }
+  {
+    "name": "Thịt bò",
+    "category": "meat",
+    "aliases": ["beef"]
+  },
+  {
+    "name": "Thịt gà",
+    "category": "meat",
+    "aliases": ["chicken"]
+  },
+  {
+    "name": "Thịt heo",
+    "category": "meat",
+    "aliases": ["pork", "thịt lợn"]
+  },
+  {
+    "name": "Thịt nạc vai",
+    "category": "meat",
+    "aliases": ["pork shoulder"]
+  },
+  {
+    "name": "Xương bò",
+    "category": "meat",
+    "aliases": ["beef bones", "xương ống bò", "xương tủy bò"]
+  },
+  {
+    "name": "Xương heo",
+    "category": "meat",
+    "aliases": ["pork bones", "xương ống heo"]
+  },
+  {
+    "name": "Bắp bò",
+    "category": "meat",
+    "aliases": ["beef shank"]
+  },
+  {
+    "name": "Nạm bò",
+    "category": "meat",
+    "aliases": ["beef flank"]
+  },
+  {
+    "name": "Gân bò",
+    "category": "meat",
+    "aliases": ["beef tendon"]
+  },
+  {
+    "name": "Tái lăn",
+    "category": "meat",
+    "aliases": ["sliced rare beef", "tái băm"]
+  },
+  {
+    "name": "Thịt ba chỉ",
+    "category": "meat",
+    "aliases": ["pork belly"]
+  },
+  {
+    "name": "Giò heo",
+    "category": "meat",
+    "aliases": ["pork hock", "pork leg"]
+  },
+  {
+    "name": "Chả lụa",
+    "category": "meat",
+    "aliases": ["vietnamese pork sausage", "pork loaf"]
+  },
+  {
+    "name": "Chả bò",
+    "category": "meat",
+    "aliases": ["beef sausage"]
+  },
+  {
+    "name": "Chả cua",
+    "category": "seafood",
+    "aliases": ["crab cake"]
+  },
+  {
+    "name": "Tiết lợn",
+    "category": "meat",
+    "aliases": ["pork blood", "huyết"]
+  },
+  {
+    "name": "Cá lóc",
+    "category": "seafood",
+    "aliases": ["snakehead fish", "cá quả"]
+  },
+  {
+    "name": "Tôm",
+    "category": "seafood",
+    "aliases": ["shrimp"]
+  },
+  {
+    "name": "Mực",
+    "category": "seafood",
+    "aliases": ["squid"]
+  },
+  {
+    "name": "Nghêu",
+    "category": "seafood",
+    "aliases": ["clam"]
+  },
+  {
+    "name": "Cà chua",
+    "category": "vegetables",
+    "aliases": ["tomato"]
+  },
+  {
+    "name": "Dứa",
+    "category": "vegetables",
+    "aliases": ["pineapple", "thơm"]
+  },
+  {
+    "name": "Đậu bắp",
+    "category": "vegetables",
+    "aliases": ["okra"]
+  },
+  {
+    "name": "Bạc hà",
+    "category": "vegetables",
+    "aliases": ["dọc mùng", "elephant ear stalk"]
+  },
+  {
+    "name": "Giá đỗ",
+    "category": "vegetables",
+    "aliases": ["bean sprouts"]
+  },
+  {
+    "name": "Hành tây",
+    "category": "vegetables",
+    "aliases": ["onion"]
+  },
+  {
+    "name": "Cà rốt",
+    "category": "vegetables",
+    "aliases": ["carrot"]
+  },
+  {
+    "name": "Đu đủ xanh",
+    "category": "vegetables",
+    "aliases": ["green papaya"]
+  },
+  {
+    "name": "Xà lách",
+    "category": "vegetables",
+    "aliases": ["lettuce"]
+  },
+  {
+    "name": "Rau cải bẹ xanh",
+    "category": "vegetables",
+    "aliases": ["mustard greens", "cải non"]
+  },
+  {
+    "name": "Dưa leo",
+    "category": "vegetables",
+    "aliases": ["cucumber", "dưa chuột"]
+  },
+  {
+    "name": "Chuối chát",
+    "category": "vegetables",
+    "aliases": ["green banana"]
+  },
+  {
+    "name": "Khế",
+    "category": "vegetables",
+    "aliases": ["star fruit"]
+  },
+  {
+    "name": "Bông so đũa",
+    "category": "vegetables",
+    "aliases": ["sesbania grandiflora flower"]
+  },
+  {
+    "name": "Kèo nèo",
+    "category": "vegetables",
+    "aliases": ["water lily stem"]
+  },
+  {
+    "name": "Nấm rơm",
+    "category": "vegetables",
+    "aliases": ["straw mushroom"]
+  },
+  {
+    "name": "Bông cải",
+    "category": "vegetables",
+    "aliases": ["cauliflower"]
+  },
+  {
+    "name": "Cải thìa",
+    "category": "vegetables",
+    "aliases": ["bok choy"]
+  },
+  {
+    "name": "Rau muống",
+    "category": "vegetables",
+    "aliases": ["water spinach"]
+  },
+  {
+    "name": "Mồng tơi",
+    "category": "vegetables",
+    "aliases": ["malabar spinach"]
+  },
+  {
+    "name": "Rau dền",
+    "category": "vegetables",
+    "aliases": ["amaranth"]
+  },
+  {
+    "name": "Khoai tây",
+    "category": "vegetables",
+    "aliases": ["potato"]
+  },
+  {
+    "name": "Bắp cải",
+    "category": "vegetables",
+    "aliases": ["cabbage"]
+  },
+  {
+    "name": "Măng",
+    "category": "vegetables",
+    "aliases": ["bamboo shoot"]
+  },
+  {
+    "name": "Khổ qua",
+    "category": "vegetables",
+    "aliases": ["bitter melon", "mướp đắng"]
+  },
+  {
+    "name": "Bí đao",
+    "category": "vegetables",
+    "aliases": ["winter melon"]
+  },
+  {
+    "name": "Bí đỏ",
+    "category": "vegetables",
+    "aliases": ["pumpkin"]
+  },
+  {
+    "name": "Su su",
+    "category": "vegetables",
+    "aliases": ["chayote"]
+  },
+  {
+    "name": "Cà tím",
+    "category": "vegetables",
+    "aliases": ["eggplant"]
+  },
+  {
+    "name": "Rau đắng",
+    "category": "vegetables",
+    "aliases": ["bitter herb"]
+  },
+  {
+    "name": "Hành lá",
+    "category": "herbs",
+    "aliases": ["scallion", "spring onion"]
+  },
+  {
+    "name": "Ngò rí",
+    "category": "herbs",
+    "aliases": ["coriander", "cilantro", "rau mùi"]
+  },
+  {
+    "name": "Húng quế",
+    "category": "herbs",
+    "aliases": ["thai basil"]
+  },
+  {
+    "name": "Tía tô",
+    "category": "herbs",
+    "aliases": ["perilla leaf"]
+  },
+  {
+    "name": "Kinh giới",
+    "category": "herbs",
+    "aliases": ["vietnamese balm"]
+  },
+  {
+    "name": "Húng lủi",
+    "category": "herbs",
+    "aliases": ["spearmint", "mojito mint"]
+  },
+  {
+    "name": "Diếp cá",
+    "category": "herbs",
+    "aliases": ["fish mint"]
+  },
+  {
+    "name": "Ngò gai",
+    "category": "herbs",
+    "aliases": ["culantro", "sawtooth coriander"]
+  },
+  {
+    "name": "Ngò om",
+    "category": "herbs",
+    "aliases": ["rice paddy herb", "rau ngổ"]
+  },
+  {
+    "name": "Rau răm",
+    "category": "herbs",
+    "aliases": ["vietnamese coriander"]
+  },
+  {
+    "name": "Hẹ",
+    "category": "herbs",
+    "aliases": ["garlic chives"]
+  },
+  {
+    "name": "Lá lốt",
+    "category": "herbs",
+    "aliases": ["lolot leaf"]
+  },
+  {
+    "name": "Xương sông",
+    "category": "herbs",
+    "aliases": ["elsholtzia ciliata"]
+  },
+  {
+    "name": "Lá chanh",
+    "category": "herbs",
+    "aliases": ["lime leaf"]
+  },
+  {
+    "name": "Bạc hà",
+    "category": "herbs",
+    "aliases": ["mint"]
+  },
+  {
+    "name": "Rau má",
+    "category": "herbs",
+    "aliases": ["pennywort"]
+  },
+  {
+    "name": "Tỏi",
+    "category": "spices",
+    "aliases": ["garlic"]
+  },
+  {
+    "name": "Hành tím",
+    "category": "spices",
+    "aliases": ["shallot", "hành khô"]
+  },
+  {
+    "name": "Gừng",
+    "category": "spices",
+    "aliases": ["ginger"]
+  },
+  {
+    "name": "Hoa hồi",
+    "category": "spices",
+    "aliases": ["star anise"]
+  },
+  {
+    "name": "Quế",
+    "category": "spices",
+    "aliases": ["cinnamon stick", "cinnamon"]
+  },
+  {
+    "name": "Thảo quả",
+    "category": "spices",
+    "aliases": ["black cardamom"]
+  },
+  {
+    "name": "Đinh hương",
+    "category": "spices",
+    "aliases": ["clove"]
+  },
+  {
+    "name": "Hạt mùi",
+    "category": "spices",
+    "aliases": ["coriander seeds"]
+  },
+  {
+    "name": "Ớt tươi",
+    "category": "spices",
+    "aliases": ["chilli", "chili"]
+  },
+  {
+    "name": "Tiêu",
+    "category": "spices",
+    "aliases": ["pepper", "black pepper"]
+  },
+  {
+    "name": "Nghệ",
+    "category": "spices",
+    "aliases": ["turmeric", "bột nghệ"]
+  },
+  {
+    "name": "Sả",
+    "category": "spices",
+    "aliases": ["lemongrass"]
+  },
+  {
+    "name": "Riềng",
+    "category": "spices",
+    "aliases": ["galangal"]
+  },
+  {
+    "name": "Nước mắm",
+    "category": "seasoning",
+    "aliases": ["fish sauce"]
+  },
+  {
+    "name": "Muối",
+    "category": "seasoning",
+    "aliases": ["salt"]
+  },
+  {
+    "name": "Đường",
+    "category": "seasoning",
+    "aliases": ["sugar", "đường cát"]
+  },
+  {
+    "name": "Đường phèn",
+    "category": "seasoning",
+    "aliases": ["rock sugar"]
+  },
+  {
+    "name": "Bột ngọt",
+    "category": "seasoning",
+    "aliases": ["MSG", "monosodium glutamate"]
+  },
+  {
+    "name": "Dầu ăn",
+    "category": "seasoning",
+    "aliases": ["cooking oil"]
+  },
+  {
+    "name": "Nước hàng",
+    "category": "seasoning",
+    "aliases": ["caramelized sugar syrup"]
+  },
+  {
+    "name": "Dấm",
+    "category": "seasoning",
+    "aliases": ["vinegar"]
+  },
+  {
+    "name": "Chanh",
+    "category": "seasoning",
+    "aliases": ["lime"]
+  },
+  {
+    "name": "Mắm ruốc Huế",
+    "category": "seasoning",
+    "aliases": ["fermented shrimp paste hue style"]
+  },
+  {
+    "name": "Dầu điều",
+    "category": "seasoning",
+    "aliases": ["annatto oil"]
+  },
+  {
+    "name": "Ớt bột",
+    "category": "seasoning",
+    "aliases": ["chilli powder"]
+  },
+  {
+    "name": "Sa tế",
+    "category": "seasoning",
+    "aliases": ["chilli sate"]
+  },
+  {
+    "name": "Tương ớt",
+    "category": "seasoning",
+    "aliases": ["chilli sauce"]
+  },
+  {
+    "name": "Nước tương",
+    "category": "seasoning",
+    "aliases": ["soy sauce", "xì dầu"]
+  },
+  {
+    "name": "Dầu hào",
+    "category": "seasoning",
+    "aliases": ["oyster sauce"]
+  },
+  {
+    "name": "Mẻ",
+    "category": "seasoning",
+    "aliases": ["fermented rice"]
+  },
+  {
+    "name": "Mắm tôm",
+    "category": "seasoning",
+    "aliases": ["shrimp paste"]
+  },
+  {
+    "name": "Tương hột",
+    "category": "seasoning",
+    "aliases": ["fermented soybean paste"]
+  },
+  {
+    "name": "Bánh phở",
+    "category": "grains",
+    "aliases": ["pho noodles", "flat rice noodles"]
+  },
+  {
+    "name": "Bún tươi",
+    "category": "grains",
+    "aliases": ["rice vermicelli", "bún rối", "bún lá"]
+  },
+  {
+    "name": "Gạo",
+    "category": "grains",
+    "aliases": ["rice"]
+  },
+  {
+    "name": "Bánh tráng",
+    "category": "grains",
+    "aliases": ["rice paper"]
+  },
+  {
+    "name": "Bột gạo",
+    "category": "grains",
+    "aliases": ["rice flour"]
+  },
+  {
+    "name": "Bột năng",
+    "category": "grains",
+    "aliases": ["tapioca starch"]
+  },
+  {
+    "name": "Bột bắp",
+    "category": "grains",
+    "aliases": ["cornstarch"]
+  },
+  {
+    "name": "Miến",
+    "category": "grains",
+    "aliases": ["glass noodles", "cellophane noodles"]
+  },
+  {
+    "name": "Bánh mì",
+    "category": "grains",
+    "aliases": ["baguette"]
+  },
+  {
+    "name": "Trứng gà",
+    "category": "other",
+    "aliases": ["chicken egg"]
+  },
+  {
+    "name": "Nước cốt dừa",
+    "category": "other",
+    "aliases": ["coconut milk"]
+  },
+  {
+    "name": "Đậu xanh cà",
+    "category": "other",
+    "aliases": ["split mung bean"]
+  },
+  {
+    "name": "Đậu phộng rang",
+    "category": "other",
+    "aliases": ["roasted peanuts", "lạc rang"]
+  },
+  {
+    "name": "Xương gà",
+    "category": "meat",
+    "aliases": ["chicken bones"]
+  },
+  {
+    "name": "Nem (chả viên)",
+    "category": "meat",
+    "aliases": ["pork sausage patty", "grilled pork patty"]
+  },
+  {
+    "name": "Tương đen",
+    "category": "seasoning",
+    "aliases": ["Hoisin sauce"]
+  },
+  {
+    "name": "Bì heo",
+    "category": "meat",
+    "aliases": ["shredded pork skin"]
+  },
+  {
+    "name": "Mộc nhĩ",
+    "category": "vegetables",
+    "aliases": ["wood ear mushroom", "nấm mèo"]
+  },
+  {
+    "name": "Đậu phụ",
+    "category": "other",
+    "aliases": ["tofu"]
+  },
+  {
+    "name": "Chả cốm",
+    "category": "meat",
+    "aliases": ["fried green rice flake sausage"]
+  },
+  {
+    "name": "Mì Quảng",
+    "category": "grains",
+    "aliases": ["Quang noodles"]
+  },
+  {
+    "name": "Trứng cút",
+    "category": "other",
+    "aliases": ["quail egg"]
+  },
+  {
+    "name": "Mì Cao Lầu",
+    "category": "grains",
+    "aliases": ["Cao Lau noodles"]
+  },
+  {
+    "name": "Mắm cá linh",
+    "category": "seasoning",
+    "aliases": ["fermented fish sauce (Linh fish)"]
+  },
+  {
+    "name": "Mắm cá sặc",
+    "category": "seasoning",
+    "aliases": ["fermented fish sauce (Sac fish)"]
+  },
+  {
+    "name": "Cá lăng",
+    "category": "seafood",
+    "aliases": ["catfish (Hemibagrus)"]
+  },
+  {
+    "name": "Cá trình",
+    "category": "seafood",
+    "aliases": ["eel"]
+  },
+  {
+    "name": "Thì là",
+    "category": "herbs",
+    "aliases": ["dill"]
+  },
+  {
+    "name": "Nước dùng gà",
+    "category": "other",
+    "aliases": ["chicken broth", "chicken stock"]
+  },
+  {
+    "name": "Tôm khô",
+    "category": "seafood",
+    "aliases": ["dried shrimp"]
+  },
+  {
+    "name": "Mỡ heo",
+    "category": "meat",
+    "aliases": ["pork fat"]
+  },
+  {
+    "name": "Xoài xanh",
+    "category": "fruits",
+    "aliases": ["green mango"]
+  },
+  {
+    "name": "Me",
+    "category": "seasoning",
+    "aliases": ["tamarind"]
+  },
+  {
+    "name": "Khô bò",
+    "category": "meat",
+    "aliases": ["beef jerky"]
+  },
+  {
+    "name": "Trứng vịt",
+    "category": "other",
+    "aliases": ["duck egg"]
+  },
+  {
+    "name": "Ngó sen",
+    "category": "vegetables",
+    "aliases": ["lotus stem"]
+  },
+  {
+    "name": "Da heo chiên giòn",
+    "category": "other",
+    "aliases": ["fried pork skin", "tóp mỡ"]
+  },
+  {
+    "name": "Chả cá",
+    "category": "seafood",
+    "aliases": ["fish cake"]
+  }
 ]
