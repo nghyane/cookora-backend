@@ -1,0 +1,37 @@
+{
+  "name": "cookora-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts --host 0.0.0.0",
+    "build": "bun build src/index.ts --outdir=dist --target=bun",
+    "start": "bun run dist/index.js --host 0.0.0.0",
+    "test": "bun test",
+    "db:generate": "bunx drizzle-kit generate",
+    "db:migrate": "bunx drizzle-kit migrate",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:db": "docker-compose up -d postgres redis",
+    "docker:logs": "docker-compose logs -f",
+    "check": "biome check --fix .",
+    "format": "biome format --write .",
+    "lint": "biome lint --fix ."
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^1.1.0",
+    "@hono/zod-validator": "^0.7.2",
+    "@scalar/hono-api-reference": "^0.9.13",
+    "drizzle-orm": "^0.44.4",
+    "drizzle-zod": "^0.8.3",
+    "hono": "^4.9.2",
+    "postgres": "^3.4.7",
+    "redis": "^5.8.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.20",
+    "@types/node": "^24.3.0",
+    "drizzle-kit": "^0.31.4",
+    "typescript": "^5.9.2"
+  }
+}

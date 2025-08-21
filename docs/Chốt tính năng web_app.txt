@@ -1,0 +1,220 @@
+﻿PHẦN A: GIAO DIỆN CÔNG KHAI (PUBLIC FACING)
+1.0 Trang Chủ (/)
+* Header (Thanh điều hướng trên cùng):
+   * Logo Cookora.
+   * Thanh tìm kiếm chính.
+   * Menu điều hướng: Trang chủ, Tạp chí, Cộng đồng, Về Cookora, Liên hệ.
+   * Khu vực người dùng: Nút "Đăng nhập/Đăng ký" hoặc Avatar người dùng dẫn đến menu thả xuống (Trang cá nhân, Tạo bài viết, Tin nhắn, Thông báo, Đăng xuất).
+* 1.1 Hero Section:
+   * Thành phần: Slider ảnh/video toàn màn hình, lớp phủ màu nhẹ để làm nổi bật chữ.
+   * Nội dung: Tiêu đề lớn, câu mô tả ngắn, 2 nút kêu gọi hành động (CTA) chính.
+* 1.2 "Bài viết nổi bật từ Cộng đồng":
+   * Thành phần: Lưới (grid) gồm 4-6 thẻ bài viết.
+   * Mỗi thẻ bài viết: Ảnh đại diện, Tên bài viết, Tên tác giả & Avatar, Lượt thích & Bình luận.
+   * Logic: Hiển thị các bài viết có tương tác cao nhất trong 7 ngày qua.
+* 1.3 "Tạp chí Cookora":
+   * Thành phần: Một layout chia cột, bên trái là 1 bài viết mới nhất (ảnh to), bên phải là 3 bài viết cũ hơn (ảnh nhỏ + tiêu đề).
+* 1.4 Khu vực Giới thiệu App Cookora:
+   * Thành phần: Layout 2 cột. Cột trái: Tiêu đề, mô tả lợi ích của app, danh sách 3 tính năng chính (có icon). Cột phải: Hình ảnh mockup điện thoại đang chạy app Cookora.
+   * CTA: Nút App Store và Google Play.
+2.0 Tạp chí Cookora (/magazine)
+* 2.1 Trang chính Tạp chí: Hiển thị bài viết mới nhất từ tất cả chuyên mục.
+* 2.2 Chuyên mục: Review (/magazine/reviews): Đánh giá sản phẩm, dịch vụ, nhà hàng...
+* 2.3 Chuyên mục: Xu Hướng & Góc Nhìn Chuyên Gia (/magazine/trends): Phân tích các xu hướng ẩm thực.
+* 2.4 Chuyên mục: Chuyện Bếp (/magazine/stories): Các bài viết truyền cảm hứng.
+3.0 Cộng Đồng (/community)
+* 3.1 Bảng tin Cộng đồng (News Feed):
+   * Thành phần chính:
+      * Cột trái (Cố định): Menu con của Cộng đồng (Bảng tin, Thử thách, Hỏi & Đáp, Nhóm, Sự kiện, Thành viên).
+      * Cột giữa (Luồng nội dung chính):
+         * Khung "Tạo bài viết": Avatar người dùng và ô input "Bạn đang nghĩ gì về món ăn hôm nay?". Nhấn vào sẽ mở ra trang Tạo bài viết chi tiết.
+         * Luồng các bài đăng: Mỗi bài đăng là một component riêng.
+      * Cột phải (Cố định): Gợi ý "Theo dõi thêm", "Các chủ đề hot", "Nhóm nổi bật".
+   * Component "Một Bài Đăng":
+      * Header: Avatar, Tên người đăng, thời gian đăng.
+      * Nội dung: Đoạn text, hình ảnh/video. Hỗ trợ gắn thẻ người dùng (@username).
+      * Tương tác: Số lượt thích, bình luận.
+      * Actions: Nút Thích, Bình luận, Chia sẻ, Lưu bài viết.
+      * Khu vực bình luận: Hiển thị 2 bình luận mới nhất và ô để nhập bình luận mới.
+* 3.2 Thử Thách Sáng Tạo (/community/challenges):
+   * Thành phần: Banner thử thách hiện tại với đồng hồ đếm ngược. Tab điều hướng: "Đang diễn ra", "Sắp diễn ra", "Đã kết thúc". Lưới các bài dự thi. Nút "Nộp bài dự thi".
+* 3.3 Hỏi & Đáp (/community/q-a):
+   * Thành phần: Nút "Đặt câu hỏi mới". Danh sách các câu hỏi. Trang chi tiết câu hỏi có hệ thống vote up/down cho câu trả lời.
+* 3.4 Nhóm (/community/groups):
+   * Thành phần: Trang danh sách các nhóm (có thể tìm kiếm). Nút "Tạo nhóm mới". Trang chi tiết của một nhóm sẽ có bảng tin riêng, danh sách thành viên và mục thảo luận.
+* 3.5 Sự kiện (/community/events):
+   * Thành phần: Lịch hoặc danh sách các sự kiện (online/offline). Người dùng có thể xem chi tiết và đăng ký tham gia.
+4.0  Về Cookora (/about) - CHI TIẾT
+* Mục tiêu: Xây dựng niềm tin, truyền tải tầm nhìn và kết nối cảm xúc với người dùng, đối tác.
+* 4.1 Hero Section:
+   * Thành phần: Một hình ảnh lớn, ấm cúng về đội ngũ Cookora hoặc một khoảnh khắc cộng đồng.
+   * Nội dung: Tiêu đề "Câu chuyện đằng sau mỗi căn bếp".
+* 4.2 Sứ mệnh của chúng tôi (Our Mission):
+   * Thành phần: Một khu vực với tiêu đề lớn và đoạn văn ngắn, súc tích.
+   * Nội dung gợi ý: "Tại Cookora, chúng tôi tin rằng mỗi căn bếp đều ẩn chứa một câu chuyện và niềm vui nấu nướng là sợi dây kết nối diệu kỳ. Sứ mệnh của chúng tôi là xây dựng một cộng đồng ẩm thực sôi nổi, nơi mọi người có thể tự do chia sẻ công thức, lan tỏa cảm hứng và cùng nhau tạo nên những khoảnh khắc đáng nhớ bên mâm cơm gia đình."
+* 4.3 Hành trình Cookora (Our Journey):
+   * Thành phần: Một timeline trực quan theo chiều ngang hoặc dọc.
+   * Nội dung: Các cột mốc quan trọng (Ngày thành lập, Ra mắt website, Ra mắt app, Đạt 10,000 thành viên, Tổ chức sự kiện cộng đồng đầu tiên...).
+* 4.4 Đội ngũ sáng lập (Our Team):
+   * Thành phần: Lưới các thẻ thông tin thành viên.
+   * Nội dung gợi ý cho mỗi thẻ:
+      * [Ảnh] Nguyễn An Nhiên - CEO & Founder: "Nấu ăn với tôi không chỉ là công việc, mà là cách để thể hiện tình yêu thương. Tôi muốn Cookora là nơi mọi người tìm thấy niềm vui đó."
+      * [Ảnh] Trần Minh Khang - CTO: "Tôi đam mê việc sử dụng công nghệ để giải quyết các vấn đề đời thường. Cookora là cơ hội để tôi mang đến những trải nghiệm tốt nhất cho cộng đồng yêu bếp."
+      * [Ảnh] Lê Thảo Vy - Trưởng ban Nội dung: "Mỗi món ăn đều có một linh hồn. Tôi và đội ngũ của mình sẽ nỗ lực để truyền tải những câu chuyện ẩm thực đặc sắc nhất đến với bạn."
+* 4.5 Giá trị cốt lõi (Core Values):
+   * Thành phần: 3-4 cột với icon và tiêu đề.
+   * Nội dung gợi ý:
+      * [Icon] Cộng đồng là trên hết: Chúng tôi lắng nghe, tôn trọng và xây dựng mọi tính năng vì lợi ích của cộng đồng.
+      * [Icon] Sáng tạo không ngừng: Khuyến khích mọi ý tưởng mới, từ công thức độc đáo đến những mẹo vặt hữu ích.
+      * [Icon] Chia sẻ là sức mạnh: Tin rằng việc cho đi kiến thức và kinh nghiệm sẽ làm cho cộng đồng ngày càng lớn mạnh.
+      * [Icon] Minh bạch & Tin cậy: Cam kết xây dựng một sân chơi công bằng, an toàn và đáng tin cậy cho tất cả thành viên.
+* 4.6 Báo chí nói về chúng tôi (Press & Media):
+   * Thành phần: Slider logo của các trang báo, tạp chí đã viết bài về Cookora. Nhấn vào logo sẽ dẫn đến bài viết gốc.
+* 4.7 Tham gia cùng chúng tôi (Join Us):
+   * Thành phần: Một khu vực CTA cuối trang.
+   * Nội dung gợi ý: "Hành trình vạn dặm bắt đầu từ một bước chân, và hành trình ẩm thực của bạn có thể bắt đầu ngay tại đây. Hãy trở thành một phần của gia đình Cookora để cùng nhau học hỏi, chia sẻ và lan tỏa đam mê. Nếu bạn là một nhãn hàng hoặc đối tác mong muốn đồng hành, chúng tôi luôn sẵn sàng lắng nghe."
+   * Nút: "Tham gia ngay" (dẫn đến trang đăng ký) và "Liên hệ hợp tác" (dẫn đến trang liên hệ).
+5.0 Kênh Cá Nhân & Quản lý (/profile/:username)
+* 5.1 Giao diện công khai (Tường nhà bạn):
+   * Thành phần:
+      * Ảnh bìa & Ảnh đại diện.
+      * Tên người dùng, @username, Cấp bậc & Huy hiệu, nút "Theo dõi" hoặc "Chỉnh sửa".
+      * Thông tin: Số bài viết, số người theo dõi, đang theo dõi.
+      * Thanh tiến trình cấp bậc (Progress Bar) và số điểm hiện có.
+      * Tab điều hướng: "Bài viết", "Giới thiệu", "Bộ sưu tập", "Thành tích".
+      * Dòng thời gian hiển thị các bài viết của người dùng đó.
+* 5.2 Bảng điều khiển cá nhân (Chỉ bạn thấy):
+   * Trang Tạo bài viết (/profile/create-post): Trình soạn thảo Rich Text Editor, ô nhập Hashtags, nút "Đăng bài" và "Lưu bản nháp".
+   * Trang Thông báo (/profile/notifications): Danh sách các thông báo tương tác.
+   * Trang Tin nhắn (/profile/messages): Giao diện chat trực tiếp với người dùng khác.
+   * Trang Lên kế hoạch bữa ăn (/profile/meal-planner): Giao diện lịch, cho phép kéo thả các bài viết đã lưu vào các ngày trong tuần.
+6.0 Chương trình Phần thưởng: "Bếp Trưởng Sáng Tạo" (/creators-club)
+Chương trình được tạo ra nhằm ghi nhận, vinh danh và tưởng thưởng cho những đóng góp chất lượng và đầy cảm hứng từ các thành viên trong cộng đồng Cookora.
+* 6.1 Cách thức hoạt động: Tích điểm & Lên cấp
+   * Bảng Tích điểm: Người dùng tích lũy điểm thưởng (Points) thông qua các hoạt động trên website.
+Hành động
+	Điểm thưởng
+	Đăng một bài viết mới
+	+10 điểm
+	Bài viết được BTV chọn lên "Tạp chí Cookora"
+	+50 điểm
+	Bài viết lọt top "Nổi bật" trên Trang chủ
+	+30 điểm
+	Nhận 1 lượt "Thích" từ người khác
+	+1 điểm
+	Nhận 1 bình luận từ người khác
+	+2 điểm
+	Tham gia một "Thử thách sáng tạo"
+	+20 điểm
+	Thắng giải trong "Thử thách sáng tạo"
+	+100 điểm
+	Đăng nhập mỗi ngày
+	+1 điểm
+	   * * **Hệ thống Cấp bậc:** Dựa trên số điểm tích lũy, người dùng sẽ đạt các cấp bậc với huy hiệu tương ứng.
+
+
+Cấp bậc
+	Điểm cần đạt
+	Huy hiệu
+	Cấp 1: Tập Sự Bếp
+	0 - 100
+	[Hình ảnh huy hiệu Tập Sự]
+	Cấp 2: Bếp Phó
+	101 - 500
+	[Hình ảnh huy hiệu Bếp Phó]
+	Cấp 3: Bếp Trưởng
+	501 - 1500
+	[Hình ảnh huy hiệu Bếp Trưởng]
+	Cấp 4: Chuyên Gia Ẩm Thực
+	1501 - 5000
+	[Hình ảnh huy hiệu Chuyên Gia]
+	Cấp 5: Đại Sứ Cookora
+	> 5000
+	[Hình ảnh huy hiệu Đại Sứ]
+	* 
+6.2 Quyền lợi & Phần thưởng
+   * Quyền lợi đặc biệt theo Cấp bậc:
+   * Bếp Trưởng trở lên: Nhận huy hiệu "Tài khoản xác thực" (dấu tick xanh), bài viết được ưu tiên hiển thị hơn.
+   * Đại Sứ Cookora: Được mời tham gia các sự kiện độc quyền, có cơ hội trở thành đối tác nội dung được trả phí, làm giám khảo cho các thử thách.
+   * Cửa hàng đổi thưởng (/creators-club/redeem):
+   * Mô tả: Người dùng có thể sử dụng điểm thưởng đã tích lũy để đổi lấy các phần quà giá trị.
+   * Danh mục quà tặng:
+   * Voucher: Giảm giá từ các đối tác (siêu thị, cửa hàng dụng cụ bếp, nhãn hàng thực phẩm).
+   * Quà tặng hiện vật: Các sản phẩm độc quyền mang thương hiệu Cookora (tạp dề, sổ tay, bộ dao dĩa...).
+   * Quà tặng số: Ebook công thức cao cấp, vé tham gia các lớp học nấu ăn online độc quyền.
+   * 6.3 Tích hợp vào Website
+   * Trang chính chương trình (/creators-club): Giải thích chi tiết luật chơi, hiển thị Bảng xếp hạng (Leaderboard) vinh danh các thành viên xuất sắc.
+   * Trang cá nhân (/profile/:username): Hiển thị rõ ràng cấp bậc, điểm số, thanh tiến trình lên cấp và tab "Thành tích" để trưng bày các huy hiệu đã đạt được.
+
+
+PHẦN B: KHU VỰC QUẢN TRỊ (ADMIN PANEL) - PHÂN RÃ CHI TIẾT
+Đây là khu vực nội bộ, yêu cầu đăng nhập với quyền hạn đặc biệt (Quản trị viên, Biên tập viên).
+7.0 Tổng quan về Khu vực Quản trị
+   * 7.1 Trang đăng nhập (/admin/login): Giao diện đăng nhập riêng biệt, bảo mật dành cho đội ngũ quản trị.
+   * 7.2 Bố cục chung (Admin Layout):
+   * Thanh bên (Sidebar): Menu điều hướng cố định bên trái, chứa liên kết đến tất cả các mục quản lý.
+   * Thanh trên (Top Bar): Hiển thị tên và avatar của quản trị viên đang đăng nhập, cùng với nút truy cập nhanh thông báo và đăng xuất.
+8.0 Bảng điều khiển (/admin/dashboard)
+   * Mục tiêu: Cung cấp cái nhìn tổng quan, nhanh chóng về các chỉ số quan trọng của website.
+   * Thành phần & Tính năng:
+   * Các thẻ thống kê nhanh (Statistic Cards): Hiển thị các con số cốt lõi:
+   * Tổng số người dùng.
+   * Người dùng mới (trong 24 giờ/7 ngày).
+   * Tổng số bài viết.
+   * Bài viết đang chờ duyệt.
+   * Bình luận/Báo cáo đang chờ xử lý.
+   * Biểu đồ phân tích (Charts):
+   * Biểu đồ đường: Thể hiện xu hướng "Đăng ký người dùng mới" và "Bài viết được tạo" theo ngày, tuần, hoặc tháng.
+   * Biểu đồ tròn: Phân bổ bài viết theo các chuyên mục chính.
+   * Luồng hoạt động gần đây (Recent Activity Feed):
+   * Danh sách các hành động mới nhất trên toàn hệ thống (VD: "Thành viên A vừa đăng bài viết 'Cách làm bánh flan'", "Thành viên B đã báo cáo một bình luận").
+   * Hành động nhanh (Quick Actions): Các nút bấm để điều hướng trực tiếp đến các tác vụ quan trọng nhất (VD: "Duyệt bài viết", "Xử lý báo cáo").
+9.0 Quản lý Bài viết (/admin/posts)
+   * Mục tiêu: Kiểm soát toàn bộ nội dung do người dùng và đội ngũ BTV tạo ra.
+   * Thành phần & Tính năng:
+   * Thanh lọc & Tìm kiếm:
+   * Tìm kiếm theo tiêu đề bài viết hoặc tên tác giả.
+   * Bộ lọc theo Trạng thái (Đã đăng, Chờ duyệt, Bị từ chối, Bản nháp).
+   * Bộ lọc theo Chuyên mục (Review, Xu hướng, Chuyện bếp...).
+   * Bộ lọc theo khoảng thời gian đăng bài.
+   * Bảng dữ liệu bài viết (Posts Data Table):
+   * Các cột: Checkbox (chọn nhiều), ID, Ảnh đại diện, Tiêu đề, Tác giả, Chuyên mục, Ngày tạo, Trạng thái, Hành động.
+   * Hành động trên mỗi dòng:
+   * Xem: Mở bài viết trên giao diện người dùng thực tế.
+   * Sửa: Mở trình soạn thảo để chỉnh sửa nội dung bài viết.
+   * Xóa: Mở hộp thoại xác nhận trước khi xóa vĩnh viễn.
+   * Duyệt (Approve): (Chỉ có ở bài viết "Chờ duyệt") - Chuyển trạng thái bài viết thành "Đã đăng" và tự động gửi thông báo cho tác giả.
+   * Từ chối (Reject): (Chỉ có ở bài viết "Chờ duyệt") - Mở hộp thoại yêu cầu BTV chọn lý do từ chối (VD: "Nội dung không phù hợp", "Chất lượng hình ảnh thấp", "Sao chép nội dung") hoặc nhập lý do tùy chỉnh. Hệ thống sẽ gửi thông báo kèm lý do cho tác giả.
+10.0 Quản lý Cộng đồng (/admin/community)
+   * Mục tiêu: Giám sát và điều phối các hoạt động tương tác trong cộng đồng.
+   * Các trang con (Sub-pages):
+   * 10.1 Quản lý Thử thách (/admin/community/challenges):
+   * Giao diện bảng liệt kê các thử thách đã, đang và sẽ diễn ra.
+   * Hành động: Tạo thử thách mới (với form chi tiết: tên, mô tả, luật chơi, ngày bắt đầu/kết thúc, giải thưởng), sửa, xóa, tạm dừng hoặc kết thúc sớm một thử thách.
+   * 10.2 Quản lý Nhóm (/admin/community/groups):
+   * Giao diện bảng liệt kê các nhóm.
+   * Hành động: Xem chi tiết thành viên, đổi tên nhóm, xóa nhóm nếu vi phạm.
+   * 10.3 Kiểm duyệt Nội dung (/admin/community/moderation):
+   * Giao diện có 2 tab chính: "Bình luận chờ duyệt" và "Nội dung bị báo cáo".
+   * Hành động: Cho phép quản trị viên đọc, duyệt hoặc xóa các bình luận/bài viết vi phạm. Có thể thực hiện hành động cảnh cáo hoặc khóa tài khoản người dùng vi phạm trực tiếp từ đây.
+11.0 Quản lý Người dùng (/admin/users)
+   * Mục tiêu: Quản lý toàn bộ tài khoản người dùng và phân quyền.
+   * Thành phần & Tính năng:
+   * Thanh lọc & Tìm kiếm: Tìm theo Tên, Username, Email. Lọc theo Vai trò (Admin, BTV, KOL, Thành viên). Lọc theo Trạng thái (Đang hoạt động, Bị khóa).
+   * Bảng dữ liệu người dùng (Users Data Table):
+   * Các cột: Avatar, Tên, Username, Email, Vai trò, Cấp bậc (trong chương trình phần thưởng), Ngày tham gia, Trạng thái, Hành động.
+   * Hành động:
+   * Xem chi tiết: Mở trang hồ sơ quản trị của người dùng, xem lịch sử hoạt động, các bài viết đã đăng.
+   * Chỉnh sửa vai trò: Thay đổi quyền hạn của người dùng (VD: nâng cấp một "Thành viên" lên "KOL").
+   * Khóa/Mở khóa tài khoản: Vô hiệu hóa hoặc kích hoạt lại tài khoản người dùng.
+12.0 Quản lý Chương trình Phần thưởng (/admin/rewards)
+   * Mục tiêu: Toàn quyền điều hành và cấu hình hệ thống phần thưởng.
+   * Các trang con (Sub-pages):
+   * 12.1 Cấu hình Điểm (/admin/rewards/points-config):
+   * Giao diện liệt kê tất cả các hành động có thể nhận thưởng. Bên cạnh mỗi hành động là một ô để quản trị viên có thể thay đổi số điểm thưởng.
+   * 12.2 Quản lý Cửa hàng đổi thưởng (/admin/rewards/redeem-store):
+   * Giao diện bảng liệt kê các vật phẩm trong cửa hàng.
+   * Hành động: Nút "Thêm vật phẩm mới" (mở form: tên, mô tả, ảnh, số điểm cần đổi, số lượng tồn kho). Cho phép sửa, xóa, hoặc tạm ẩn một vật phẩm.
+   * 12.3 Lịch sử Giao dịch (/admin/rewards/history):
+   * Ghi lại toàn bộ lịch sử đổi thưởng của người dùng (Ai đổi, đổi gì, khi nào, trạng thái - Chờ xử lý/Đã hoàn thành). Giúp việc quản lý và trao quà trở nên minh bạch.
+   *
