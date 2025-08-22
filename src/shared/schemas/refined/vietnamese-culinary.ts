@@ -5,7 +5,7 @@ import { INGREDIENT_CATEGORIES } from '@/shared/constants/vietnamese-culinary'
  * MVP INGREDIENT SCHEMA - Tinh gọn cho giai đoạn đầu
  */
 export const vietnameseIngredientBaseSchema = z.object({
-  id: z.string().uuid(),
+  id: z.uuid(),
   name: z.string().min(1, 'Tên nguyên liệu không được để trống'),
   category: z.enum(INGREDIENT_CATEGORIES).optional(), // Sync với DB categories
   aliases: z.array(z.string()).default([]), // Các tên gọi khác để tìm kiếm
@@ -20,7 +20,7 @@ export const vietnameseIngredientSchema = vietnameseIngredientBaseSchema
  * MVP RECIPE SCHEMA - Chỉ giữ thông tin cốt lõi
  */
 export const vietnameseRecipeBaseSchema = z.object({
-  id: z.string().uuid(),
+  id: z.uuid(),
   title: z.string().min(3, 'Tên món ăn phải có ít nhất 3 ký tự'),
   description: z.string().optional(),
   imageUrl: z.string().url().optional(),
@@ -37,8 +37,8 @@ export const vietnameseRecipeSchema = vietnameseRecipeBaseSchema
  * RECIPE INGREDIENT SCHEMA - Nguyên liệu trong công thức
  */
 export const recipeIngredientSchema = z.object({
-  recipeId: z.string().uuid(),
-  ingredientId: z.string().uuid(),
+  recipeId: z.uuid(),
+  ingredientId: z.uuid(),
   amount: z.number().positive('Số lượng phải lớn hơn 0'),
   unit: z.string().min(1, 'Đơn vị không được để trống'), // gram, ml, quả, muỗng,...
   notes: z.string().optional(), // "băm nhuyễn", "cắt lát mỏng"
@@ -48,7 +48,7 @@ export const recipeIngredientSchema = z.object({
  * RECIPE INSTRUCTION SCHEMA - Các bước thực hiện
  */
 export const recipeInstructionSchema = z.object({
-  recipeId: z.string().uuid(),
+  recipeId: z.uuid(),
   step: z.number().int().positive('Thứ tự bước phải lớn hơn 0'),
   description: z.string().min(10, 'Mô tả bước làm phải có ít nhất 10 ký tự'),
 })
@@ -57,9 +57,9 @@ export const recipeInstructionSchema = z.object({
  * PANTRY ITEM SCHEMA - Kho nguyên liệu của người dùng
  */
 export const pantryItemSchema = z.object({
-  id: z.string().uuid(),
-  userId: z.string().uuid(),
-  ingredientId: z.string().uuid(),
+  id: z.uuid(),
+  userId: z.uuid(),
+  ingredientId: z.uuid(),
   quantity: z.number().positive('Số lượng phải lớn hơn 0'),
   unit: z.string().min(1, 'Đơn vị không được để trống'),
   addedAt: z.date(),

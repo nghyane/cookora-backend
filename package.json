@@ -27,7 +27,8 @@
     "openai": "^5.13.1",
     "postgres": "^3.4.7",
     "redis": "^5.8.2",
-    "zod": "^3.25.76"
+    "zod": "^4.0.17",
+    "zod-openapi": "^5.3.1"
   },
   "devDependencies": {
     "@types/bun": "^1.2.20",

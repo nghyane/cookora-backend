@@ -117,11 +117,20 @@ app.get(
             bearerFormat: 'JWT',
             description: 'JWT Bearer token authentication',
           },
+          ApiKey: {
+            type: 'apiKey',
+            in: 'header',
+            name: 'x-api-key',
+            description: 'API Key authentication via x-api-key header',
+          },
         },
       },
       security: [
         {
           Bearer: [],
+        },
+        {
+          ApiKey: [],
         },
       ],
       servers: [

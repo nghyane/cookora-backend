@@ -10,18 +10,18 @@ dev: ## Start development server
 	bun run dev
 
 dev-docker: ## Start with Docker (database + backend)
-	docker-compose up -d
+	docker compose up -d
 
 # Database
 db-up: ## Start database services only
-	docker-compose up -d postgres redis
+	docker compose up -d postgres redis
 
 db-down: ## Stop all services
-	docker-compose down
+	docker compose down
 
 db-reset: ## Reset database (WARNING: destroys data)
-	docker-compose down -v
-	docker-compose up -d postgres redis
+	docker compose down -v
+	docker compose up -d postgres redis
 	sleep 5
 	bun run db:migrate
 
@@ -51,7 +51,7 @@ clean: ## Clean build artifacts
 	rm -rf dist node_modules
 
 logs: ## View Docker logs
-	docker-compose logs -f
+	docker compose logs -f
 
 help: ## Show this help message
 	@echo "Cookora Backend Development Commands:"

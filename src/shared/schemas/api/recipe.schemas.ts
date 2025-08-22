@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import 'zod-openapi'
 import {
     vietnameseRecipeBaseSchema,
     vietnameseRecipeSearchSchema,
@@ -25,25 +26,42 @@ export const updateRecipeRequestSchema = createRecipeRequestSchema.partial()
 export const recipeSearchQuerySchema = vietnameseRecipeSearchSchema
 
 // Find recipes by ingredients
-export const findByIngredientsSchema = z.object({
-    ingredientIds: z.array(z.string().uuid()).min(1).max(20),
-    matchType: z.enum(['all', 'any']).default('any'),
-    limit: z.coerce.number().int().min(1).max(20).default(10),
-})
+export const findByIngredientsSchema = z
+    .object({
+        ingredientIds: z
+            .array(z.uuid())
+            .min(1)
+            .max(20)
+            .meta({ example: ['b3f1f1f1-1234-5678-9abc-def012345678'] }),
+        matchType: z.enum(['all', 'any']).default('any').meta({ example: 'any' }),
+        limit: z
+            .coerce
+            .number()
+            .int()
+            .min(1)
+            .max(20)
+            .default(10)
+            .meta({ example: 10 }),
+    })
+
 
 // Add ingredients to recipe
-export const addRecipeIngredientsSchema = z.object({
-    ingredients: z.array(
-        recipeIngredientSchema.omit({ recipeId: true })
-    ).min(1, 'Phải có ít nhất 1 nguyên liệu'),
-})
+export const addRecipeIngredientsSchema = z
+    .object({
+        ingredients: z
+            .array(recipeIngredientSchema.omit({ recipeId: true }))
+            .min(1, 'Phải có ít nhất 1 nguyên liệu'),
+    })
+
 
 // Add instructions to recipe
-export const addRecipeInstructionsSchema = z.object({
-    instructions: z.array(
-        recipeInstructionSchema.omit({ recipeId: true })
-    ).min(1, 'Phải có ít nhất 1 bước làm'),
-})
+export const addRecipeInstructionsSchema = z
+    .object({
+        instructions: z
+            .array(recipeInstructionSchema.omit({ recipeId: true }))
+            .min(1, 'Phải có ít nhất 1 bước làm'),
+    })
+
 
 // Export types
 export type CreateRecipeRequest = z.infer<typeof createRecipeRequestSchema>

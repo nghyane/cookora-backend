@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { describeRoute } from 'hono-openapi'
-import { zValidator } from '@hono/zod-validator'
+import { validator as zValidator } from 'hono-openapi/zod'
 import { z } from 'zod'
 
 import { authMiddleware } from '@/shared/middleware/auth'
@@ -19,6 +19,8 @@ import {
   forgotPasswordRequestSchema,
   resetPasswordRequestSchema,
   userRegistrationSchema,
+  emailLoginSchema,
+  googleLoginSchema,
 } from '@/shared/schemas/api/auth.schemas'
 
 // Static imports for better performance
@@ -49,15 +51,30 @@ authRoutes.post(
   describeRoute({
     summary: 'Đăng nhập với provider',
     tags: [AUTH_TAG],
-    description: 'Supports email/password and OAuth providers like Google',
+    description: `Hỗ trợ đăng nhập với email/password và OAuth providers như Google.
+
+**Email Provider (POST /api/v1/auth/email/login):**
+\`\`\`json
+{
+  "email": "hoa.nguyen@example.com",
+  "password": "MyStrongPass123!"
+}
+\`\`\`
+
+**Google Provider (POST /api/v1/auth/google/login):**
+\`\`\`json
+{
+  "code": "auth_code_from_google_oauth"
+}
+\`\`\``,
   }),
   zValidator(
     'param',
     z.object({
-      provider: z.enum(['email', 'google']),
+      provider: z.enum(['email', 'google']).meta({ example: 'email' }),
     }),
   ),
-  zValidator('json', z.record(z.unknown())),
+  zValidator('json', z.union([emailLoginSchema, googleLoginSchema]).or(z.any())),
   async (c) => {
     const provider = c.req.valid('param').provider
     const body = c.req.valid('json')
@@ -259,7 +276,7 @@ authRoutes.post(
       provider: z.enum(['email', 'google']),
     }),
   ),
-  zValidator('json', z.record(z.unknown())),
+  zValidator('json', z.any()),
   async (c) => {
     const user = c.get('user')
     const provider = c.req.valid('param').provider

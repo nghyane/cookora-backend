@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { describeRoute } from 'hono-openapi'
-import { zValidator } from '@hono/zod-validator'
+import { validator as zValidator } from 'hono-openapi/zod'
 import { z } from 'zod'
 
 import { authMiddleware } from '@/shared/middleware/auth'
@@ -203,7 +203,7 @@ pantryRoutes.get(
     zValidator(
         'param',
         z.object({
-            recipeId: z.string().uuid('Recipe ID phải là UUID hợp lệ'),
+            recipeId: z.uuid('Recipe ID phải là UUID hợp lệ'),
         }),
     ),
     async (c) => {

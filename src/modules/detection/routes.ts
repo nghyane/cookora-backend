@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { describeRoute } from 'hono-openapi'
-import { zValidator } from '@hono/zod-validator'
+import { validator as zValidator } from 'hono-openapi/zod'
 
 import { authMiddleware } from '@/shared/middleware/auth'
 import { detectionUploadSchema } from '@/shared/schemas/api/detection.schemas'
@@ -18,6 +18,23 @@ detectionRoutes.post(
     tags: [DETECTION_TAG],
     security: [{ Bearer: [] }],
     description: 'Upload ảnh để AI nhận diện nguyên liệu. Trả về danh sách nguyên liệu đã có trong database.',
+    requestBody: {
+      content: {
+        'multipart/form-data': {
+          schema: {
+            type: 'object',
+            properties: {
+              image: {
+                type: 'string',
+                format: 'binary',
+                description: 'File ảnh để nhận diện nguyên liệu (tối đa 10MB)',
+              },
+            },
+            required: ['image'],
+          },
+        },
+      },
+    },
   }),
   authMiddleware,
   zValidator('query', detectionUploadSchema),

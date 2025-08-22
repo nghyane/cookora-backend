@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import 'zod-openapi'
 import {
     vietnameseIngredientBaseSchema,
     ingredientSearchSchema,
@@ -19,10 +20,19 @@ export const createIngredientRequestSchema = vietnameseIngredientBaseSchema.omit
 export const ingredientSearchQuerySchema = ingredientSearchSchema
 
 // Ingredient suggestion query parameters
-export const ingredientSuggestionQuerySchema = z.object({
-    q: z.string().min(2, 'Query phải có ít nhất 2 ký tự'),
-    limit: z.coerce.number().int().min(1).max(20).default(10),
-})
+export const ingredientSuggestionQuerySchema = z
+    .object({
+        q: z.string().min(2).meta({ example: 'cà', description: 'Từ khóa tìm kiếm' }),
+        limit: z
+            .coerce
+            .number()
+            .int()
+            .min(1)
+            .max(20)
+            .default(10)
+            .meta({ example: 5 }),
+    })
+
 
 // Export types
 export type CreateIngredientRequest = z.infer<typeof createIngredientRequestSchema>

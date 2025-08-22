@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { describeRoute } from 'hono-openapi'
-import { zValidator } from '@hono/zod-validator'
+import { validator as zValidator } from 'hono-openapi/zod'
 
 import { authMiddleware } from '@/shared/middleware/auth'
 import { adminMiddleware } from '@/shared/middleware/admin'

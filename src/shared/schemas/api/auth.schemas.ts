@@ -17,29 +17,52 @@ export const strongPasswordSchema = z
 
 // User registration
 export const userRegistrationSchema = z.object({
-    name: z.string().min(2, 'Tên phải có ít nhất 2 ký tự').max(100),
-    email: emailSchema,
-    password: strongPasswordSchema,
+    name: z.string().min(2, 'Tên phải có ít nhất 2 ký tự').max(100)
+        .meta({ example: 'Nguyễn Thị Hoa' }),
+    email: emailSchema
+        .meta({ example: 'hoa.nguyen@example.com' }),
+    password: strongPasswordSchema
+        .meta({ example: 'MyStrongPass123!' }),
+})
+
+// Email login
+export const emailLoginSchema = z.object({
+    email: emailSchema
+        .meta({ example: 'hoa.nguyen@example.com' }),
+    password: z.string().min(1, 'Mật khẩu là bắt buộc')
+        .meta({ example: 'MyStrongPass123!' }),
+})
+
+// Google OAuth login
+export const googleLoginSchema = z.object({
+    code: z.string().min(1, 'Authorization code is required')
+        .meta({ example: 'auth_code_from_google_oauth' }),
 })
 
 // Email verification
 export const verifyEmailRequestSchema = z.object({
-    token: z.string().min(1, 'Verification token is required'),
+    token: z.string().min(1, 'Verification token is required')
+        .meta({ example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' }),
 })
 
 // Forgot password
 export const forgotPasswordRequestSchema = z.object({
-    email: emailSchema,
+    email: emailSchema
+        .meta({ example: 'hoa.nguyen@example.com' }),
 })
 
 // Reset password
 export const resetPasswordRequestSchema = z.object({
-    token: z.string().min(1, 'Reset token is required'),
-    newPassword: strongPasswordSchema,
+    token: z.string().min(1, 'Reset token is required')
+        .meta({ example: 'reset-token-12345' }),
+    newPassword: strongPasswordSchema
+        .meta({ example: 'NewStrongPass456!' }),
 })
 
 // Export types
 export type UserRegistration = z.infer<typeof userRegistrationSchema>
+export type EmailLogin = z.infer<typeof emailLoginSchema>
+export type GoogleLogin = z.infer<typeof googleLoginSchema>
 export type VerifyEmailRequest = z.infer<typeof verifyEmailRequestSchema>
 export type ForgotPasswordRequest = z.infer<typeof forgotPasswordRequestSchema>
 export type ResetPasswordRequest = z.infer<typeof resetPasswordRequestSchema>
