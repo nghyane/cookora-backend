@@ -79,14 +79,19 @@ export async function getAllRecipes(query: RecipeSearchQuery) {
         .from(recipes)
         .where(whereClause)
 
-    const [recipesList, [totalResult]] = await Promise.all([recipesQuery, totalQuery])
+    const [recipesList, totalResult] = await Promise.all([
+        recipesQuery,
+        totalQuery
+    ])
+
+    const totalCount = totalResult?.[0]?.count || 0
 
     return {
-        recipes: recipesList,
-        total: totalResult.count,
+        recipes: recipesList || [],
+        total: totalCount,
         page,
         limit,
-        totalPages: Math.ceil(totalResult.count / limit)
+        totalPages: Math.ceil(totalCount / limit)
     }
 }
 
