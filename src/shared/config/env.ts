@@ -2,9 +2,7 @@ import { z } from "zod";
 
 const envSchema = z.object({
   // Server configuration
-  NODE_ENV: z
-    .enum(["development", "production", "test"])
-    .default("development"),
+  NODE_ENV: z.string().default("development"),
   PORT: z.coerce.number().default(3000),
 
   // Security: Required fields, no defaults for sensitive data
