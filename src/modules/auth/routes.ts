@@ -6,6 +6,7 @@ import { z } from "zod";
 import { authMiddleware } from "@/shared/middleware/auth";
 import { providerRegistry } from "./providers";
 import { response } from "@/shared/utils/response";
+import { env } from "@/shared/config/env";
 import {
   BadRequestError,
   ValidationError,
@@ -25,7 +26,12 @@ import {
 
 // Static imports for better performance
 import { authenticateUser, registerUser } from "./auth.core";
-import { verifyEmail, requestPasswordReset, resetPassword } from "./auth.email";
+import {
+  verifyEmail,
+  requestPasswordReset,
+  resetPassword,
+  resendVerificationEmail,
+} from "./auth.email";
 import { logoutUser, logoutAllUserSessions } from "./auth.sessions";
 import { linkProvider, unlinkProvider } from "./auth.providers";
 
@@ -166,11 +172,45 @@ authRoutes.post(
   },
 );
 
-// Email verification
+// Email verification - GET route for clicking link from email
+authRoutes.get(
+  "/verify-email",
+  describeRoute({
+    summary: "Xác thực email qua link",
+    tags: [AUTH_TAG],
+  }),
+  zValidator(
+    "query",
+    z.object({
+      token: z.string().min(1, "Token is required"),
+    }),
+  ),
+  async (c) => {
+    const { token } = c.req.valid("query");
+
+    const isVerified = await verifyEmail(token);
+
+    if (!isVerified) {
+      // Redirect to frontend with error status
+      return c.redirect(
+        `${env.FRONTEND_URL}/auth/verify-email?status=error&message=invalid_token`,
+        301,
+      );
+    }
+
+    // Redirect to frontend with success status
+    return c.redirect(
+      `${env.FRONTEND_URL}/auth/verify-email?status=success`,
+      301,
+    );
+  },
+);
+
+// Email verification - POST route for API calls
 authRoutes.post(
   "/verify-email",
   describeRoute({
-    summary: "Xác thực email",
+    summary: "Xác thực email qua API",
     tags: [AUTH_TAG],
   }),
   zValidator("json", verifyEmailRequestSchema),
@@ -187,6 +227,34 @@ authRoutes.post(
     }
 
     return c.json(response.success(null, "Xác thực email thành công"));
+  },
+);
+
+// Resend verification email
+authRoutes.post(
+  "/resend-verification",
+  describeRoute({
+    summary: "Gửi lại email xác thực",
+    tags: [AUTH_TAG],
+  }),
+  zValidator("json", forgotPasswordRequestSchema), // Reuse schema - only needs email
+  async (c) => {
+    const body = c.req.valid("json");
+
+    const success = await resendVerificationEmail(body.email);
+
+    if (!success) {
+      return c.json(
+        response.success(null, "Email đã được xác thực hoặc không tồn tại."),
+      );
+    }
+
+    return c.json(
+      response.success(
+        null,
+        "Email xác thực đã được gửi lại. Vui lòng kiểm tra hộp thư của bạn.",
+      ),
+    );
   },
 );
 
