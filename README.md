@@ -2,140 +2,175 @@
 
 > REST API server for Cookora AI Cooking Assistant Platform - Vietnamese Culinary API with AI-powered ingredient detection
 
-[![Production Status](https://img.shields.io/badge/Status-Production%20Ready-success)](https://cookora-backend.vercel.app)
-[![API Documentation](https://img.shields.io/badge/API-Documentation-blue)](https://cookora-backend.vercel.app/docs)
-[![Health Check](https://img.shields.io/badge/Health-Check-green)](https://cookora-backend.vercel.app/health)
-
-## 📋 Current Project Status
-
-**✅ Completed Features:**
-- ✅ **User Authentication** - Email/password & Google OAuth integration
-- ✅ **Ingredients Management** - Vietnamese culinary ingredients database (2000+ items)
-- ✅ **Recipe Management** - CRUD operations với Vietnamese cuisine
-- ✅ **Pantry System** - User pantry tracking và ingredient inventory
-- ✅ **Search & Filtering** - Full-text search với PostgreSQL và pgvector
-- ✅ **Admin Panel** - Admin controls cho content management
-- ✅ **API Documentation** - OpenAPI 3.0 với Scalar UI
-- ✅ **Production Ready** - Docker containerization và deployment
-
-## 🚀 Production Demo
-
-**Live Demo:** [https://cookora-backend.vercel.app](https://cookora-backend.vercel.app)
-
-**API Documentation:** [https://cookora-backend.vercel.app/docs](https://cookora-backend.vercel.app/docs)
-
-**Health Check:** [https://cookora-backend.vercel.app/health](https://cookora-backend.vercel.app/health)
-
 ## 🛠️ Tech Stack
 
 - **Runtime**: Bun 1.2.16
-- **Framework**: Hono với OpenAPI integration
+- **Framework**: Hono with OpenAPI integration
 - **Database**: PostgreSQL 17 with pgvector extension
-- **Cache**: Redis 8
-- **ORM**: Drizzle ORM 0.44.4
-- **Validation**: Zod schemas với type safety
+- **Cache**: Redis 8 (optional)
+- **ORM**: Drizzle ORM
+- **Validation**: Zod schemas with type safety
 - **Documentation**: OpenAPI 3.0 + Scalar UI
-- **Deployment**: Docker + Production hosting
+- **AI Integration**: OpenAI Vision / Google Gemini for ingredient detection
 
-## Quick Start
+## 🚀 Quick Start
 
-### Development with Docker (Recommended)
-```bash
-# Start all services (database + backend)
-docker-compose up -d
-
-# View logs
-docker-compose logs -f backend
-
-# Stop services
-docker-compose down
-```
+### Prerequisites
+- Bun 1.2.16+
+- Docker & Docker Compose
+- PostgreSQL database (local or cloud)
 
 ### Local Development
 ```bash
 # Install dependencies
 bun install
 
-# Start database only
-docker-compose up -d postgres redis
+# Copy environment variables
+cp .env.example .env
 
-# Start backend
+# Edit .env with your configuration
+# Note: Do NOT use quotes in .env when using with Docker --env-file
+
+# Start development server
 bun run dev
 ```
 
-## Database Setup
-
-### Initial Setup
+### Docker Development
 ```bash
-# Generate migration files
+# Build and run with Docker
+docker build -t cookora-backend .
+docker run -d \
+  --name cookora-backend \
+  --env-file .env \
+  -p 3000:3000 \
+  cookora-backend
+
+# View logs
+docker logs -f cookora-backend
+```
+
+## 📦 Available Scripts
+
+```bash
+bun run dev          # Start development server with hot reload
+bun run build        # Build for production
+bun run start        # Run production build
+bun test             # Run tests
+bun run db:generate  # Generate Drizzle migrations
+bun run db:migrate   # Apply migrations to database
+bun run check        # Run Biome formatter and linter
+bun run format       # Format code
+bun run lint         # Fix linting issues
+```
+
+## 🔧 Environment Variables
+
+Create a `.env` file based on `.env.example`:
+
+```bash
+# Required
+DATABASE_URL=postgresql://user:pass@host:port/dbname  # No quotes for Docker
+JWT_SECRET=your-secret-key-min-32-chars               # Min 32 characters
+
+# Optional
+NODE_ENV=development                                  # development/production
+PORT=3000                                             # Server port
+REDIS_URL=redis://localhost:6379                     # Redis connection
+
+# AI Provider (optional)
+AI_PROVIDER=gemini                                   # openai or gemini
+OPENAI_API_KEY=your-openai-key                      # If using OpenAI
+GEMINI_API_KEY=your-gemini-key                      # If using Gemini
+
+# OAuth (optional)
+GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_CLIENT_SECRET=your-client-secret
+GOOGLE_REDIRECT_URI=https://yourdomain/api/auth/google/callback
+```
+
+**Important**: When using Docker's `--env-file`, do NOT wrap values in quotes.
+
+## 🏗️ Project Structure
+
+```
+src/
+├── modules/           # Feature modules (DDD)
+│   ├── auth/         # Authentication & authorization
+│   ├── ingredients/  # Ingredient management
+│   ├── recipes/      # Recipe CRUD
+│   ├── pantry/       # User pantry tracking
+│   ├── users/        # User management
+│   ├── detection/    # AI ingredient detection
+│   └── community/    # Social features
+├── shared/           # Shared utilities
+│   ├── config/       # Environment config
+│   ├── database/     # DB connection & schema
+│   ├── middleware/   # Express middleware
+│   ├── schemas/      # Zod validation schemas
+│   └── utils/        # Helper functions
+├── app.ts           # Main application setup
+└── index.ts         # Entry point
+```
+
+## 🗄️ Database
+
+### Setup
+```bash
+# Generate migrations from schema changes
 bun run db:generate
 
 # Apply migrations
 bun run db:migrate
-```
 
-### Reset Database
-```bash
-# Stop and remove database
+# Reset database (destructive)
 docker-compose down -v
-
-# Start fresh
 docker-compose up -d postgres redis
 bun run db:migrate
 ```
 
-## Available Scripts
-
-```bash
-bun run dev          # Start development server
-bun run build        # Build for production
-bun run start        # Start production server
-bun test             # Run tests
-bun run db:generate  # Generate database migrations
-bun run db:migrate   # Apply database migrations
-bun run check        # Format and lint code
-```
+### Using Supabase/Cloud PostgreSQL
+The app is configured to work with Supabase pooler connections. Ensure your DATABASE_URL uses the pooler endpoint for production.
 
 ## 📖 API Documentation
 
-**Live Documentation:** [https://cookora-backend.vercel.app/docs](https://cookora-backend.vercel.app/docs)
+When running locally, access the API documentation at:
+- Scalar UI: `http://localhost:3000/docs`
+- OpenAPI JSON: `http://localhost:3000/openapi.json`
+- Health Check: `http://localhost:3000/health`
 
-**Main Modules:** Authentication, Ingredients (2000+ Vietnamese items), Recipes, Pantry Management, User Profiles
-
-## 🌍 Production Deployment
+## 🧪 Testing
 
 ```bash
-# Build & start production
-bun run build && bun run start
+# Run all tests
+bun test
 
-# Or với Docker
+# Run specific test file
+bun test tests/detection.test.ts
+```
+
+## 🐳 Docker Deployment
+
+```bash
+# Build image
+docker build -t cookora-backend .
+
+# Run container
+docker run -d \
+  --name cookora-backend \
+  --env-file .env \
+  -p 3000:3000 \
+  cookora-backend
+
+# Using docker-compose
 docker-compose up -d
 ```
 
-**Production URL:** [https://cookora-backend.vercel.app](https://cookora-backend.vercel.app)
-
-## 🔧 Environment Variables
-
-**Required:** `DATABASE_URL`, `JWT_SECRET`, `OPENAI_API_KEY` (32+ chars)
-**Optional:** `REDIS_URL`, `GOOGLE_CLIENT_ID/SECRET` (OAuth), `PORT` (default: 3000)
-
-## 🏗️ Architecture
-
-**Domain-Driven Modules:** `auth`, `ingredients`, `recipes`, `pantry`, `users`
-**Vietnamese Culinary Focus:** 2000+ ingredients, Vietnamese cuisine specialization
-**AI-Ready:** pgvector embeddings, full-text search, type-safe APIs
-
-## 💾 Database Schema
-
-**PostgreSQL 17** với pgvector extension cho AI-powered search
-**Tables:** users, ingredients, recipes, pantry, cache
-**Features:** Full-text search, vector embeddings, type-safe ORM
-
-## 🛠️ Development
-
-**Tools:** Biome (formatting/lint), TypeScript 5.9, Zod validation, Drizzle ORM
-**Workflow:** `make dev` for development, `make check` for code quality
-
 ## 🔌 Default Ports
 
-**Backend:** 3000 | **PostgreSQL:** 5433 | **Redis:** 6380
+- **Backend API**: 3000
+- **PostgreSQL**: 5432 (default)
+- **Redis**: 6379 (default)
+
+## 📝 License
+
+Private repository - All rights reserved
