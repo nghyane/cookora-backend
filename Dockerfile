@@ -13,7 +13,8 @@ RUN bun install --frozen-lockfile
 COPY . .
 
 # Build application (bundles everything into single file)
-RUN bun build src/index.ts --outdir=dist --target=bun --minify
+# Add --sourcemap for better error traces in production
+RUN bun build src/index.ts --outdir=dist --target=bun --sourcemap
 
 # Runtime stage
 FROM oven/bun:latest
@@ -28,7 +29,7 @@ EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:3000/health || exit 1
+    CMD curl -f http://localhost:3000/health || exit 1
 
 # Run application
 CMD ["bun", "run", "dist/index.js", "--host", "0.0.0.0"]

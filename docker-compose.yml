@@ -1,43 +1,35 @@
+version: "3.8"
+
 services:
-  # Database services
-  # postgres:
-  #   image: pgvector/pgvector:pg17
-  #   container_name: cookora-backend-postgres
-  #   environment:
-  #     POSTGRES_DB: cookora
-  #     POSTGRES_USER: cookora
-  #     POSTGRES_PASSWORD: cookora123
-  #   ports:
-  #     - "5433:5432"
-  #   volumes:
-  #     - postgres_data:/var/lib/postgresql/data
-  #   command: postgres -c shared_preload_libraries=pg_trgm,vector
-  #   networks:
-  #     - cookora-backend-network
-
-  # Backend service
   backend:
-    image: oven/bun:1.2.16
+    image: ghcr.io/nghyane/cookora-backend:latest
     container_name: cookora-backend
-    working_dir: /app
+    restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${PORT:-3000}:3000"
+    env_file:
+      - .env
     environment:
-      - NODE_ENV=development
-      - DATABASE_URL=postgresql://cookora:cookora123@postgres:5432/cookora
-      - REDIS_URL=redis://redis:6379
-    depends_on:
-      - postgres
-      - redis
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
     volumes:
-      - .:/app
-    command: bun run start
+      # Optional: Mount for logs persistence
+      - ./logs:/app/logs
+      # Optional: Mount for file uploads if needed
+      - ./uploads:/app/tmp
     networks:
-      - cookora-backend-network
-
-# volumes:
-# postgres_data:
+      - cookora-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 networks:
-  cookora-backend-network:
+  cookora-network:
     driver: bridge
