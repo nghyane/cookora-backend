@@ -1,143 +1,158 @@
-import { db } from '@/shared/database/connection'
-import { pantryItems, ingredients } from '@/shared/database/schema'
-import { eq, inArray } from 'drizzle-orm'
-import { NotFoundError, ForbiddenError } from '@/shared/utils/errors'
-import type { AddPantryItem, UpdatePantryItem } from '@/shared/schemas/api/pantry.schemas'
+import { db } from "@/shared/database/connection";
+import { pantryItems, ingredients, users } from "@/shared/database/schema";
+import { eq, inArray } from "drizzle-orm";
+import { NotFoundError, ForbiddenError } from "@/shared/utils/errors";
+import type {
+  AddPantryItem,
+  UpdatePantryItem,
+} from "@/shared/schemas/api/pantry.schemas";
 
-/**
- * Pantry Operations - Basic CRUD functionality
- * Handles: add, update, delete, batch operations
- */
-
-/**
- * Thêm item vào pantry của user, với transaction để đảm bảo ingredient tồn tại.
- */
 export async function addPantryItem(userId: string, data: AddPantryItem) {
-    return db.transaction(async tx => {
-        const [ingredient] = await tx
-            .select({ id: ingredients.id })
-            .from(ingredients)
-            .where(eq(ingredients.id, data.ingredientId))
-            .limit(1)
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+    columns: { primaryPantryOwnerId: true },
+  });
 
-        if (!ingredient) {
-            throw new NotFoundError('Nguyên liệu không tồn tại.')
-        }
+  const pantryOwnerId = user?.primaryPantryOwnerId || userId;
 
-        const [newItem] = await tx
-            .insert(pantryItems)
-            .values({
-                userId,
-                ingredientId: data.ingredientId,
-                quantity: data.quantity,
-                unit: data.unit,
-                expiresAt: data.expiresAt,
-                notes: data.notes,
-            })
-            .returning()
+  return db.transaction(async (tx) => {
+    const ingredient = await tx.query.ingredients.findFirst({
+      where: eq(ingredients.id, data.ingredientId),
+      columns: { id: true },
+    });
 
-        return newItem
-    })
-}
-
-/**
- * Thêm nhiều items cùng lúc (batch), với transaction để đảm bảo tất cả đều thành công hoặc không gì cả.
- */
-export async function addPantryBatch(userId: string, items: AddPantryItem[]) {
-    if (items.length === 0) {
-        return []
+    if (!ingredient) {
+      throw new NotFoundError("Nguyên liệu không tồn tại.");
     }
 
-    return db.transaction(async tx => {
-        const ingredientIds = [...new Set(items.map(item => item.ingredientId))]
-        const existingIngredients = await tx
-            .select({ id: ingredients.id })
-            .from(ingredients)
-            .where(inArray(ingredients.id, ingredientIds))
+    const [newItem] = await tx
+      .insert(pantryItems)
+      .values({
+        userId: pantryOwnerId,
+        ingredientId: data.ingredientId,
+        quantity: data.quantity,
+        unit: data.unit,
+        expiresAt: data.expiresAt,
+        notes: data.notes,
+        addedBy: userId,
+      })
+      .returning();
 
-        if (existingIngredients.length !== ingredientIds.length) {
-            const existingIds = new Set(existingIngredients.map(i => i.id))
-            const missingIds = ingredientIds.filter(id => !existingIds.has(id))
-            throw new NotFoundError(`Các nguyên liệu không tồn tại: ${missingIds.join(', ')}`)
-        }
-
-        const itemsToInsert = items.map(item => ({
-            userId,
-            ingredientId: item.ingredientId,
-            quantity: item.quantity,
-            unit: item.unit,
-            expiresAt: item.expiresAt,
-            notes: item.notes,
-        }))
-
-        const newItems = await tx
-            .insert(pantryItems)
-            .values(itemsToInsert)
-            .returning()
-
-        return newItems
-    })
+    return newItem;
+  });
 }
 
-/**
- * Cập nhật pantry item (với ownership checking và transaction)
- */
-export async function updatePantryItem(userId: string, itemId: string, data: UpdatePantryItem) {
-    return db.transaction(async tx => {
-        // 1. Kiểm tra item tồn tại và ownership
-        const [existingItem] = await tx
-            .select({ userId: pantryItems.userId })
-            .from(pantryItems)
-            .where(eq(pantryItems.id, itemId))
-            .limit(1)
+export async function addPantryBatch(userId: string, items: AddPantryItem[]) {
+  if (items.length === 0) {
+    return [];
+  }
 
-        if (!existingItem) {
-            throw new NotFoundError('Pantry item không tồn tại')
-        }
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+    columns: { primaryPantryOwnerId: true },
+  });
 
-        if (existingItem.userId !== userId) {
-            throw new ForbiddenError('Bạn không có quyền truy cập item này')
-        }
+  const pantryOwnerId = user?.primaryPantryOwnerId || userId;
 
-        // 2. Chuẩn bị update data và thực hiện
-        const updateData: Partial<typeof pantryItems.$inferInsert> = { ...data }
+  return db.transaction(async (tx) => {
+    const ingredientIds = [...new Set(items.map((item) => item.ingredientId))];
+    const existingIngredients = await tx.query.ingredients.findMany({
+      where: inArray(ingredients.id, ingredientIds),
+      columns: { id: true },
+    });
 
-        const [updatedItem] = await tx
-            .update(pantryItems)
-            .set(updateData)
-            .where(eq(pantryItems.id, itemId))
-            .returning()
+    if (existingIngredients.length !== ingredientIds.length) {
+      const existingIds = new Set(existingIngredients.map((i) => i.id));
+      const missingIds = ingredientIds.filter((id) => !existingIds.has(id));
+      throw new NotFoundError(
+        `Các nguyên liệu không tồn tại: ${missingIds.join(", ")}`,
+      );
+    }
 
-        return updatedItem
-    })
+    const itemsToInsert = items.map((item) => ({
+      userId: pantryOwnerId,
+      ingredientId: item.ingredientId,
+      quantity: item.quantity,
+      unit: item.unit,
+      expiresAt: item.expiresAt,
+      notes: item.notes,
+      addedBy: userId,
+    }));
+
+    const newItems = await tx
+      .insert(pantryItems)
+      .values(itemsToInsert)
+      .returning();
+
+    return newItems;
+  });
 }
 
-/**
- * Xóa item khỏi pantry (với ownership checking và transaction)
- */
+export async function updatePantryItem(
+  userId: string,
+  itemId: string,
+  data: UpdatePantryItem,
+) {
+  return db.transaction(async (tx) => {
+    const user = await tx.query.users.findFirst({
+      where: eq(users.id, userId),
+      columns: { primaryPantryOwnerId: true },
+    });
+
+    const pantryOwnerId = user?.primaryPantryOwnerId || userId;
+
+    const existingItem = await tx.query.pantryItems.findFirst({
+      where: eq(pantryItems.id, itemId),
+      columns: { userId: true },
+    });
+
+    if (!existingItem) {
+      throw new NotFoundError("Pantry item không tồn tại");
+    }
+
+    if (existingItem.userId !== pantryOwnerId) {
+      throw new ForbiddenError("Item này không thuộc pantry hiện tại của bạn");
+    }
+
+    const updateData: Partial<typeof pantryItems.$inferInsert> = { ...data };
+
+    const [updatedItem] = await tx
+      .update(pantryItems)
+      .set(updateData)
+      .where(eq(pantryItems.id, itemId))
+      .returning();
+
+    return updatedItem;
+  });
+}
+
 export async function removePantryItem(userId: string, itemId: string) {
-    return db.transaction(async tx => {
-        // 1. Kiểm tra item tồn tại và ownership
-        const [existingItem] = await tx
-            .select({ userId: pantryItems.userId })
-            .from(pantryItems)
-            .where(eq(pantryItems.id, itemId))
-            .limit(1)
+  return db.transaction(async (tx) => {
+    const user = await tx.query.users.findFirst({
+      where: eq(users.id, userId),
+      columns: { primaryPantryOwnerId: true },
+    });
 
-        if (!existingItem) {
-            throw new NotFoundError('Pantry item không tồn tại')
-        }
+    const pantryOwnerId = user?.primaryPantryOwnerId || userId;
 
-        if (existingItem.userId !== userId) {
-            throw new ForbiddenError('Bạn không có quyền truy cập item này')
-        }
+    const existingItem = await tx.query.pantryItems.findFirst({
+      where: eq(pantryItems.id, itemId),
+      columns: { userId: true },
+    });
 
-        // 2. Xóa item
-        const [deletedItem] = await tx
-            .delete(pantryItems)
-            .where(eq(pantryItems.id, itemId))
-            .returning({ id: pantryItems.id })
+    if (!existingItem) {
+      throw new NotFoundError("Pantry item không tồn tại");
+    }
 
-        return deletedItem
-    })
+    if (existingItem.userId !== pantryOwnerId) {
+      throw new ForbiddenError("Item này không thuộc pantry hiện tại của bạn");
+    }
+
+    const [deletedItem] = await tx
+      .delete(pantryItems)
+      .where(eq(pantryItems.id, itemId))
+      .returning({ id: pantryItems.id });
+
+    return deletedItem;
+  });
 }

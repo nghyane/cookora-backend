@@ -1,57 +1,69 @@
-import { db } from '@/shared/database/connection'
-import { pantryItems, ingredients } from '@/shared/database/schema'
-import { eq, and, count, desc, lte, gte } from 'drizzle-orm'
+import { db } from "@/shared/database/connection";
+import { pantryItems, ingredients, users } from "@/shared/database/schema";
+import { eq, and, count, desc, lte, gte } from "drizzle-orm";
 
 /**
  * Pantry Analytics - Statistics and insights functionality
  * Handles: usage stats, category breakdown, expiry tracking
+ * SIMPLIFIED: Single pantry model
  */
 
 /**
  * Thống kê pantry của user
  */
 export async function getPantryStats(userId: string) {
-    // Tổng số items
-    const [totalItemsResult] = await db
-        .select({ count: count() })
-        .from(pantryItems)
-        .where(eq(pantryItems.userId, userId))
+  // Get user's current pantry
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+    columns: { primaryPantryOwnerId: true },
+  });
 
-    // Items sắp hết hạn trong 7 ngày
-    const nextWeek = new Date()
-    nextWeek.setDate(nextWeek.getDate() + 7)
+  const pantryOwnerId = user?.primaryPantryOwnerId || userId;
 
-    const [expiringThisWeekResult] = await db
-        .select({ count: count() })
-        .from(pantryItems)
-        .where(
-            and(
-                eq(pantryItems.userId, userId),
-                lte(pantryItems.expiresAt, nextWeek),
-                gte(pantryItems.expiresAt, new Date())
-            )
-        )
+  // Tổng số items
+  const [totalItemsResult] = await db
+    .select({ count: count() })
+    .from(pantryItems)
+    .where(eq(pantryItems.userId, pantryOwnerId));
 
-    // Thống kê theo categories
-    const categoriesStats = await db
-        .select({
-            category: ingredients.category,
-            count: count()
-        })
-        .from(pantryItems)
-        .innerJoin(ingredients, eq(pantryItems.ingredientId, ingredients.id))
-        .where(eq(pantryItems.userId, userId))
-        .groupBy(ingredients.category)
-        .orderBy(desc(count()))
+  // Items sắp hết hạn trong 7 ngày
+  const nextWeek = new Date();
+  nextWeek.setDate(nextWeek.getDate() + 7);
 
-    return {
-        totalItems: totalItemsResult.count,
-        expiringThisWeek: expiringThisWeekResult.count,
-        categories: categoriesStats.reduce((acc, item) => {
-            if (item.category) {
-                acc[item.category] = item.count
-            }
-            return acc
-        }, {} as Record<string, number>)
-    }
+  const [expiringThisWeekResult] = await db
+    .select({ count: count() })
+    .from(pantryItems)
+    .where(
+      and(
+        eq(pantryItems.userId, pantryOwnerId),
+        lte(pantryItems.expiresAt, nextWeek),
+        gte(pantryItems.expiresAt, new Date()),
+      ),
+    );
+
+  // Thống kê theo categories
+  const categoriesStats = await db
+    .select({
+      category: ingredients.category,
+      count: count(),
+    })
+    .from(pantryItems)
+    .innerJoin(ingredients, eq(pantryItems.ingredientId, ingredients.id))
+    .where(eq(pantryItems.userId, pantryOwnerId))
+    .groupBy(ingredients.category)
+    .orderBy(desc(count()));
+
+  return {
+    totalItems: totalItemsResult.count,
+    expiringThisWeek: expiringThisWeekResult.count,
+    categories: categoriesStats.reduce(
+      (acc, item) => {
+        if (item.category) {
+          acc[item.category] = item.count;
+        }
+        return acc;
+      },
+      {} as Record<string, number>,
+    ),
+  };
 }

@@ -116,7 +116,7 @@ docker-compose up -d
 
 ## 🔧 Environment Variables
 
-**Required:** `DATABASE_URL`, `JWT_SECRET`, `ADMIN_API_KEY` (32+ chars)
+**Required:** `DATABASE_URL`, `JWT_SECRET`, `OPENAI_API_KEY` (32+ chars)
 **Optional:** `REDIS_URL`, `GOOGLE_CLIENT_ID/SECRET` (OAuth), `PORT` (default: 3000)
 
 ## 🏗️ Architecture

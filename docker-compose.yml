@@ -1,29 +1,19 @@
 services:
   # Database services
-  postgres:
-    image: pgvector/pgvector:pg17
-    container_name: cookora-backend-postgres
-    environment:
-      POSTGRES_DB: cookora
-      POSTGRES_USER: cookora
-      POSTGRES_PASSWORD: cookora123
-    ports:
-      - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    command: postgres -c shared_preload_libraries=pg_trgm,vector
-    networks:
-      - cookora-backend-network
-
-  redis:
-    image: redis:8-alpine
-    container_name: cookora-backend-redis
-    ports:
-      - "6380:6379"
-    volumes:
-      - redis_data:/data
-    networks:
-      - cookora-backend-network
+  # postgres:
+  #   image: pgvector/pgvector:pg17
+  #   container_name: cookora-backend-postgres
+  #   environment:
+  #     POSTGRES_DB: cookora
+  #     POSTGRES_USER: cookora
+  #     POSTGRES_PASSWORD: cookora123
+  #   ports:
+  #     - "5433:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   command: postgres -c shared_preload_libraries=pg_trgm,vector
+  #   networks:
+  #     - cookora-backend-network
 
   # Backend service
   backend:
@@ -41,13 +31,12 @@ services:
       - redis
     volumes:
       - .:/app
-    command: bun run dev
+    command: bun run start
     networks:
       - cookora-backend-network
 
-volumes:
-  postgres_data:
-  redis_data:
+# volumes:
+# postgres_data:
 
 networks:
   cookora-backend-network:

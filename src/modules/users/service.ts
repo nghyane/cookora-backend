@@ -1,21 +1,25 @@
-import { db } from '@/shared/database/connection'
-import { users, authProviders, userFavorites } from '@/shared/database/schema'
-import { recipes } from '@/shared/database/schema'
-import { eq, and, count, desc, sql } from 'drizzle-orm'
-import { providerRegistry } from '@/modules/auth/providers'
-import type { EmailAuthProvider } from '@/modules/auth/providers/email.provider'
-import { UnauthorizedError, NotFoundError, ConflictError } from '@/shared/utils/errors'
+import { db } from "@/shared/database/connection";
+import { users, authProviders, userFavorites } from "@/shared/database/schema";
+import { recipes } from "@/shared/database/schema";
+import { eq, and, count, desc, sql } from "drizzle-orm";
+import { providerRegistry } from "@/modules/auth/providers";
+import type { EmailAuthProvider } from "@/modules/auth/providers/email.provider";
+import {
+  UnauthorizedError,
+  NotFoundError,
+  ConflictError,
+} from "@/shared/utils/errors";
 
 // This interface defines the shape of a user's public profile.
 export interface UserProfile {
-  id: string
-  email: string
-  name: string
-  avatarUrl?: string | null
-  emailVerified: boolean
-  providers: string[]
-  createdAt: Date
-  updatedAt: Date
+  id: string;
+  email: string;
+  name: string;
+  avatarUrl?: string | null;
+  emailVerified: boolean;
+  providers: string[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export class UsersService {
@@ -25,20 +29,30 @@ export class UsersService {
    * @returns A promise that resolves to the user's profile or null if not found.
    */
   async getUserProfile(userId: string): Promise<UserProfile | null> {
-    const [user] = await db.select().from(users).where(eq(users.id, userId)).limit(1)
+    const [user] = await db
+      .select()
+      .from(users)
+      .where(eq(users.id, userId))
+      .limit(1);
 
-    if (!user) return null
+    if (!user) return null;
 
     // Get user's auth providers
     const userProviders = await db
       .select({ provider: authProviders.provider })
       .from(authProviders)
-      .where(eq(authProviders.userId, userId))
+      .where(eq(authProviders.userId, userId));
 
     return {
-      ...user,
-      providers: userProviders.map(p => p.provider),
-    }
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      avatarUrl: user.avatarUrl,
+      emailVerified: user.emailVerified,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+      providers: userProviders.map((p) => p.provider),
+    };
   }
 
   /**
@@ -55,22 +69,28 @@ export class UsersService {
       .update(users)
       .set({ ...updates, updatedAt: new Date() })
       .where(eq(users.id, userId))
-      .returning()
+      .returning();
 
     if (!user) {
-      throw new Error('User not found')
+      throw new Error("User not found");
     }
 
     // Get providers to return the full profile
     const userProviders = await db
       .select({ provider: authProviders.provider })
       .from(authProviders)
-      .where(eq(authProviders.userId, userId))
+      .where(eq(authProviders.userId, userId));
 
     return {
-      ...user,
-      providers: userProviders.map(p => p.provider),
-    }
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      avatarUrl: user.avatarUrl,
+      emailVerified: user.emailVerified,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+      providers: userProviders.map((p) => p.provider),
+    };
   }
 
   /**
@@ -79,10 +99,14 @@ export class UsersService {
    * @param oldPassword The user's current password.
    * @param newPassword The new password to set.
    */
-  async changePassword(userId: string, oldPassword: string, newPassword: string): Promise<void> {
-    const emailProvider = providerRegistry.get('email') as EmailAuthProvider
+  async changePassword(
+    userId: string,
+    oldPassword: string,
+    newPassword: string,
+  ): Promise<void> {
+    const emailProvider = providerRegistry.get("email") as EmailAuthProvider;
     // Let email provider handle its own errors - it already throws meaningful errors
-    await emailProvider.changePassword(userId, oldPassword, newPassword)
+    await emailProvider.changePassword(userId, oldPassword, newPassword);
   }
 
   /**
@@ -93,21 +117,22 @@ export class UsersService {
    * @returns A promise that resolves to the user's favorite recipes.
    */
   async getFavorites(userId: string, page: number = 1, limit: number = 20) {
-    const offset = (page - 1) * limit
+    const offset = (page - 1) * limit;
 
     const [favorites, [totalResult]] = await Promise.all([
-      db.select({
-        recipe: {
-          id: recipes.id,
-          title: recipes.title,
-          description: recipes.description,
-          imageUrl: recipes.imageUrl,
-          cookingTime: recipes.cookingTime,
-          servings: recipes.servings,
-          createdAt: recipes.createdAt,
-        },
-        favoritedAt: userFavorites.createdAt,
-      })
+      db
+        .select({
+          recipe: {
+            id: recipes.id,
+            title: recipes.title,
+            description: recipes.description,
+            imageUrl: recipes.imageUrl,
+            cookingTime: recipes.cookingTime,
+            servings: recipes.servings,
+            createdAt: recipes.createdAt,
+          },
+          favoritedAt: userFavorites.createdAt,
+        })
         .from(userFavorites)
         .innerJoin(recipes, eq(userFavorites.recipeId, recipes.id))
         .where(eq(userFavorites.userId, userId))
@@ -115,18 +140,19 @@ export class UsersService {
         .limit(limit)
         .offset(offset),
 
-      db.select({ count: count() })
+      db
+        .select({ count: count() })
         .from(userFavorites)
-        .where(eq(userFavorites.userId, userId))
-    ])
+        .where(eq(userFavorites.userId, userId)),
+    ]);
 
     return {
       favorites,
       total: totalResult.count,
       page,
       limit,
-      totalPages: Math.ceil(totalResult.count / limit)
-    }
+      totalPages: Math.ceil(totalResult.count / limit),
+    };
   }
 
   /**
@@ -140,14 +166,16 @@ export class UsersService {
     const existing = await db
       .select()
       .from(userFavorites)
-      .where(and(
-        eq(userFavorites.userId, userId),
-        eq(userFavorites.recipeId, recipeId)
-      ))
-      .limit(1)
+      .where(
+        and(
+          eq(userFavorites.userId, userId),
+          eq(userFavorites.recipeId, recipeId),
+        ),
+      )
+      .limit(1);
 
     if (existing.length > 0) {
-      throw new ConflictError('Công thức đã có trong danh sách yêu thích')
+      throw new ConflictError("Công thức đã có trong danh sách yêu thích");
     }
 
     // Check if recipe exists
@@ -155,18 +183,18 @@ export class UsersService {
       .select({ id: recipes.id })
       .from(recipes)
       .where(eq(recipes.id, recipeId))
-      .limit(1)
+      .limit(1);
 
     if (recipe.length === 0) {
-      throw new NotFoundError('Recipe not found')
+      throw new NotFoundError("Recipe not found");
     }
 
     const [favorite] = await db
       .insert(userFavorites)
       .values({ userId, recipeId })
-      .returning()
+      .returning();
 
-    return favorite
+    return favorite;
   }
 
   /**
@@ -178,17 +206,19 @@ export class UsersService {
   async removeFromFavorites(userId: string, recipeId: string) {
     const result = await db
       .delete(userFavorites)
-      .where(and(
-        eq(userFavorites.userId, userId),
-        eq(userFavorites.recipeId, recipeId)
-      ))
-      .returning()
+      .where(
+        and(
+          eq(userFavorites.userId, userId),
+          eq(userFavorites.recipeId, recipeId),
+        ),
+      )
+      .returning();
 
     if (result.length === 0) {
-      throw new NotFoundError('Recipe not found in favorites')
+      throw new NotFoundError("Recipe not found in favorites");
     }
 
-    return result[0]
+    return result[0];
   }
 
   /**
@@ -199,38 +229,40 @@ export class UsersService {
    * @returns A promise that resolves to the user's created recipes.
    */
   async getMyRecipes(userId: string, page: number = 1, limit: number = 20) {
-    const offset = (page - 1) * limit
+    const offset = (page - 1) * limit;
 
     const [userRecipes, [totalResult]] = await Promise.all([
-      db.select({
-        id: recipes.id,
-        title: recipes.title,
-        description: recipes.description,
-        imageUrl: recipes.imageUrl,
-        cookingTime: recipes.cookingTime,
-        servings: recipes.servings,
-        createdAt: recipes.createdAt,
-        updatedAt: recipes.updatedAt,
-      })
+      db
+        .select({
+          id: recipes.id,
+          title: recipes.title,
+          description: recipes.description,
+          imageUrl: recipes.imageUrl,
+          cookingTime: recipes.cookingTime,
+          servings: recipes.servings,
+          createdAt: recipes.createdAt,
+          updatedAt: recipes.updatedAt,
+        })
         .from(recipes)
         .where(eq(recipes.authorId, userId))
         .orderBy(desc(recipes.createdAt))
         .limit(limit)
         .offset(offset),
 
-      db.select({ count: count() })
+      db
+        .select({ count: count() })
         .from(recipes)
-        .where(eq(recipes.authorId, userId))
-    ])
+        .where(eq(recipes.authorId, userId)),
+    ]);
 
     return {
       recipes: userRecipes,
       total: totalResult.count,
       page,
       limit,
-      totalPages: Math.ceil(totalResult.count / limit)
-    }
+      totalPages: Math.ceil(totalResult.count / limit),
+    };
   }
 }
 
-export const usersService = new UsersService()
+export const usersService = new UsersService();

@@ -1,11 +1,11 @@
-import { Hono } from 'hono'
-import { describeRoute } from 'hono-openapi'
-import { validator as zValidator } from 'hono-openapi/zod'
-import { z } from 'zod'
+import { Hono } from "hono";
+import { describeRoute } from "hono-openapi";
+import { validator as zValidator } from "hono-openapi/zod";
+import { z } from "zod";
 
-import { authMiddleware } from '@/shared/middleware/auth'
-import { providerRegistry } from './providers'
-import { response } from '@/shared/utils/response'
+import { authMiddleware } from "@/shared/middleware/auth";
+import { providerRegistry } from "./providers";
+import { response } from "@/shared/utils/response";
 import {
   BadRequestError,
   ValidationError,
@@ -13,7 +13,7 @@ import {
   UserExistsError,
   UnauthorizedError,
   ConflictError,
-} from '@/shared/utils/errors'
+} from "@/shared/utils/errors";
 import {
   verifyEmailRequestSchema,
   forgotPasswordRequestSchema,
@@ -21,77 +21,68 @@ import {
   userRegistrationSchema,
   emailLoginSchema,
   googleLoginSchema,
-} from '@/shared/schemas/api/auth.schemas'
+} from "@/shared/schemas/api/auth.schemas";
 
 // Static imports for better performance
-import { authenticateUser, registerUser } from './auth.core'
-import { verifyEmail, requestPasswordReset, resetPassword } from './auth.email'
-import { logoutUser, logoutAllUserSessions } from './auth.sessions'
-import { linkProvider, unlinkProvider } from './auth.providers'
+import { authenticateUser, registerUser } from "./auth.core";
+import { verifyEmail, requestPasswordReset, resetPassword } from "./auth.email";
+import { logoutUser, logoutAllUserSessions } from "./auth.sessions";
+import { linkProvider, unlinkProvider } from "./auth.providers";
 
-const AUTH_TAG = 'Authentication'
-const authRoutes = new Hono()
+const AUTH_TAG = "Authentication";
+const authRoutes = new Hono();
 
 // List available providers
 authRoutes.get(
-  '/providers',
+  "/providers",
   describeRoute({
-    summary: 'Lấy danh sách providers hỗ trợ',
+    summary: "Lấy danh sách providers hỗ trợ",
     tags: [AUTH_TAG],
   }),
   (c) => {
-    const providers = providerRegistry.list()
-    return c.json(response.success({ providers }, 'Available providers'))
+    const providers = providerRegistry.list();
+    return c.json(response.success({ providers }, "Available providers"));
   },
-)
+);
 
 // Generic provider login endpoint
 authRoutes.post(
-  '/:provider/login',
+  "/:provider/login",
   describeRoute({
-    summary: 'Đăng nhập với provider',
+    summary: "Đăng nhập với provider",
     tags: [AUTH_TAG],
-    description: `Hỗ trợ đăng nhập với email/password và OAuth providers như Google.
-
-**Email Provider (POST /api/v1/auth/email/login):**
-\`\`\`json
-{
-  "email": "hoa.nguyen@example.com",
-  "password": "MyStrongPass123!"
-}
-\`\`\`
-
-**Google Provider (POST /api/v1/auth/google/login):**
-\`\`\`json
-{
-  "code": "auth_code_from_google_oauth"
-}
-\`\`\``,
+    description: "Hỗ trợ email/password và OAuth providers",
   }),
   zValidator(
-    'param',
+    "param",
     z.object({
-      provider: z.enum(['email', 'google']).meta({ example: 'email' }),
+      provider: z.enum(["email", "google"]).meta({ example: "email" }),
     }),
   ),
-  zValidator('json', z.union([emailLoginSchema, googleLoginSchema]).or(z.any())),
+  zValidator(
+    "json",
+    z.union([emailLoginSchema, googleLoginSchema]).or(z.any()),
+  ),
   async (c) => {
-    const provider = c.req.valid('param').provider
-    const body = c.req.valid('json')
+    const provider = c.req.valid("param").provider;
+    const body = c.req.valid("json");
 
     if (!providerRegistry.has(provider)) {
-      throw new BadRequestError('Provider không được hỗ trợ', 'INVALID_PROVIDER')
+      throw new BadRequestError(
+        "Provider không được hỗ trợ",
+        "INVALID_PROVIDER",
+      );
     }
 
     // Handle email login validation
-    if (provider === 'email') {
+    if (provider === "email") {
       if (!body.email || !body.password) {
-        throw new ValidationError('Yêu cầu email và mật khẩu')
+        throw new ValidationError("Yêu cầu email và mật khẩu");
       }
     }
 
-    const ipAddress = c.req.header('x-forwarded-for')
-    const userAgent = c.req.header('user-agent')
+    const ipAddress = c.req.header("x-forwarded-for");
+    const userAgent = c.req.header("user-agent");
 
     // Let authenticateUser handle its own errors properly
     const { user, token, expiresAt } = await authenticateUser(
@@ -99,220 +90,240 @@ authRoutes.post(
       body,
       ipAddress,
       userAgent,
-    )
+    );
 
-    return c.json(response.success({ user, token, expiresAt }, 'Đăng nhập thành công'))
+    return c.json(
+      response.success({ user, token, expiresAt }, "Đăng nhập thành công"),
+    );
   },
-)
+);
 
 // OAuth callback endpoint
 authRoutes.get(
-  '/:provider/callback',
+  "/:provider/callback",
   describeRoute({
-    summary: 'OAuth callback endpoint',
+    summary: "OAuth callback endpoint",
     tags: [AUTH_TAG],
-    description: 'Handles OAuth callbacks from providers like Google',
+    description: "Handles OAuth callbacks from providers like Google",
   }),
   zValidator(
-    'param',
+    "param",
     z.object({
-      provider: z.enum(['google']),
+      provider: z.enum(["google"]),
     }),
   ),
   async (c) => {
-    const provider = c.req.valid('param').provider
+    const provider = c.req.valid("param").provider;
 
-    if (provider !== 'google') {
-      throw new BadRequestError('Provider không được hỗ trợ', 'INVALID_PROVIDER')
+    if (provider !== "google") {
+      throw new BadRequestError(
+        "Provider không được hỗ trợ",
+        "INVALID_PROVIDER",
+      );
     }
 
-    const code = c.req.query('code')
+    const code = c.req.query("code");
     if (!code) {
-      throw new BadRequestError('Yêu cầu authorization code', 'MISSING_CODE')
+      throw new BadRequestError("Yêu cầu authorization code", "MISSING_CODE");
     }
 
     // Let authenticateUser handle its own errors properly
-    const { user, token, expiresAt } = await authenticateUser(provider, { code })
-    return c.json(response.success({ user, token, expiresAt }, 'Đăng nhập thành công'))
+    const { user, token, expiresAt } = await authenticateUser(provider, {
+      code,
+    });
+    return c.json(
+      response.success({ user, token, expiresAt }, "Đăng nhập thành công"),
+    );
   },
-)
+);
 
 // Email registration
 authRoutes.post(
-  '/register',
+  "/register",
   describeRoute({
-    summary: 'Đăng ký tài khoản email',
+    summary: "Đăng ký tài khoản email",
     tags: [AUTH_TAG],
   }),
-  zValidator('json', userRegistrationSchema),
+  zValidator("json", userRegistrationSchema),
   async (c) => {
-    const body = c.req.valid('json')
+    const body = c.req.valid("json");
 
     // Zod validation already ensures required fields
     const { user, verificationToken } = await registerUser(
       body.email,
       body.password,
       body.name,
-    )
-    
+    );
+
     // TODO: Send verification email with the token
     return c.json(
       response.success(
         { user },
-        'Đăng ký thành công. Vui lòng kiểm tra email để xác thực.',
+        "Đăng ký thành công. Vui lòng kiểm tra email để xác thực.",
       ),
       201,
-    )
+    );
   },
-)
+);
 
 // Email verification
 authRoutes.post(
-  '/verify-email',
+  "/verify-email",
   describeRoute({
-    summary: 'Xác thực email',
+    summary: "Xác thực email",
     tags: [AUTH_TAG],
   }),
-  zValidator('json', verifyEmailRequestSchema),
+  zValidator("json", verifyEmailRequestSchema),
   async (c) => {
-    const body = c.req.valid('json')
+    const body = c.req.valid("json");
 
     // Zod validation already ensures token is present
-    const isVerified = await verifyEmail(body.token)
+    const isVerified = await verifyEmail(body.token);
 
     if (!isVerified) {
-      throw new InvalidTokenError('Token xác thực không hợp lệ hoặc đã hết hạn')
+      throw new InvalidTokenError(
+        "Token xác thực không hợp lệ hoặc đã hết hạn",
+      );
     }
 
-    return c.json(response.success(null, 'Xác thực email thành công'))
+    return c.json(response.success(null, "Xác thực email thành công"));
   },
-)
+);
 
 // Password reset flow
 authRoutes.post(
-  '/forgot-password',
+  "/forgot-password",
   describeRoute({
-    summary: 'Yêu cầu đặt lại mật khẩu',
+    summary: "Yêu cầu đặt lại mật khẩu",
     tags: [AUTH_TAG],
   }),
-  zValidator('json', forgotPasswordRequestSchema),
+  zValidator("json", forgotPasswordRequestSchema),
   async (c) => {
-    const body = c.req.valid('json')
-    
+    const body = c.req.valid("json");
+
     // Zod validation already ensures email is present
-    await requestPasswordReset(body.email)
+    await requestPasswordReset(body.email);
     return c.json(
       response.success(
         null,
-        'Nếu email tồn tại, một email đặt lại mật khẩu đã được gửi.',
+        "Nếu email tồn tại, một email đặt lại mật khẩu đã được gửi.",
       ),
-    )
+    );
   },
-)
+);
 
 authRoutes.post(
-  '/reset-password',
+  "/reset-password",
   describeRoute({
-    summary: 'Đặt lại mật khẩu',
+    summary: "Đặt lại mật khẩu",
     tags: [AUTH_TAG],
   }),
-  zValidator('json', resetPasswordRequestSchema),
+  zValidator("json", resetPasswordRequestSchema),
   async (c) => {
-    const body = c.req.valid('json')
-    
+    const body = c.req.valid("json");
+
     // Zod validation already ensures required fields
-    await resetPassword(body.token, body.newPassword)
-    return c.json(response.success(null, 'Đặt lại mật khẩu thành công'))
+    await resetPassword(body.token, body.newPassword);
+    return c.json(response.success(null, "Đặt lại mật khẩu thành công"));
   },
-)
+);
 
 // Session management
 authRoutes.post(
-  '/logout',
+  "/logout",
   describeRoute({
-    summary: 'Đăng xuất',
+    summary: "Đăng xuất",
     tags: [AUTH_TAG],
     security: [{ Bearer: [] }],
   }),
   authMiddleware,
   async (c) => {
-    const authHeader = c.req.header('Authorization')
-    const token = authHeader?.substring(7)
-    
+    const authHeader = c.req.header("Authorization");
+    const token = authHeader?.substring(7);
+
     if (token) {
-      await logoutUser(token)
+      await logoutUser(token);
     }
-    return c.json(response.success({ loggedOut: true }, 'Đăng xuất thành công'))
+    return c.json(
+      response.success({ loggedOut: true }, "Đăng xuất thành công"),
+    );
   },
-)
+);
 
 authRoutes.post(
-  '/logout-all',
+  "/logout-all",
   describeRoute({
-    summary: 'Đăng xuất tất cả thiết bị',
+    summary: "Đăng xuất tất cả thiết bị",
     tags: [AUTH_TAG],
     security: [{ Bearer: [] }],
   }),
   authMiddleware,
   async (c) => {
-    const user = c.get('user')
-    await logoutAllUserSessions(user.userId)
-    return c.json(response.success(null, 'Đã đăng xuất khỏi tất cả các thiết bị'))
+    const user = c.get("user");
+    await logoutAllUserSessions(user.userId);
+    return c.json(
+      response.success(null, "Đã đăng xuất khỏi tất cả các thiết bị"),
+    );
   },
-)
+);
 
 // Provider management (link/unlink additional auth methods)
 authRoutes.post(
-  '/link/:provider',
+  "/link/:provider",
   describeRoute({
-    summary: 'Liên kết provider mới',
+    summary: "Liên kết provider mới",
     tags: [AUTH_TAG],
     security: [{ Bearer: [] }],
   }),
   authMiddleware,
   zValidator(
-    'param',
+    "param",
     z.object({
-      provider: z.enum(['email', 'google']),
+      provider: z.enum(["email", "google"]),
     }),
   ),
-  zValidator('json', z.any()),
+  zValidator("json", z.any()),
   async (c) => {
-    const user = c.get('user')
-    const provider = c.req.valid('param').provider
-    const body = c.req.valid('json')
+    const user = c.get("user");
+    const provider = c.req.valid("param").provider;
+    const body = c.req.valid("json");
 
     if (!providerRegistry.has(provider)) {
-      throw new BadRequestError('Provider không được hỗ trợ', 'INVALID_PROVIDER')
+      throw new BadRequestError(
+        "Provider không được hỗ trợ",
+        "INVALID_PROVIDER",
+      );
     }
 
     // Let linkProvider handle its own errors properly
-    await linkProvider(user.userId, provider, body)
-    return c.json(response.success(null, `Đã liên kết thành công với ${provider}`))
+    await linkProvider(user.userId, provider, body);
+    return c.json(
+      response.success(null, `Đã liên kết thành công với ${provider}`),
+    );
   },
-)
+);
 
 authRoutes.delete(
-  '/unlink/:provider',
+  "/unlink/:provider",
   describeRoute({
-    summary: 'Hủy liên kết provider',
+    summary: "Hủy liên kết provider",
     tags: [AUTH_TAG],
     security: [{ Bearer: [] }],
   }),
   authMiddleware,
   zValidator(
-    'param',
+    "param",
     z.object({
-      provider: z.enum(['email', 'google']),
+      provider: z.enum(["email", "google"]),
     }),
   ),
   async (c) => {
-    const user = c.get('user')
-    const provider = c.req.valid('param').provider
-    
-    await unlinkProvider(user.userId, provider)
-    return c.json(response.success(null, `Đã hủy liên kết với ${provider}`))
-  },
-)
+    const user = c.get("user");
+    const provider = c.req.valid("param").provider;
 
-export { authRoutes }
+    await unlinkProvider(user.userId, provider);
+    return c.json(response.success(null, `Đã hủy liên kết với ${provider}`));
+  },
+);
+
+export { authRoutes };

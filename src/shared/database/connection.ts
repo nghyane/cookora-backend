@@ -1,12 +1,19 @@
-import { env } from '@/shared/config/env'
-import { drizzle } from 'drizzle-orm/bun-sql'
-import * as schema from './schema'
+import { env } from "@/shared/config/env";
+import { drizzle } from "drizzle-orm/bun-sql";
+import * as schema from "./schema";
 
-const connectionString = env.DATABASE_URL
+import { SQL } from "bun";
 
-export const db = drizzle(connectionString, {
+const connectionString = env.DATABASE_URL;
+
+const queryClient = new SQL(connectionString, {
+  prepare: false, // Disable prepared statements for Supabase pooler
+  max: 20,
+});
+
+export const db = drizzle(queryClient, {
   schema,
-  logger: env.NODE_ENV === 'development',
-})
+  logger: env.NODE_ENV === "development",
+});
 
-export { sql } from 'drizzle-orm'
+export { sql } from "drizzle-orm";

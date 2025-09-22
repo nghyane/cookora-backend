@@ -1,9 +1,9 @@
-import { z } from 'zod'
-import 'zod-openapi'
+import { z } from "zod";
+import "zod-openapi";
 import {
-    vietnameseIngredientBaseSchema,
-    ingredientSearchSchema,
-} from '@/shared/schemas/refined/vietnamese-culinary'
+  vietnameseIngredientBaseSchema,
+  ingredientSearchSchema,
+} from "@/shared/schemas/refined/vietnamese-culinary";
 
 /**
  * Ingredient Domain Schemas - Ingredient related validations
@@ -11,30 +11,39 @@ import {
  */
 
 // Create ingredient request
-export const createIngredientRequestSchema = vietnameseIngredientBaseSchema.omit({
+export const createIngredientRequestSchema =
+  vietnameseIngredientBaseSchema.omit({
     id: true,
     createdAt: true,
-})
+  });
+
+// Update ingredient request - all fields optional for partial updates
+export const updateIngredientRequestSchema =
+  createIngredientRequestSchema.partial();
 
 // Ingredient search query parameters
-export const ingredientSearchQuerySchema = ingredientSearchSchema
+export const ingredientSearchQuerySchema = ingredientSearchSchema;
 
 // Ingredient suggestion query parameters
-export const ingredientSuggestionQuerySchema = z
-    .object({
-        q: z.string().min(2).meta({ example: 'cà', description: 'Từ khóa tìm kiếm' }),
-        limit: z
-            .coerce
-            .number()
-            .int()
-            .min(1)
-            .max(20)
-            .default(10)
-            .meta({ example: 5 }),
-    })
-
+export const ingredientSuggestionQuerySchema = z.object({
+  q: z.string().min(2).meta({ example: "cà", description: "Từ khóa tìm kiếm" }),
+  limit: z.coerce
+    .number()
+    .int()
+    .min(1)
+    .max(20)
+    .default(10)
+    .meta({ example: 5 }),
+});
 
 // Export types
-export type CreateIngredientRequest = z.infer<typeof createIngredientRequestSchema>
-export type IngredientSearchQuery = z.infer<typeof ingredientSearchQuerySchema>
-export type IngredientSuggestionQuery = z.infer<typeof ingredientSuggestionQuerySchema>
+export type CreateIngredientRequest = z.infer<
+  typeof createIngredientRequestSchema
+>;
+export type UpdateIngredientRequest = z.infer<
+  typeof updateIngredientRequestSchema
+>;
+export type IngredientSearchQuery = z.infer<typeof ingredientSearchQuerySchema>;
+export type IngredientSuggestionQuery = z.infer<
+  typeof ingredientSuggestionQuerySchema
+>;
