@@ -34,13 +34,6 @@ export const categoryResponseSchema = z.object({
 // Post schemas
 export const createPostSchema = z.object({
   title: z.string().min(1).max(200).describe("Tiêu đề bài viết"),
-  slug: z
-    .string()
-    .min(1)
-    .max(200)
-    .regex(/^[a-z0-9-]+$/)
-    .optional()
-    .describe("Đường dẫn thân thiện URL"),
   content: z.string().min(1).describe("Nội dung bài viết (HTML hoặc markdown)"),
   excerpt: z.string().max(500).optional().describe("Mô tả ngắn"),
   imageUrl: z.string().url().optional().describe("Đường dẫn ảnh nổi bật"),
@@ -63,7 +56,6 @@ export const updatePostSchema = createPostSchema.partial().extend({
 export const postResponseSchema = z.object({
   id: z.uuid(),
   title: z.string(),
-  slug: z.string().nullable(),
   content: z.string().nullable(),
   excerpt: z.string().nullable(),
   imageUrl: z.string().nullable(),

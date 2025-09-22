@@ -15,21 +15,6 @@ import {
 import { AppError } from "@/shared/utils/errors";
 import { logger } from "@/shared/utils/logger";
 
-// Helper function to generate slug
-function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[àáạảãâầấậẩẫăằắặẳẵ]/g, "a")
-    .replace(/[èéẹẻẽêềếệểễ]/g, "e")
-    .replace(/[ìíịỉĩ]/g, "i")
-    .replace(/[òóọỏõôồốộổỗơờớợởỡ]/g, "o")
-    .replace(/[ùúụủũưừứựửữ]/g, "u")
-    .replace(/[ỳýỵỷỹ]/g, "y")
-    .replace(/đ/g, "d")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
-
 export class CommunityService {
   // =================== CATEGORIES ===================
   async createCategory(data: {
@@ -40,7 +25,9 @@ export class CommunityService {
     sortOrder?: number;
     isActive?: boolean;
   }) {
-    const slug = data.slug || generateSlug(data.name);
+    // Note: Categories still keep slug for SEO purposes
+    const slug =
+      data.slug || data.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
     // Check if slug already exists
     const existing = await db.query.postCategories.findFirst({
@@ -89,7 +76,6 @@ export class CommunityService {
   async createPost(
     data: {
       title: string;
-      slug?: string;
       content?: string;
       excerpt?: string;
       imageUrl?: string;
@@ -103,20 +89,6 @@ export class CommunityService {
     },
     authorId: string,
   ) {
-    const slug = data.slug || generateSlug(data.title);
-
-    // Check if slug already exists
-    const existing = await db.query.posts.findFirst({
-      where: eq(posts.slug, slug),
-    });
-
-    if (existing) {
-      // Append timestamp to make it unique
-      data.slug = `${slug}-${Date.now()}`;
-    } else {
-      data.slug = slug;
-    }
-
     const [post] = await db
       .insert(posts)
       .values({
@@ -308,7 +280,6 @@ export class CommunityService {
     id: string,
     data: Partial<{
       title: string;
-      slug: string;
       content: string;
       excerpt: string;
       imageUrl: string;
@@ -344,11 +315,6 @@ export class CommunityService {
           "FORBIDDEN",
         );
       }
-    }
-
-    // Update slug if title changed
-    if (data.title && !data.slug) {
-      data.slug = generateSlug(data.title);
     }
 
     // Update publishedAt if status changes to published
