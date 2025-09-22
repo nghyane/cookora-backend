@@ -14,7 +14,7 @@ import { recipes } from "./recipes";
 import { ingredients } from "./ingredients";
 
 // User role enum
-export const userRoleEnum = pgEnum("user_role", ["user", "admin"]);
+export const userRoleEnum = pgEnum("user_role", ["user", "staff", "admin"]);
 
 // Users table - Core user information
 export const users = pgTable("users", {

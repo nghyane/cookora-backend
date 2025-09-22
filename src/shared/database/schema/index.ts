@@ -5,4 +5,5 @@ export * from "./recipes";
 export * from "./ingredients";
 export * from "./cache";
 export * from "./community";
+export * from "./media";
 export * from "./relations";

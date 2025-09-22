@@ -20,8 +20,21 @@ const envSchema = z.object({
   OPENAI_API_KEY: z.string().optional(),
   GEMINI_API_KEY: z.string().optional(),
 
+  // Email Configuration (Resend)
+  RESEND_API_KEY: z.string().optional(),
+  EMAIL_FROM: z.string().default("Cookora <noreply@cookora.vn>"), // Allow "Name <email>" format
+  APP_URL: z.url().default("http://localhost:3000"),
+  FRONTEND_URL: z.url().default("http://localhost:5173"), // Frontend app URL for redirects
+
   // Optional fields with secure defaults
   REDIS_URL: z.string().default("redis://localhost:6379"),
+
+  // R2 Storage Configuration (Cloudflare R2)
+  R2_ACCOUNT_ID: z.string().optional(),
+  R2_ACCESS_KEY_ID: z.string().optional(),
+  R2_SECRET_ACCESS_KEY: z.string().optional(),
+  R2_BUCKET_NAME: z.string().optional(),
+  R2_PUBLIC_URL: z.string().url().optional(), // CDN URL for serving files
 });
 
 export const env = envSchema.parse(process.env);

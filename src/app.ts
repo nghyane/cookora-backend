@@ -13,6 +13,7 @@ import { usersRoutes } from "@/modules/users/routes";
 import { pantryRoutes } from "@/modules/pantry/routes";
 import { detectionRoutes } from "@/modules/detection/routes";
 import { communityRoutes } from "@/modules/community/routes";
+import { mediaRoutes } from "@/modules/media/routes";
 
 // Import shared middleware and error handling
 import { AppError } from "@/shared/utils/errors";
@@ -58,6 +59,7 @@ app.route("/api/v1/recipes", recipesRoutes);
 app.route("/api/v1/users", usersRoutes);
 app.route("/api/v1/detect", detectionRoutes);
 app.route("/api/v1/community", communityRoutes);
+app.route("/api/v1/media", mediaRoutes);
 
 // Error handling with onError
 app.onError((err, c) => {
