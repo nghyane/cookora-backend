@@ -6,14 +6,14 @@
 export const TEST_ACCOUNTS = [
   {
     email: "admin@cookora.com",
-    password: "Admin123@",
+    password: "admin123",
     name: "Admin",
     role: "admin",
     description: "Admin account with full access",
   },
   {
     email: "nguyen@example.com",
-    password: "User123@",
+    password: "admin123",
     name: "Nguyen Van A",
     role: "user",
     description: "Regular user account 1",

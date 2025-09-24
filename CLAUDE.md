@@ -14,13 +14,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Database
 - `bun run db:generate` - Generate Drizzle migrations from schema changes
 - `bun run db:migrate` - Apply pending migrations to database
-- `docker-compose up -d postgres redis` - Start database services only
-- `docker-compose down -v && docker-compose up -d postgres redis && bun run db:migrate` - Full database reset
-
-### Docker
-- `docker-compose up -d` - Start all services (PostgreSQL, Redis, backend)
-- `docker-compose logs -f backend` - View backend logs
-- `docker-compose down` - Stop all services
 
 ### Production
 - `bun run build` - Build for production (outputs to dist/)
@@ -49,7 +42,7 @@ The application follows a domain-driven modular architecture at `/src/modules/`:
 ### Key Architectural Patterns
 1. **Route Registration**: Each module exports a `routes.ts` that's mounted in `app.ts`
 2. **Service Pattern**: Business logic separated into service files (e.g., `ingredients/service.ts`)
-3. **Schema Organization**: 
+3. **Schema Organization**:
    - Database schemas in `/src/shared/database/schema/`
    - API schemas in `/src/shared/schemas/api/` using Zod with OpenAPI extensions
 4. **Error Handling**: Custom `AppError` class with consistent error responses via `response.ts` utility
